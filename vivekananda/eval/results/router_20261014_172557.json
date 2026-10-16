@@ -1,0 +1,1218 @@
+{
+ "model": "qwen3:14b",
+ "n": 170,
+ "accuracy": 0.9412,
+ "confusion": {
+  "scholar": {
+   "scholar": 48,
+   "oracle": 2
+  },
+  "oracle": {
+   "oracle": 50
+  },
+  "persona": {
+   "persona": 46,
+   "oracle": 5
+  },
+  "decline": {
+   "decline": 6,
+   "persona": 1,
+   "scholar": 2
+  },
+  "mixed": {
+   "mixed": 10
+  }
+ },
+ "rows": [
+  {
+   "id": "q-001",
+   "question": "What did you say in your first address at the Parliament of Religions in Chicago?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said in his first address at the Parliament of Religions in Chicago, which relates to his own words and actions."
+  },
+  {
+   "id": "q-002",
+   "question": "How did your view of Buddhism relate to Hinduism in your Chicago addresses?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's views on Buddhism in relation to Hinduism in his Chicago addresses, which relates to his own opinions and teachings."
+  },
+  {
+   "id": "q-003",
+   "question": "What did you write to Alasinga about starting work in Madras?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda wrote to Alasinga, which relates to his personal correspondence and is addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-004",
+   "question": "What did you say about the condition of the masses in India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the condition of the masses in India, which relates to his views and statements."
+  },
+  {
+   "id": "q-005",
+   "question": "What was your position on the caste system?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's position, which relates to his views and is addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-006",
+   "question": "What did you say about the education of women in India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the education of women in India."
+  },
+  {
+   "id": "q-007",
+   "question": "How did you describe your Master, Shri Ramakrishna, in your lectures?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about how Swami Vivekananda described his Master, Shri Ramakrishna, in his lectures, which relates directly to his own views and experiences."
+  },
+  {
+   "id": "q-008",
+   "question": "What did you tell the people of Madras when you returned from the West?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said to the people of Madras upon his return from the West, which relates directly to his life and specific events."
+  },
+  {
+   "id": "q-009",
+   "question": "What did you say about idol worship when questioned in the West?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about idol worship in the West, which relates to his views and teachings."
+  },
+  {
+   "id": "q-010",
+   "question": "What did you write about the relationship between science and religion?",
+   "expected": "scholar",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept directly addressed in his works."
+  },
+  {
+   "id": "q-011",
+   "question": "What did you say about Christ in your lecture 'Christ, the Messenger'?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Christ in a specific lecture, which relates to his views and teachings."
+  },
+  {
+   "id": "q-012",
+   "question": "What did you say about Mohammedanism and Islam?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding Mohammedanism and Islam, which relates to his views and opinions."
+  },
+  {
+   "id": "q-013",
+   "question": "What were your views on the Vedas and their authority?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's views on the Vedas and their authority, which relates directly to his own opinions and teachings."
+  },
+  {
+   "id": "q-014",
+   "question": "How did you explain Maya in your London lectures?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Maya in his London lectures, which relates to his own teachings and lectures."
+  },
+  {
+   "id": "q-015",
+   "question": "What did you say about the Sikhs and Guru Govind Singh?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the Sikhs and Guru Govind Singh, which relates to his views and opinions."
+  },
+  {
+   "id": "q-016",
+   "question": "What did you write to Sister Nivedita about her work for Indian women?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda wrote to Sister Nivedita, which relates to his personal correspondence and opinions."
+  },
+  {
+   "id": "q-017",
+   "question": "What did you say about vegetarianism and meat-eating?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding vegetarianism and meat-eating, which relates to his views and statements."
+  },
+  {
+   "id": "q-018",
+   "question": "What was your opinion of social reformers in India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's opinion of social reformers in India, which relates to his views and is addressed in his writings."
+  },
+  {
+   "id": "q-019",
+   "question": "What did you say about the Theosophists?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's views on the Theosophists, which relates to his opinions and is addressed in his writings and lectures."
+  },
+  {
+   "id": "q-020",
+   "question": "What did you say about the English and British rule in India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the English and British rule in India, which relates to his views and opinions."
+  },
+  {
+   "id": "q-021",
+   "question": "What did you tell Mrs. Bull about your plans for the Math at Belur?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda told Mrs. Bull about his plans for the Math at Belur, which relates to his personal communications and views."
+  },
+  {
+   "id": "q-022",
+   "question": "What did you write about the historical evolution of India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda wrote regarding the historical evolution of India, which relates to his views and writings."
+  },
+  {
+   "id": "q-023",
+   "question": "How did you describe the Sannyasin's ideal in your poem?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about how Swami Vivekananda described the Sannyasin's ideal in his poem, which relates to his own views and writings."
+  },
+  {
+   "id": "q-024",
+   "question": "What did you say to your brother disciples about organising the Ramakrishna Mission?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said to his brother disciples regarding organising the Ramakrishna Mission, which relates to his life and teachings."
+  },
+  {
+   "id": "q-025",
+   "question": "What did you say about Shankaracharya and Advaita?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding Shankaracharya and Advaita, which relates to his views and discussions."
+  },
+  {
+   "id": "q-026",
+   "question": "What did you say about Ramanuja and qualified non-dualism?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Ramanuja and qualified non-dualism, which relates to his views and opinions."
+  },
+  {
+   "id": "q-027",
+   "question": "What did you say about the Buddha as a person?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about the Buddha, which relates to his views and opinions."
+  },
+  {
+   "id": "q-028",
+   "question": "What did you say about the role of the Brahmin in India's future?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the role of the Brahmin in India's future, which relates to his views and opinions."
+  },
+  {
+   "id": "q-029",
+   "question": "What did you say about Japan when you visited it?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Japan, which relates to his personal views and experiences."
+  },
+  {
+   "id": "q-030",
+   "question": "What did you say about American women?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about American women, which relates to his views and statements."
+  },
+  {
+   "id": "q-031",
+   "question": "What did you say about the Jains?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about the Jains, which relates to his views and opinions on them."
+  },
+  {
+   "id": "q-032",
+   "question": "What did you write about the Paris Congress of the History of Religions?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda wrote about the Paris Congress of the History of Religions, which relates to his own writings and experiences."
+  },
+  {
+   "id": "q-033",
+   "question": "What did you say about the Vedanta being practical?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the practicality of Vedanta, which relates to his own views and teachings."
+  },
+  {
+   "id": "q-034",
+   "question": "What did you say about Kali and Mother worship?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding Kali and Mother worship, which relates to his personal views and statements."
+  },
+  {
+   "id": "q-035",
+   "question": "What did you say about the hymn 'As the different streams having their sources in different places'?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about a specific hymn, which relates to his views and teachings."
+  },
+  {
+   "id": "q-036",
+   "question": "What did you say about the Gita and Krishna's historicity?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the Gita and Krishna's historicity, which relates to his views and opinions."
+  },
+  {
+   "id": "q-037",
+   "question": "How did you define religion in your lectures?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about how Swami Vivekananda defined religion in his lectures, which relates to his own views and teachings."
+  },
+  {
+   "id": "q-038",
+   "question": "What did you say about the problem of evil?",
+   "expected": "scholar",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-039",
+   "question": "What did you say about hypnotism and psychic powers?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding hypnotism and psychic powers, which relates to his views and is addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-040",
+   "question": "What did you tell the Alambazar Math members about rules of the monastery?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda told the Alambazar Math members, which relates to his direct communication with them."
+  },
+  {
+   "id": "q-041",
+   "question": "What did you say about Mahavira and Indian history?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Mahavira and Indian history, which relates to his views and opinions."
+  },
+  {
+   "id": "q-042",
+   "question": "What did you write about the East and the West in your essay?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda wrote about the East and the West in his essay, which relates to his own writings and views."
+  },
+  {
+   "id": "q-043",
+   "question": "What did you say about Sister Nivedita's book on Kali?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's views on Sister Nivedita's book, which relates to his opinions and interactions."
+  },
+  {
+   "id": "q-044",
+   "question": "What did you say about the Arya Samaj and Dayananda?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about Swami Vivekananda's views on the Arya Samaj and Dayananda, which relates to his opinions on specific people and movements."
+  },
+  {
+   "id": "q-045",
+   "question": "What did you say about Tantra and the Tantras?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about Tantra and the Tantras, which relates to his views and opinions."
+  },
+  {
+   "id": "q-046",
+   "question": "What did you say about spiritualism and talking to the dead?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding spiritualism and talking to the dead, which relates to his views and is addressed in his writings."
+  },
+  {
+   "id": "q-047",
+   "question": "What did you say about the poverty of your own family?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the poverty of his own family, which relates to his personal views and experiences."
+  },
+  {
+   "id": "q-048",
+   "question": "What did you say about the Chicago Fair and your early days in America?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said regarding the Chicago Fair and his early days in America, which relates to his life and experiences."
+  },
+  {
+   "id": "q-049",
+   "question": "What did you say about your health and illness in your last years?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question is about Swami Vivekananda's views on his own health and illness, which relates to his personal life and correspondence."
+  },
+  {
+   "id": "q-050",
+   "question": "What did you say about music and art in India?",
+   "expected": "scholar",
+   "predicted": "scholar",
+   "reason": "The question asks about what Swami Vivekananda said about music and art in India, which relates to his views and is addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-051",
+   "question": "What is Karma-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about the concept of Karma-Yoga, which is directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-052",
+   "question": "What is Raja-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about a concept (Raja-Yoga) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-053",
+   "question": "What is Bhakti-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about the definition and nature of Bhakti-Yoga, which is directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-054",
+   "question": "What is Jnana-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about a concept (Jnana-Yoga) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-055",
+   "question": "What is the secret of work?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (the secret of work) directly addressed in Vivekananda's teachings on Karma-Yoga."
+  },
+  {
+   "id": "q-056",
+   "question": "What is duty?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (duty) directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-057",
+   "question": "What is Maya?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-058",
+   "question": "What is Prana?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Prana) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-059",
+   "question": "What is the goal of Raja-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Raja-Yoga) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-060",
+   "question": "How should I practise meditation?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question is about a practice (meditation) directly addressed in his works."
+  },
+  {
+   "id": "q-061",
+   "question": "What is Pratyahara?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about a concept (Pratyahara) directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-062",
+   "question": "What is Samadhi?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Samadhi) directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-063",
+   "question": "What is the Atman?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Atman) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-064",
+   "question": "What is the real nature of man?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-065",
+   "question": "Is the soul immortal?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching about the soul's immortality, which is directly addressed in his works."
+  },
+  {
+   "id": "q-066",
+   "question": "What is the ideal of a universal religion?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-067",
+   "question": "What is the difference between religion and the religions?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (religion vs. religions) directly addressed in his works."
+  },
+  {
+   "id": "q-068",
+   "question": "Why do we disagree about religion?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question relates to a teaching or concept addressed in Swami Vivekananda's works about religion."
+  },
+  {
+   "id": "q-069",
+   "question": "What is renunciation?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (renunciation) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-070",
+   "question": "What is the meaning of 'each is great in his own place'?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-071",
+   "question": "What is Para-Bhakti?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Para-Bhakti) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-072",
+   "question": "What is the Ishta?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Ishta) directly addressed in Vivekananda's teachings."
+  },
+  {
+   "id": "q-073",
+   "question": "What is the need of a Guru?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-074",
+   "question": "What does the Vedanta say about God?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching of Vedanta about God, which is directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-075",
+   "question": "What is the cause of evil in the world?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a philosophical concept (evil) that Swami Vivekananda directly addresses in his teachings."
+  },
+  {
+   "id": "q-076",
+   "question": "What is freedom?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (freedom) directly addressed in his works."
+  },
+  {
+   "id": "q-077",
+   "question": "What is the ideal of Karma-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Swami Vivekananda's works on Karma-Yoga."
+  },
+  {
+   "id": "q-078",
+   "question": "What is the Sankhya cosmology?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Sankhya cosmology) directly addressed in his works."
+  },
+  {
+   "id": "q-079",
+   "question": "What are the three Gunas?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (the three Gunas) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-080",
+   "question": "What is the relation of Buddhism to Hinduism?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-081",
+   "question": "What is Advaita?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Advaita) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-082",
+   "question": "What is Dharma?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Dharma) directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-083",
+   "question": "What is the meaning of the Gita's 'work without attachment'?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-084",
+   "question": "How does one control the mind?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question is about a concept (controlling the mind) directly addressed in his works."
+  },
+  {
+   "id": "q-085",
+   "question": "What is Om?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-086",
+   "question": "What is the Vedanta's teaching on the many and the One?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about a core teaching of Vedanta, which is directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-087",
+   "question": "What is love of God?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Swami Vivekananda's teachings on love of God."
+  },
+  {
+   "id": "q-088",
+   "question": "What are the four Yogas?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (the four Yogas) directly addressed in his works."
+  },
+  {
+   "id": "q-089",
+   "question": "What is the place of ritual and symbols in religion?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching or concept addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-090",
+   "question": "What is the Hindu idea of creation and cycles?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching about creation and cycles directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-091",
+   "question": "What is reincarnation and why believe it?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about the concept of reincarnation, which is directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-092",
+   "question": "What is the Absolute and manifestation?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a philosophical concept (the Absolute and manifestation) directly addressed in Swami Vivekananda's teachings."
+  },
+  {
+   "id": "q-093",
+   "question": "What is the unity in diversity?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Swami Vivekananda's works."
+  },
+  {
+   "id": "q-094",
+   "question": "What is the real worship?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (real worship) directly addressed in his teachings."
+  },
+  {
+   "id": "q-095",
+   "question": "What is the ideal of womanhood in India?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-096",
+   "question": "What is the use of concentration?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (concentration) directly addressed in Swami Vivekananda's teachings."
+  },
+  {
+   "id": "q-097",
+   "question": "What is the mind according to Raja-Yoga?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question asks about a concept (the mind) according to Raja-Yoga, which is directly addressed in his works."
+  },
+  {
+   "id": "q-098",
+   "question": "What is the Chitta and what are the Vrittis?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (Chitta and Vrittis) directly addressed in Swami Vivekananda's teachings."
+  },
+  {
+   "id": "q-099",
+   "question": "Why is man divine?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a teaching directly addressed in Vivekananda's works."
+  },
+  {
+   "id": "q-100",
+   "question": "What is the secret of success in work?",
+   "expected": "oracle",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (secret of success in work) directly addressed in his teachings."
+  },
+  {
+   "id": "q-101",
+   "question": "How should I handle burnout at work?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling burnout, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-102",
+   "question": "I feel anxious about my career; what should I do?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal inquiry about career anxiety, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-103",
+   "question": "How do I stay focused when my phone keeps distracting me?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on staying focused with phone distractions, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-104",
+   "question": "My parents want me to marry; I want to pursue my studies abroad. What should I do?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal dilemma about marriage and career choices, which Swami Vivekananda did not address directly."
+  },
+  {
+   "id": "q-105",
+   "question": "How do I deal with a boss who takes credit for my work?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with a boss, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-106",
+   "question": "Is it wrong to want to be rich?",
+   "expected": "persona",
+   "predicted": "oracle",
+   "reason": "The question relates to a teaching on wealth and its proper use, which is addressed in his works."
+  },
+  {
+   "id": "q-107",
+   "question": "How should I raise my children in a city far from India?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on raising children in a modern context, which is not addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-108",
+   "question": "How do I forgive someone who betrayed me?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on forgiving someone who betrayed the user, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-109",
+   "question": "What should a software engineer do to serve society?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on how a software engineer can serve society, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-110",
+   "question": "How do I find meaning in a boring job?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on finding meaning in a modern situation (a boring job), which Swami Vivekananda did not directly address."
+  },
+  {
+   "id": "q-111",
+   "question": "I am lonely in a foreign country. How do I cope?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal inquiry about coping with loneliness in a foreign country, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-112",
+   "question": "Should I meditate with an app?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on using an app for meditation, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-113",
+   "question": "How do I stop procrastinating?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on stopping procrastination, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-114",
+   "question": "How do I balance ambition with contentment?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on balancing ambition with contentment, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-115",
+   "question": "How should I treat people who are rude to me online?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling online rudeness, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-116",
+   "question": "How should a startup founder think about failure?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on how a startup founder should think about failure, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-117",
+   "question": "Is it okay to leave my religion?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal inquiry about leaving religion, which is not directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-118",
+   "question": "How do I deal with the fear of death?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with fear of death, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-119",
+   "question": "Should I take antidepressants or rely on spiritual practice?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on a modern issue (antidepressants vs. spiritual practice) which Swami Vivekananda did not address directly."
+  },
+  {
+   "id": "q-120",
+   "question": "How can I be brave when I feel weak?",
+   "expected": "persona",
+   "predicted": "oracle",
+   "reason": "The question relates to a teaching or concept (bravery and weakness) directly addressed in his works."
+  },
+  {
+   "id": "q-121",
+   "question": "What do I do when my friends mock my spiritual interests?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with friends mocking spiritual interests, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-122",
+   "question": "How should a doctor handle the suffering of patients she cannot save?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling patient suffering, which Swami Vivekananda did not directly address."
+  },
+  {
+   "id": "q-123",
+   "question": "How do I handle jealousy of my more successful sibling?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling jealousy, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-124",
+   "question": "What is the purpose of exercise and fitness?",
+   "expected": "persona",
+   "predicted": "oracle",
+   "reason": "The question refers to a concept (exercise and fitness) that Swami Vivekananda's works address directly."
+  },
+  {
+   "id": "q-125",
+   "question": "How do I choose between two job offers?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on choosing between job offers, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-126",
+   "question": "How should I deal with anger at injustice I see in the news?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with anger at injustice, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-127",
+   "question": "How do I keep my faith while studying science at university?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on maintaining faith while studying science, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-128",
+   "question": "Should I give money to beggars?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal inquiry about modern behavior and advice."
+  },
+  {
+   "id": "q-129",
+   "question": "How do I teach my students to be fearless?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on teaching students to be fearless, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-130",
+   "question": "How do I remain humble after success?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on remaining humble after success, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-131",
+   "question": "What should I do about climate change?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on addressing climate change, which is a modern issue not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-132",
+   "question": "How can a working mother find time for spiritual practice?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on balancing work and spiritual practice, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-133",
+   "question": "How do I recover from a breakup?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on recovering from a breakup, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-134",
+   "question": "How do I handle criticism of my art?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling criticism of art, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-135",
+   "question": "Is competition good for children?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on whether competition is good for children, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-136",
+   "question": "How do I speak to my dying grandmother?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on how to speak to a dying grandmother, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-137",
+   "question": "How do I stop comparing myself to others on social media?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on a modern issue (social media comparisons) which Swami Vivekananda did not address directly."
+  },
+  {
+   "id": "q-138",
+   "question": "What should a young Indian engineer going to America remember?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice to a young Indian engineer going to America, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-139",
+   "question": "How do I deal with a corrupt official?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with a corrupt official, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-140",
+   "question": "How much should I sleep?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is about personal advice on sleep, which Swami Vivekananda did not directly address in his works."
+  },
+  {
+   "id": "q-141",
+   "question": "How do I keep calm during exams?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on keeping calm during exams, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-142",
+   "question": "Should I become a monk or stay a householder?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question is a personal inquiry about life choices not directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-143",
+   "question": "How do I know if my teacher is genuine?",
+   "expected": "persona",
+   "predicted": "oracle",
+   "reason": "The question is about a concept (genuine teacher) directly addressed in his works."
+  },
+  {
+   "id": "q-144",
+   "question": "How do I practise non-attachment while loving my family?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on practising non-attachment in the context of loving family, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-145",
+   "question": "How do I deal with guilt over past mistakes?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on dealing with guilt, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-146",
+   "question": "What should I do with my inheritance?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on handling inheritance, which is a modern situation not directly addressed in Swami Vivekananda's teachings."
+  },
+  {
+   "id": "q-147",
+   "question": "How do I become a better listener?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on becoming a better listener, which is not directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-148",
+   "question": "How do I serve the poor without becoming proud of it?",
+   "expected": "persona",
+   "predicted": "oracle",
+   "reason": "The question relates to a philosophical concept about serving others without pride, which is addressed in his teachings."
+  },
+  {
+   "id": "q-149",
+   "question": "How can I stop being afraid of public speaking?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on overcoming fear of public speaking, which is a modern situation not directly addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-150",
+   "question": "How do I find my purpose in life?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on finding life's purpose, which is not directly addressed in the retrieval evidence."
+  },
+  {
+   "id": "q-151",
+   "question": "What do you think of the current Prime Minister of India?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question refers to the current Prime Minister of India, which is unrelated to Swami Vivekananda's time and work."
+  },
+  {
+   "id": "q-152",
+   "question": "Who should I vote for in the next election?",
+   "expected": "decline",
+   "predicted": "persona",
+   "reason": "The question asks for personal advice on voting in an election, which is a modern situation not addressed by Swami Vivekananda."
+  },
+  {
+   "id": "q-153",
+   "question": "What is your view on the 1947 partition of India?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question refers to an event (1947 partition of India) that occurred after Swami Vivekananda's death in 1902."
+  },
+  {
+   "id": "q-154",
+   "question": "What do you think about artificial intelligence?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for Swami Vivekananda's opinion on a modern topic (artificial intelligence) he never addressed."
+  },
+  {
+   "id": "q-155",
+   "question": "Was Gandhi right about non-violence?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question refers to Gandhi and his views on non-violence, which are outside the scope of Swami Vivekananda's lifetime and works."
+  },
+  {
+   "id": "q-156",
+   "question": "What is the capital of Australia?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question is unrelated to Swami Vivekananda and religion/philosophy."
+  },
+  {
+   "id": "q-157",
+   "question": "Write me a Python function to sort a list.",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question is unrelated to Swami Vivekananda and religion/philosophy."
+  },
+  {
+   "id": "q-158",
+   "question": "What do you think of the Ramakrishna Mission's work in the 21st century?",
+   "expected": "decline",
+   "predicted": "scholar",
+   "reason": "The question refers to Swami Vivekananda's views on the Ramakrishna Mission, which is about him and his opinions."
+  },
+  {
+   "id": "q-159",
+   "question": "Did you know you died in 1902?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question refers to Swami Vivekananda's death, which is a historical fact and not a topic he addressed in his works."
+  },
+  {
+   "id": "q-160",
+   "question": "What happened at the 1893 Chicago World's Fair after you left?",
+   "expected": "decline",
+   "predicted": "scholar",
+   "reason": "The question asks about events at the 1893 Chicago World's Fair after Swami Vivekananda left, which relates to his life and activities."
+  },
+  {
+   "id": "q-161",
+   "question": "What did you say about education, and how should I educate my daughter today?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about education (scholar) and another about modern advice on educating a daughter (persona)."
+  },
+  {
+   "id": "q-162",
+   "question": "What was your view on caste, and how should I respond to caste discrimination at my workplace?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about Swami Vivekananda's view on caste (scholar/oracle) and another about personal advice on responding to caste discrimination."
+  },
+  {
+   "id": "q-163",
+   "question": "What did you say about fear, and how do I overcome my fear of failure?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about fear (scholar) and how to overcome fear of failure (persona)."
+  },
+  {
+   "id": "q-164",
+   "question": "What did you teach about Karma-Yoga, and how can I apply it as a nurse?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda taught about Karma-Yoga (scholar) and how to apply it as a nurse (persona)."
+  },
+  {
+   "id": "q-165",
+   "question": "What did you say about women, and should my wife continue working after children?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about Swami Vivekananda's views on women (scholar) and another seeking personal advice on whether the user's wife should continue working (persona)."
+  },
+  {
+   "id": "q-166",
+   "question": "What did you say about the masses of India, and what can I do about poverty today?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about the Indian masses (scholar) and another about addressing poverty today (persona)."
+  },
+  {
+   "id": "q-167",
+   "question": "What did you say about strength, and how do I become strong after illness?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about strength (scholar) and how to become strong after illness (persona)."
+  },
+  {
+   "id": "q-168",
+   "question": "What did you say about Christ, and how should a Hindu respond to missionaries now?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about Christ (scholar/oracle) and another about how a Hindu should respond to missionaries now (persona)."
+  },
+  {
+   "id": "q-169",
+   "question": "What did you say about meditation, and can I meditate while commuting?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about meditation (scholar/oracle) and another about meditating while commuting (personal advice)."
+  },
+  {
+   "id": "q-170",
+   "question": "What did you say about renunciation, and should I renounce my career for a spiritual life?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about renunciation (scholar) and seeks personal advice on whether to renounce a career (persona)."
+  }
+ ]
+}

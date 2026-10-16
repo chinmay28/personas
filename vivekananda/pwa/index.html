@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vivekananda</title>
+<meta name="description" content="Ask Swami Vivekananda: answers grounded in the Complete Works, with citations.">
+<meta name="theme-color" content="#1f1a17">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <img src="/icon-192.png" alt="" width="28" height="28">
+    <div>
+      <h1>Swami Vivekananda</h1>
+      <div class="status" id="status">connecting…</div>
+    </div>
+  </div>
+  <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings">&#9881;</button>
+</header>
+
+<main id="chat" aria-live="polite">
+  <div class="empty" id="empty">
+    <p>Ask anything. Every answer is spoken in his own voice and labelled by how it is grounded:</p>
+    <p><span class="badge oracle">oracle</span> his own words, verbatim &nbsp; <span class="badge scholar">scholar</span> what he said or wrote, cited &nbsp; <span class="badge persona">persona</span> reasoning beyond his record, marked</p>
+    <p class="hint">Tap a citation to read the full section.</p>
+  </div>
+</main>
+
+<form id="form" class="composer" autocomplete="off">
+  <select id="mode" title="Mode override" aria-label="Mode">
+    <option value="auto">auto</option>
+    <option value="oracle">oracle</option>
+    <option value="scholar">scholar</option>
+    <option value="persona">persona</option>
+    <option value="mixed">mixed</option>
+  </select>
+  <textarea id="q" rows="1" placeholder="Ask Swamiji…" aria-label="Question" required></textarea>
+  <button type="submit" id="send" class="send" aria-label="Ask">Ask</button>
+</form>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Section text">
+  <header>
+    <div class="drawer-title" id="drawerTitle"></div>
+    <button class="icon-btn" id="drawerClose" aria-label="Close">&times;</button>
+  </header>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<aside class="drawer settings" id="settings" hidden aria-label="Settings">
+  <header>
+    <div class="drawer-title">Settings</div>
+    <button class="icon-btn" id="settingsClose" aria-label="Close">&times;</button>
+  </header>
+  <div class="drawer-body">
+    <label>Backend
+      <select id="backend">
+        <option value="">server default</option>
+        <option value="prompted">prompted (phase 3 cascade)</option>
+        <option value="unified">unified (fine-tuned 8B)</option>
+      </select>
+    </label>
+    <label>Model (Ollama tag, blank = backend default)
+      <input id="model" list="models" placeholder="e.g. vivekananda:8b">
+      <datalist id="models"></datalist>
+    </label>
+    <label class="row"><input type="checkbox" id="showMeta"> show retrieval and timing details</label>
+    <div class="row">
+      <button id="clearHistory" class="danger">Clear history</button>
+      <button id="exportHistory">Export history (JSON)</button>
+    </div>
+    <pre id="healthDump" class="small"></pre>
+  </div>
+</aside>
+
+<script src="/app.js"></script>
+</body>
+</html>

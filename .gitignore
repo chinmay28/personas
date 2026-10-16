@@ -1,0 +1,19 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# large or derived artifacts (rebuild from corpus/, or download from the model/dataset hubs)
+*/index/
+*/models/
+*/data/*.jsonl
+*/data/qfp/
+*/data/tiers/
+*/train/out/
+*/train/*.log
+*/eval/results/*.log
+*.gguf
+*.safetensors
+*.epub
+*.mobi

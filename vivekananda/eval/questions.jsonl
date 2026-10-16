@@ -1,0 +1,170 @@
+{"id": "q-001", "question": "What did you say in your first address at the Parliament of Religions in Chicago?", "expected_mode": "scholar"}
+{"id": "q-002", "question": "How did your view of Buddhism relate to Hinduism in your Chicago addresses?", "expected_mode": "scholar"}
+{"id": "q-003", "question": "What did you write to Alasinga about starting work in Madras?", "expected_mode": "scholar"}
+{"id": "q-004", "question": "What did you say about the condition of the masses in India?", "expected_mode": "scholar"}
+{"id": "q-005", "question": "What was your position on the caste system?", "expected_mode": "scholar"}
+{"id": "q-006", "question": "What did you say about the education of women in India?", "expected_mode": "scholar"}
+{"id": "q-007", "question": "How did you describe your Master, Shri Ramakrishna, in your lectures?", "expected_mode": "scholar"}
+{"id": "q-008", "question": "What did you tell the people of Madras when you returned from the West?", "expected_mode": "scholar"}
+{"id": "q-009", "question": "What did you say about idol worship when questioned in the West?", "expected_mode": "scholar"}
+{"id": "q-010", "question": "What did you write about the relationship between science and religion?", "expected_mode": "scholar"}
+{"id": "q-011", "question": "What did you say about Christ in your lecture 'Christ, the Messenger'?", "expected_mode": "scholar"}
+{"id": "q-012", "question": "What did you say about Mohammedanism and Islam?", "expected_mode": "scholar"}
+{"id": "q-013", "question": "What were your views on the Vedas and their authority?", "expected_mode": "scholar"}
+{"id": "q-014", "question": "How did you explain Maya in your London lectures?", "expected_mode": "scholar"}
+{"id": "q-015", "question": "What did you say about the Sikhs and Guru Govind Singh?", "expected_mode": "scholar"}
+{"id": "q-016", "question": "What did you write to Sister Nivedita about her work for Indian women?", "expected_mode": "scholar"}
+{"id": "q-017", "question": "What did you say about vegetarianism and meat-eating?", "expected_mode": "scholar"}
+{"id": "q-018", "question": "What was your opinion of social reformers in India?", "expected_mode": "scholar"}
+{"id": "q-019", "question": "What did you say about the Theosophists?", "expected_mode": "scholar"}
+{"id": "q-020", "question": "What did you say about the English and British rule in India?", "expected_mode": "scholar"}
+{"id": "q-021", "question": "What did you tell Mrs. Bull about your plans for the Math at Belur?", "expected_mode": "scholar"}
+{"id": "q-022", "question": "What did you write about the historical evolution of India?", "expected_mode": "scholar"}
+{"id": "q-023", "question": "How did you describe the Sannyasin's ideal in your poem?", "expected_mode": "scholar"}
+{"id": "q-024", "question": "What did you say to your brother disciples about organising the Ramakrishna Mission?", "expected_mode": "scholar"}
+{"id": "q-025", "question": "What did you say about Shankaracharya and Advaita?", "expected_mode": "scholar"}
+{"id": "q-026", "question": "What did you say about Ramanuja and qualified non-dualism?", "expected_mode": "scholar"}
+{"id": "q-027", "question": "What did you say about the Buddha as a person?", "expected_mode": "scholar"}
+{"id": "q-028", "question": "What did you say about the role of the Brahmin in India's future?", "expected_mode": "scholar"}
+{"id": "q-029", "question": "What did you say about Japan when you visited it?", "expected_mode": "scholar"}
+{"id": "q-030", "question": "What did you say about American women?", "expected_mode": "scholar"}
+{"id": "q-031", "question": "What did you say about the Jains?", "expected_mode": "scholar"}
+{"id": "q-032", "question": "What did you write about the Paris Congress of the History of Religions?", "expected_mode": "scholar"}
+{"id": "q-033", "question": "What did you say about the Vedanta being practical?", "expected_mode": "scholar"}
+{"id": "q-034", "question": "What did you say about Kali and Mother worship?", "expected_mode": "scholar"}
+{"id": "q-035", "question": "What did you say about the hymn 'As the different streams having their sources in different places'?", "expected_mode": "scholar"}
+{"id": "q-036", "question": "What did you say about the Gita and Krishna's historicity?", "expected_mode": "scholar"}
+{"id": "q-037", "question": "How did you define religion in your lectures?", "expected_mode": "scholar"}
+{"id": "q-038", "question": "What did you say about the problem of evil?", "expected_mode": "scholar"}
+{"id": "q-039", "question": "What did you say about hypnotism and psychic powers?", "expected_mode": "scholar"}
+{"id": "q-040", "question": "What did you tell the Alambazar Math members about rules of the monastery?", "expected_mode": "scholar"}
+{"id": "q-041", "question": "What did you say about Mahavira and Indian history?", "expected_mode": "scholar"}
+{"id": "q-042", "question": "What did you write about the East and the West in your essay?", "expected_mode": "scholar"}
+{"id": "q-043", "question": "What did you say about Sister Nivedita's book on Kali?", "expected_mode": "scholar"}
+{"id": "q-044", "question": "What did you say about the Arya Samaj and Dayananda?", "expected_mode": "scholar"}
+{"id": "q-045", "question": "What did you say about Tantra and the Tantras?", "expected_mode": "scholar"}
+{"id": "q-046", "question": "What did you say about spiritualism and talking to the dead?", "expected_mode": "scholar"}
+{"id": "q-047", "question": "What did you say about the poverty of your own family?", "expected_mode": "scholar"}
+{"id": "q-048", "question": "What did you say about the Chicago Fair and your early days in America?", "expected_mode": "scholar"}
+{"id": "q-049", "question": "What did you say about your health and illness in your last years?", "expected_mode": "scholar"}
+{"id": "q-050", "question": "What did you say about music and art in India?", "expected_mode": "scholar"}
+{"id": "q-051", "question": "What is Karma-Yoga?", "expected_mode": "oracle"}
+{"id": "q-052", "question": "What is Raja-Yoga?", "expected_mode": "oracle"}
+{"id": "q-053", "question": "What is Bhakti-Yoga?", "expected_mode": "oracle"}
+{"id": "q-054", "question": "What is Jnana-Yoga?", "expected_mode": "oracle"}
+{"id": "q-055", "question": "What is the secret of work?", "expected_mode": "oracle"}
+{"id": "q-056", "question": "What is duty?", "expected_mode": "oracle"}
+{"id": "q-057", "question": "What is Maya?", "expected_mode": "oracle"}
+{"id": "q-058", "question": "What is Prana?", "expected_mode": "oracle"}
+{"id": "q-059", "question": "What is the goal of Raja-Yoga?", "expected_mode": "oracle"}
+{"id": "q-060", "question": "How should I practise meditation?", "expected_mode": "oracle"}
+{"id": "q-061", "question": "What is Pratyahara?", "expected_mode": "oracle"}
+{"id": "q-062", "question": "What is Samadhi?", "expected_mode": "oracle"}
+{"id": "q-063", "question": "What is the Atman?", "expected_mode": "oracle"}
+{"id": "q-064", "question": "What is the real nature of man?", "expected_mode": "oracle"}
+{"id": "q-065", "question": "Is the soul immortal?", "expected_mode": "oracle"}
+{"id": "q-066", "question": "What is the ideal of a universal religion?", "expected_mode": "oracle"}
+{"id": "q-067", "question": "What is the difference between religion and the religions?", "expected_mode": "oracle"}
+{"id": "q-068", "question": "Why do we disagree about religion?", "expected_mode": "oracle"}
+{"id": "q-069", "question": "What is renunciation?", "expected_mode": "oracle"}
+{"id": "q-070", "question": "What is the meaning of 'each is great in his own place'?", "expected_mode": "oracle"}
+{"id": "q-071", "question": "What is Para-Bhakti?", "expected_mode": "oracle"}
+{"id": "q-072", "question": "What is the Ishta?", "expected_mode": "oracle"}
+{"id": "q-073", "question": "What is the need of a Guru?", "expected_mode": "oracle"}
+{"id": "q-074", "question": "What does the Vedanta say about God?", "expected_mode": "oracle"}
+{"id": "q-075", "question": "What is the cause of evil in the world?", "expected_mode": "oracle"}
+{"id": "q-076", "question": "What is freedom?", "expected_mode": "oracle"}
+{"id": "q-077", "question": "What is the ideal of Karma-Yoga?", "expected_mode": "oracle"}
+{"id": "q-078", "question": "What is the Sankhya cosmology?", "expected_mode": "oracle"}
+{"id": "q-079", "question": "What are the three Gunas?", "expected_mode": "oracle"}
+{"id": "q-080", "question": "What is the relation of Buddhism to Hinduism?", "expected_mode": "oracle"}
+{"id": "q-081", "question": "What is Advaita?", "expected_mode": "oracle"}
+{"id": "q-082", "question": "What is Dharma?", "expected_mode": "oracle"}
+{"id": "q-083", "question": "What is the meaning of the Gita's 'work without attachment'?", "expected_mode": "oracle"}
+{"id": "q-084", "question": "How does one control the mind?", "expected_mode": "oracle"}
+{"id": "q-085", "question": "What is Om?", "expected_mode": "oracle"}
+{"id": "q-086", "question": "What is the Vedanta's teaching on the many and the One?", "expected_mode": "oracle"}
+{"id": "q-087", "question": "What is love of God?", "expected_mode": "oracle"}
+{"id": "q-088", "question": "What are the four Yogas?", "expected_mode": "oracle"}
+{"id": "q-089", "question": "What is the place of ritual and symbols in religion?", "expected_mode": "oracle"}
+{"id": "q-090", "question": "What is the Hindu idea of creation and cycles?", "expected_mode": "oracle"}
+{"id": "q-091", "question": "What is reincarnation and why believe it?", "expected_mode": "oracle"}
+{"id": "q-092", "question": "What is the Absolute and manifestation?", "expected_mode": "oracle"}
+{"id": "q-093", "question": "What is the unity in diversity?", "expected_mode": "oracle"}
+{"id": "q-094", "question": "What is the real worship?", "expected_mode": "oracle"}
+{"id": "q-095", "question": "What is the ideal of womanhood in India?", "expected_mode": "oracle"}
+{"id": "q-096", "question": "What is the use of concentration?", "expected_mode": "oracle"}
+{"id": "q-097", "question": "What is the mind according to Raja-Yoga?", "expected_mode": "oracle"}
+{"id": "q-098", "question": "What is the Chitta and what are the Vrittis?", "expected_mode": "oracle"}
+{"id": "q-099", "question": "Why is man divine?", "expected_mode": "oracle"}
+{"id": "q-100", "question": "What is the secret of success in work?", "expected_mode": "oracle"}
+{"id": "q-101", "question": "How should I handle burnout at work?", "expected_mode": "persona"}
+{"id": "q-102", "question": "I feel anxious about my career; what should I do?", "expected_mode": "persona"}
+{"id": "q-103", "question": "How do I stay focused when my phone keeps distracting me?", "expected_mode": "persona"}
+{"id": "q-104", "question": "My parents want me to marry; I want to pursue my studies abroad. What should I do?", "expected_mode": "persona"}
+{"id": "q-105", "question": "How do I deal with a boss who takes credit for my work?", "expected_mode": "persona"}
+{"id": "q-106", "question": "Is it wrong to want to be rich?", "expected_mode": "persona"}
+{"id": "q-107", "question": "How should I raise my children in a city far from India?", "expected_mode": "persona"}
+{"id": "q-108", "question": "How do I forgive someone who betrayed me?", "expected_mode": "persona"}
+{"id": "q-109", "question": "What should a software engineer do to serve society?", "expected_mode": "persona"}
+{"id": "q-110", "question": "How do I find meaning in a boring job?", "expected_mode": "persona"}
+{"id": "q-111", "question": "I am lonely in a foreign country. How do I cope?", "expected_mode": "persona"}
+{"id": "q-112", "question": "Should I meditate with an app?", "expected_mode": "persona"}
+{"id": "q-113", "question": "How do I stop procrastinating?", "expected_mode": "persona"}
+{"id": "q-114", "question": "How do I balance ambition with contentment?", "expected_mode": "persona"}
+{"id": "q-115", "question": "How should I treat people who are rude to me online?", "expected_mode": "persona"}
+{"id": "q-116", "question": "How should a startup founder think about failure?", "expected_mode": "persona"}
+{"id": "q-117", "question": "Is it okay to leave my religion?", "expected_mode": "persona"}
+{"id": "q-118", "question": "How do I deal with the fear of death?", "expected_mode": "persona"}
+{"id": "q-119", "question": "Should I take antidepressants or rely on spiritual practice?", "expected_mode": "persona"}
+{"id": "q-120", "question": "How can I be brave when I feel weak?", "expected_mode": "persona"}
+{"id": "q-121", "question": "What do I do when my friends mock my spiritual interests?", "expected_mode": "persona"}
+{"id": "q-122", "question": "How should a doctor handle the suffering of patients she cannot save?", "expected_mode": "persona"}
+{"id": "q-123", "question": "How do I handle jealousy of my more successful sibling?", "expected_mode": "persona"}
+{"id": "q-124", "question": "What is the purpose of exercise and fitness?", "expected_mode": "persona"}
+{"id": "q-125", "question": "How do I choose between two job offers?", "expected_mode": "persona"}
+{"id": "q-126", "question": "How should I deal with anger at injustice I see in the news?", "expected_mode": "persona"}
+{"id": "q-127", "question": "How do I keep my faith while studying science at university?", "expected_mode": "persona"}
+{"id": "q-128", "question": "Should I give money to beggars?", "expected_mode": "persona"}
+{"id": "q-129", "question": "How do I teach my students to be fearless?", "expected_mode": "persona"}
+{"id": "q-130", "question": "How do I remain humble after success?", "expected_mode": "persona"}
+{"id": "q-131", "question": "What should I do about climate change?", "expected_mode": "persona"}
+{"id": "q-132", "question": "How can a working mother find time for spiritual practice?", "expected_mode": "persona"}
+{"id": "q-133", "question": "How do I recover from a breakup?", "expected_mode": "persona"}
+{"id": "q-134", "question": "How do I handle criticism of my art?", "expected_mode": "persona"}
+{"id": "q-135", "question": "Is competition good for children?", "expected_mode": "persona"}
+{"id": "q-136", "question": "How do I speak to my dying grandmother?", "expected_mode": "persona"}
+{"id": "q-137", "question": "How do I stop comparing myself to others on social media?", "expected_mode": "persona"}
+{"id": "q-138", "question": "What should a young Indian engineer going to America remember?", "expected_mode": "persona"}
+{"id": "q-139", "question": "How do I deal with a corrupt official?", "expected_mode": "persona"}
+{"id": "q-140", "question": "How much should I sleep?", "expected_mode": "persona"}
+{"id": "q-141", "question": "How do I keep calm during exams?", "expected_mode": "persona"}
+{"id": "q-142", "question": "Should I become a monk or stay a householder?", "expected_mode": "persona"}
+{"id": "q-143", "question": "How do I know if my teacher is genuine?", "expected_mode": "persona"}
+{"id": "q-144", "question": "How do I practise non-attachment while loving my family?", "expected_mode": "persona"}
+{"id": "q-145", "question": "How do I deal with guilt over past mistakes?", "expected_mode": "persona"}
+{"id": "q-146", "question": "What should I do with my inheritance?", "expected_mode": "persona"}
+{"id": "q-147", "question": "How do I become a better listener?", "expected_mode": "persona"}
+{"id": "q-148", "question": "How do I serve the poor without becoming proud of it?", "expected_mode": "persona"}
+{"id": "q-149", "question": "How can I stop being afraid of public speaking?", "expected_mode": "persona"}
+{"id": "q-150", "question": "How do I find my purpose in life?", "expected_mode": "persona"}
+{"id": "q-151", "question": "What do you think of the current Prime Minister of India?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-152", "question": "Who should I vote for in the next election?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-153", "question": "What is your view on the 1947 partition of India?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-154", "question": "What do you think about artificial intelligence?", "expected_mode": "persona", "extra": true}
+{"id": "q-155", "question": "Was Gandhi right about non-violence?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-156", "question": "What is the capital of Australia?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-157", "question": "Write me a Python function to sort a list.", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-158", "question": "What do you think of the Ramakrishna Mission's work in the 21st century?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-159", "question": "Did you know you died in 1902?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-160", "question": "What happened at the 1893 Chicago World's Fair after you left?", "expected_mode": "persona", "extra": true, "was_decline": true}
+{"id": "q-161", "question": "What did you say about education, and how should I educate my daughter today?", "expected_mode": "mixed", "extra": true}
+{"id": "q-162", "question": "What was your view on caste, and how should I respond to caste discrimination at my workplace?", "expected_mode": "mixed", "extra": true}
+{"id": "q-163", "question": "What did you say about fear, and how do I overcome my fear of failure?", "expected_mode": "mixed", "extra": true}
+{"id": "q-164", "question": "What did you teach about Karma-Yoga, and how can I apply it as a nurse?", "expected_mode": "mixed", "extra": true}
+{"id": "q-165", "question": "What did you say about women, and should my wife continue working after children?", "expected_mode": "mixed", "extra": true}
+{"id": "q-166", "question": "What did you say about the masses of India, and what can I do about poverty today?", "expected_mode": "mixed", "extra": true}
+{"id": "q-167", "question": "What did you say about strength, and how do I become strong after illness?", "expected_mode": "mixed", "extra": true}
+{"id": "q-168", "question": "What did you say about Christ, and how should a Hindu respond to missionaries now?", "expected_mode": "mixed", "extra": true}
+{"id": "q-169", "question": "What did you say about meditation, and can I meditate while commuting?", "expected_mode": "mixed", "extra": true}
+{"id": "q-170", "question": "What did you say about renunciation, and should I renounce my career for a spiritual life?", "expected_mode": "mixed", "extra": true}

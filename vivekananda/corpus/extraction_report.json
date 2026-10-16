@@ -1,0 +1,102 @@
+{
+ "summary": {
+  "toc_entries": 1391,
+  "sections_with_text": 1335,
+  "containers": 54,
+  "paragraphs": 20694,
+  "sentences": 93500,
+  "total_chars": 8152079,
+  "expected_chars": 8300000.0,
+  "chars_within_5pct": true,
+  "dropped": {
+   "pre_toc_chars": 28525,
+   "pre_toc_blocks": 1392,
+   "unresolved_anchors": []
+  },
+  "images_dropped": 672,
+  "genre_counts": {
+   "letter": 768,
+   "notes": 143,
+   "lecture": 119,
+   "dialogue": 67,
+   "poem": 62,
+   "book_chapter": 53,
+   "newspaper_report": 43,
+   "essay": 23,
+   "other": 14,
+   "interview": 12,
+   "translation": 11,
+   "front_matter": 10,
+   "qa": 7,
+   "sayings": 3
+  },
+  "chars_by_genre": {
+   "front_matter": 32745,
+   "lecture": 2647781,
+   "book_chapter": 1065341,
+   "newspaper_report": 377540,
+   "essay": 253312,
+   "poem": 364401,
+   "translation": 382388,
+   "letter": 1423444,
+   "interview": 94708,
+   "notes": 619253,
+   "qa": 50168,
+   "dialogue": 632690,
+   "sayings": 99434,
+   "other": 108874
+  },
+  "sections_by_volume": {
+   "1": 40,
+   "2": 53,
+   "3": 70,
+   "4": 63,
+   "5": 182,
+   "6": 229,
+   "7": 154,
+   "8": 248,
+   "9": 290,
+   "None": 6
+  },
+  "letters": {
+   "total": 768,
+   "with_date": 757,
+   "with_recipient": 768,
+   "with_place": 678,
+   "date_rate": 0.986
+  },
+  "duplicate_paragraphs_gt200chars": 26,
+  "endnotes": 430,
+  "paragraphs_with_note_refs": 368,
+  "stubs": 2,
+  "issues": {
+   "very_long_sections": 4,
+   "letters_without_date": 11,
+   "endnotes_split_from": 1
+  }
+ },
+ "issues": {
+  "very_long_sections": [
+   "34\t181059\tVOLUME 1 / RAJA-YOGA / PATANJALI'S YOGA APHORISMS",
+   "443\t183386\tVOLUME 5 / WRITINGS: PROSE AND POEMS / THE EAST AND THE WEST",
+   "765\t147452\tVOLUME 7 / TRANSLATION OF WRITINGS / MEMOIRS OF EUROPEAN TRAVEL I",
+   "1384\t146270\tVOLUME 9 / NEWSPAPER REPORTS / AMERICAN NEWSPAPER REPORTS"
+  ],
+  "letters_without_date": [
+   "357\tVOLUME 5 / EPISTLES FIRST SERIES / 97 SHASHI\t'MATH, BELUR'",
+   "549\tVOLUME 6 / EPISTLES – SECOND SERIES / 52 GOVINDA SAHAY\t'C/O G. W. HALE, ESQ.,\\nCHICAGO, U.S.A.'",
+   "936\tVOLUME 8 / EPISTLES – FOURTH SERIES / 41 MR. E. T. STURDY\t'19 W. 38TH ST.,\\nNEW YORK'",
+   "955\tVOLUME 8 / EPISTLES – FOURTH SERIES / 60 MR. E. T. STURDY\t'R.M.S. \"BRITANNIC\"'",
+   "967\tVOLUME 8 / EPISTLES – FOURTH SERIES / 72 MISS MARY HALE\t'DEAR SISTER,'",
+   "973\tVOLUME 8 / EPISTLES – FOURTH SERIES / 78 MR. E. T. STURDY\t'GRAND HOTEL,\\nVALAIS,\\nSWITZERLAND.'",
+   "1041\tVOLUME 8 / EPISTLES – FOURTH SERIES / 146 MR. E. T. STURDY\t'C/O F. LEGGETT ESQ.,\\nRIDGELY MANOR,\\nULSTER COUNTY, N.Y.'",
+   "1063\tVOLUME 8 / EPISTLES – FOURTH SERIES / 168 SWAMI TURIYANANDA\t'(Translated from Bengali)'",
+   "1154\tVOLUME 9 / LETTERS -- FIFTH SERIES / 58 DR. PAUL CARUS\t'19 W. 38TH ST.,'",
+   "1161\tVOLUME 9 / LETTERS -- FIFTH SERIES / 65 MRS. G. W. HALE\t'C/O MISS DUTCHER'",
+   "1167\tVOLUME 9 / LETTERS -- FIFTH SERIES / 71 SISTER CHRISTINE\t\"[The following telegram was sent on Swami Vivekananda's behalf.]\""
+  ],
+  "endnotes_split_from": [
+   "1390\tVOLUME 9 / NEWSPAPER REPORTS / 3 HAD NO MEATS AT THE DINNER\t430 notes"
+  ]
+ }
+}

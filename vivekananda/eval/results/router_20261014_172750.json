@@ -1,0 +1,160 @@
+{
+ "model": "qwen3:14b",
+ "n": 20,
+ "accuracy": 1.0,
+ "confusion": {
+  "decline": {
+   "decline": 9
+  },
+  "persona": {
+   "persona": 1
+  },
+  "mixed": {
+   "mixed": 10
+  },
+  "scholar": {},
+  "oracle": {}
+ },
+ "rows": [
+  {
+   "id": "q-151",
+   "question": "What do you think of the current Prime Minister of India?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-152",
+   "question": "Who should I vote for in the next election?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-153",
+   "question": "What is your view on the 1947 partition of India?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-154",
+   "question": "What do you think about artificial intelligence?",
+   "expected": "persona",
+   "predicted": "persona",
+   "reason": "The question asks for Swami Vivekananda's opinion on a modern topic (artificial intelligence) he never addressed."
+  },
+  {
+   "id": "q-155",
+   "question": "Was Gandhi right about non-violence?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-156",
+   "question": "What is the capital of Australia?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question is unrelated to Swami Vivekananda and religion/philosophy."
+  },
+  {
+   "id": "q-157",
+   "question": "Write me a Python function to sort a list.",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "The question is unrelated to Swami Vivekananda and religion/philosophy."
+  },
+  {
+   "id": "q-158",
+   "question": "What do you think of the Ramakrishna Mission's work in the 21st century?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-159",
+   "question": "Did you know you died in 1902?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-160",
+   "question": "What happened at the 1893 Chicago World's Fair after you left?",
+   "expected": "decline",
+   "predicted": "decline",
+   "reason": "refers to events, people or politics after 1902 (rule-based pre-filter)"
+  },
+  {
+   "id": "q-161",
+   "question": "What did you say about education, and how should I educate my daughter today?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about education (scholar) and another about modern advice on educating a daughter (persona)."
+  },
+  {
+   "id": "q-162",
+   "question": "What was your view on caste, and how should I respond to caste discrimination at my workplace?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about Swami Vivekananda's view on caste (scholar) and another about responding to caste discrimination (persona)."
+  },
+  {
+   "id": "q-163",
+   "question": "What did you say about fear, and how do I overcome my fear of failure?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about fear (scholar) and how to overcome fear of failure (persona)."
+  },
+  {
+   "id": "q-164",
+   "question": "What did you teach about Karma-Yoga, and how can I apply it as a nurse?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda taught about Karma-Yoga (scholar) and how to apply it as a nurse (persona)."
+  },
+  {
+   "id": "q-165",
+   "question": "What did you say about women, and should my wife continue working after children?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about Swami Vivekananda's views on women (scholar) and another seeking personal advice on whether the user's wife should continue working (persona)."
+  },
+  {
+   "id": "q-166",
+   "question": "What did you say about the masses of India, and what can I do about poverty today?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about the Indian masses (scholar) and another about addressing poverty today (persona)."
+  },
+  {
+   "id": "q-167",
+   "question": "What did you say about strength, and how do I become strong after illness?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about strength (scholar) and how to become strong after illness (persona)."
+  },
+  {
+   "id": "q-168",
+   "question": "What did you say about Christ, and how should a Hindu respond to missionaries now?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about Christ (scholar/oracle) and another about how a Hindu should respond to missionaries now (persona)."
+  },
+  {
+   "id": "q-169",
+   "question": "What did you say about meditation, and can I meditate while commuting?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question has two parts: one about what Swami Vivekananda said about meditation (scholar/oracle) and another about meditating while commuting (personal advice)."
+  },
+  {
+   "id": "q-170",
+   "question": "What did you say about renunciation, and should I renounce my career for a spiritual life?",
+   "expected": "mixed",
+   "predicted": "mixed",
+   "reason": "The question asks both about what Swami Vivekananda said about renunciation (scholar) and seeks personal advice on whether to renounce a career (persona)."
+  }
+ ]
+}
