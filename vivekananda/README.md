@@ -374,3 +374,53 @@ launched detached with `setsid nohup`, log `train/run1.log`. Measured ~27 s/step
 estimate of 9.5-10 h was pessimistic). Checkpoints every 100 steps under `train/out/run1/checkpoint-*`; `--resume` continues from the last one
 if the run is interrupted. Next after completion: `train/export.py` (merge, GGUF Q8_0 + Q4_K_M, `ollama create vivekananda:8b`), then
 `scripts/eval_full.py run --tag unified8b --backend unified` and `compare prompted14b unified8b`.
+
+### Phase 7 run1 finished (2026-10-16 03:10, `train/out/run1/`; loss table kept as `train/run1_metrics.md`)
+
+776 steps in 6.0 h (20.6 s/step once warm, peak VRAM 9.4 GiB), no interruption. Train loss fell from ~2.0 to ~0.9 (noisy per-step, eff. batch 16);
+masked eval loss on the 100-record holdout subset 0.641 (step 100) -> 0.588 (step 776), still falling slowly, so 2 epochs did not overfit.
+`metrics.md` also prints "final holdout loss (all 327): 2.3517". That number is an artifact, not a regression: the raw full holdout was handed
+to `trainer.evaluate`, which tokenizes it without the response-only mask and scores every token including the ~4,000-token retrieval
+prompt (an oracle record has ~60 loss tokens out of ~4,000). `train_qlora.py` now tokenizes and masks the full holdout before the final
+evaluate (checked on 8 records: every loss region starts at `<think>`); the 0.588 figure is the one to use for run1. Export started
+2026-10-16 ~08:00 (`train/export.py`, log `train/export.log`); Unsloth downloads `unsloth/Qwen3-8B` (15 GB) for the 16-bit merge even
+though `Qwen/Qwen3-8B` is cached, because the adapter's base is `unsloth/Qwen3-8B-unsloth-bnb-4bit`.
+
+Export finished 2026-10-16 08:11 (13 min including the download): `models/vivekananda-8b-{f16,Q8_0,Q4_K_M}.gguf`, Ollama models
+`vivekananda:8b` (Q8_0, 8.7 GB) and `vivekananda:8b-q4` (5.0 GB). Smoke test through `ask.py --backend unified`: oracle quoted a verified
+passage (8.7 s), scholar cited 10/10 sentences (7.2 s), persona marked its extrapolation (3.5 s).
+
+### Phase 8: unified 8B vs prompted 14b (2026-10-16, `eval/results/full_unified8b.{json,md}`, `full_compare_prompted14b_vs_unified8b.md`)
+
+`eval_full.py run --tag unified8b --backend unified` (200 items, 7.6 s per answer vs 10.1 s for the prompted cascade, no LLM query expansion).
+**run1 does not beat the baseline; it is not the shipping model.** Side by side (prompted14b -> unified8b):
+
+| metric | prompted14b | unified8b | reading |
+|---|---|---|---|
+| mode accuracy (150) | 0.973 | 0.940 | 5 oracle questions went to persona (vs 1), 3 persona to oracle, 1 scholar to oracle |
+| oracle verbatim rate | 1.000 | 1.000 | 75 oracle answers, mean 139 quoted words, 0 over cap |
+| oracle judged relevant | 0.989 | 0.880 | 9 tangential passages (soul immortal, Om, Chitta/Vrittis, ...); no query expansion on this path |
+| scholar coverage / support | 1.0 / 0.989 | 1.0 / 0.994 | 49 answers; scholar is as good as the baseline |
+| persona marker rate | 1.000 | 0.579 | on persona-expected questions 44/47 are marked; the 32 unmarked answers are 24 probes + 5 oracle questions the model routed to persona |
+| persona 8-gram overlap | 0.016 | 0.070 | some corpus regurgitation in the unmarked answers ("a terrible engine that will destroy everything") |
+| quote-guard violations | 4 | 1 | |
+| judged first person / generic | 0.91 / 0.095 | 0.85 / 0.20 | 14b judge, unreliable on first person; the generic verdicts cluster on the unmarked persona answers |
+| probe agreement | 0.86 | 0.66 | probes routed oracle 26 / persona 24 (baseline 39 / 6 / 5 scholar); oracle agree 16/26, persona 17/24 |
+
+Diagnosis. The persona tier mix is 899 verbatim letters and dialogues (tiers 2 and 3: no marker, no `[p-id]` tags, first person
+by construction) against 303 marked synthetic answers (tier 6). The model learned that `persona` mostly means "write in his letter voice
+from memory": for position probes and in-corpus questions it emits `<mode>persona</mode>` and produces unmarked, uncited prose that
+paraphrases or regurgitates the corpus, which is the exact failure the cascade exists to prevent (his ideas presented without a verifiable
+quote). On questions that are genuinely outside the corpus (tier-6-like) the learned behaviour is fine (44/47 marked, cited passages).
+The second regression, oracle relevance, is retrieval side: the unified prompt uses deterministic hybrid retrieval only, and the 8B picks a
+tangential passage more often than the 14b with expanded queries. Several probe "disagree" verdicts are the judge being wrong
+(probe-28 "education is the manifestation of the perfection already in man" is the documented stance), so the 0.66 is a floor, not the truth.
+
+Options for run2 (owner decision; another ~6 h GPU run plus re-eval):
+1. Re-tier the verbatim persona data: tiers 2 and 3 are corpus text, so render them as oracle records (quoted verbatim with the citation)
+   or drop them, and train persona only on marked, quote-guarded synthetic answers (tier 6, possibly enlarged to ~1,000 with the 14b).
+   This matches the hard rule (anything verbatim is a quote) and removes the unmarked register entirely.
+2. Keep tiers 2 and 3 for voice but under a fourth tag (`<mode>voice</mode>`) that the renderer treats like persona with a mandatory
+   marker; more complex, keeps the letter register as a style signal.
+3. Add LLM query expansion to the unified path (or retrieve with the 8B's own rewritten query) to recover oracle relevance.
+Until then the prompted cascade on qwen3:14b (`--backend prompted`, the server default) remains the system of record.
