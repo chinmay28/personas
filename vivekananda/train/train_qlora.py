@@ -84,7 +84,15 @@ assert tokenizer.decode(labels).startswith('<think>'), 'response mask does not s
 torch.cuda.reset_peak_memory_stats()
 res = trainer.train(resume_from_checkpoint=True if args.resume else None)
 peak = torch.cuda.max_memory_allocated() / 2**30
-final = trainer.evaluate(eval_dataset=full_holdout)
+# Final holdout loss under the same response-only mask as training. A raw text dataset handed to evaluate() is tokenized without
+# the mask and scored on every token including the long retrieval prompt (run1 reported 2.35 that way vs 0.59 masked).
+mask_fn = train_on_responses_only(None, tokenizer=tokenizer, return_function=True,
+                                  instruction_part='<|im_start|>user\n', response_part='<|im_start|>assistant\n')
+full_tok = full_holdout.map(lambda b: tokenizer(b['text'], truncation=True, max_length=args.max_seq, padding=False),
+                            batched=True, remove_columns=full_holdout.column_names)
+full_tok = full_tok.map(mask_fn, batched=True)
+assert tokenizer.decode([t for t in full_tok[0]['labels'] if t != -100]).startswith('<think>'), 'holdout mask does not start at the think block'
+final = trainer.evaluate(eval_dataset=full_tok)
 model.save_pretrained(str(out / 'adapter')); tokenizer.save_pretrained(str(out / 'adapter'))
 
 hist = trainer.state.log_history
