@@ -1,0 +1,316 @@
+{
+ "n_questions": 2000,
+ "cand": 50,
+ "results": {
+  "nomic-embed-text": {
+   "dense": {
+    "para@1": 0.379,
+    "sec_via_para@1": 0.408,
+    "para@5": 0.5555,
+    "sec_via_para@5": 0.5915,
+    "para@10": 0.616,
+    "sec_via_para@10": 0.656
+   },
+   "bm25": {
+    "para@1": 0.372,
+    "sec_via_para@1": 0.3985,
+    "para@5": 0.52,
+    "sec_via_para@5": 0.553,
+    "para@10": 0.5785,
+    "sec_via_para@10": 0.622
+   },
+   "hybrid": {
+    "para@1": 0.4375,
+    "sec_via_para@1": 0.465,
+    "para@5": 0.6275,
+    "sec_via_para@5": 0.6545,
+    "para@10": 0.706,
+    "sec_via_para@10": 0.734,
+    "section@1": 0.39,
+    "section@5": 0.607,
+    "section@10": 0.696
+   },
+   "by_kind": {
+    "dense/specific": {
+     "para@1": 0.446,
+     "para@5": 0.625,
+     "para@10": 0.676
+    },
+    "bm25/specific": {
+     "para@1": 0.502,
+     "para@5": 0.65,
+     "para@10": 0.704
+    },
+    "hybrid/specific": {
+     "para@1": 0.55,
+     "para@5": 0.721,
+     "para@10": 0.8
+    },
+    "dense/general": {
+     "para@1": 0.312,
+     "para@5": 0.486,
+     "para@10": 0.556
+    },
+    "bm25/general": {
+     "para@1": 0.242,
+     "para@5": 0.39,
+     "para@10": 0.453
+    },
+    "hybrid/general": {
+     "para@1": 0.325,
+     "para@5": 0.534,
+     "para@10": 0.612
+    }
+   },
+   "seconds": 102.9
+  },
+  "bge-m3": {
+   "dense": {
+    "para@1": 0.3705,
+    "sec_via_para@1": 0.3965,
+    "para@5": 0.599,
+    "sec_via_para@5": 0.6245,
+    "para@10": 0.6835,
+    "sec_via_para@10": 0.7135
+   },
+   "bm25": {
+    "para@1": 0.372,
+    "sec_via_para@1": 0.3985,
+    "para@5": 0.52,
+    "sec_via_para@5": 0.553,
+    "para@10": 0.5785,
+    "sec_via_para@10": 0.622
+   },
+   "hybrid": {
+    "para@1": 0.475,
+    "sec_via_para@1": 0.502,
+    "para@5": 0.6675,
+    "sec_via_para@5": 0.6925,
+    "para@10": 0.7345,
+    "sec_via_para@10": 0.7605,
+    "section@1": 0.422,
+    "section@5": 0.6365,
+    "section@10": 0.7295
+   },
+   "by_kind": {
+    "dense/specific": {
+     "para@1": 0.445,
+     "para@5": 0.666,
+     "para@10": 0.746
+    },
+    "bm25/specific": {
+     "para@1": 0.502,
+     "para@5": 0.65,
+     "para@10": 0.704
+    },
+    "hybrid/specific": {
+     "para@1": 0.59,
+     "para@5": 0.762,
+     "para@10": 0.813
+    },
+    "dense/general": {
+     "para@1": 0.296,
+     "para@5": 0.532,
+     "para@10": 0.621
+    },
+    "bm25/general": {
+     "para@1": 0.242,
+     "para@5": 0.39,
+     "para@10": 0.453
+    },
+    "hybrid/general": {
+     "para@1": 0.36,
+     "para@5": 0.573,
+     "para@10": 0.656
+    }
+   },
+   "seconds": 127.4
+  },
+  "qwen3-embedding:0.6b": {
+   "dense": {
+    "para@1": 0.292,
+    "sec_via_para@1": 0.314,
+    "para@5": 0.4695,
+    "sec_via_para@5": 0.4995,
+    "para@10": 0.545,
+    "sec_via_para@10": 0.58
+   },
+   "bm25": {
+    "para@1": 0.372,
+    "sec_via_para@1": 0.3985,
+    "para@5": 0.52,
+    "sec_via_para@5": 0.553,
+    "para@10": 0.5785,
+    "sec_via_para@10": 0.622
+   },
+   "hybrid": {
+    "para@1": 0.422,
+    "sec_via_para@1": 0.451,
+    "para@5": 0.629,
+    "sec_via_para@5": 0.6575,
+    "para@10": 0.7055,
+    "sec_via_para@10": 0.7305,
+    "section@1": 0.36,
+    "section@5": 0.5755,
+    "section@10": 0.6825
+   },
+   "by_kind": {
+    "dense/specific": {
+     "para@1": 0.351,
+     "para@5": 0.51,
+     "para@10": 0.575
+    },
+    "bm25/specific": {
+     "para@1": 0.502,
+     "para@5": 0.65,
+     "para@10": 0.704
+    },
+    "hybrid/specific": {
+     "para@1": 0.507,
+     "para@5": 0.719,
+     "para@10": 0.785
+    },
+    "dense/general": {
+     "para@1": 0.233,
+     "para@5": 0.429,
+     "para@10": 0.515
+    },
+    "bm25/general": {
+     "para@1": 0.242,
+     "para@5": 0.39,
+     "para@10": 0.453
+    },
+    "hybrid/general": {
+     "para@1": 0.337,
+     "para@5": 0.539,
+     "para@10": 0.626
+    }
+   },
+   "seconds": 147.7
+  },
+  "nomic-embed-text/h": {
+   "dense": {
+    "para@1": 0.332,
+    "sec_via_para@1": 0.365,
+    "para@5": 0.5075,
+    "sec_via_para@5": 0.5455,
+    "para@10": 0.5585,
+    "sec_via_para@10": 0.601
+   },
+   "bm25": {
+    "para@1": 0.372,
+    "sec_via_para@1": 0.3985,
+    "para@5": 0.52,
+    "sec_via_para@5": 0.553,
+    "para@10": 0.5785,
+    "sec_via_para@10": 0.622
+   },
+   "hybrid": {
+    "para@1": 0.413,
+    "sec_via_para@1": 0.4425,
+    "para@5": 0.5995,
+    "sec_via_para@5": 0.6325,
+    "para@10": 0.6805,
+    "sec_via_para@10": 0.7155,
+    "section@1": 0.3725,
+    "section@5": 0.5775,
+    "section@10": 0.6775
+   },
+   "by_kind": {
+    "dense/specific": {
+     "para@1": 0.402,
+     "para@5": 0.581,
+     "para@10": 0.628
+    },
+    "bm25/specific": {
+     "para@1": 0.502,
+     "para@5": 0.65,
+     "para@10": 0.704
+    },
+    "hybrid/specific": {
+     "para@1": 0.521,
+     "para@5": 0.702,
+     "para@10": 0.784
+    },
+    "dense/general": {
+     "para@1": 0.262,
+     "para@5": 0.434,
+     "para@10": 0.489
+    },
+    "bm25/general": {
+     "para@1": 0.242,
+     "para@5": 0.39,
+     "para@10": 0.453
+    },
+    "hybrid/general": {
+     "para@1": 0.305,
+     "para@5": 0.497,
+     "para@10": 0.577
+    }
+   },
+   "seconds": 113.3
+  },
+  "bge-m3/h": {
+   "dense": {
+    "para@1": 0.427,
+    "sec_via_para@1": 0.452,
+    "para@5": 0.621,
+    "sec_via_para@5": 0.6525,
+    "para@10": 0.702,
+    "sec_via_para@10": 0.7375
+   },
+   "bm25": {
+    "para@1": 0.372,
+    "sec_via_para@1": 0.3985,
+    "para@5": 0.52,
+    "sec_via_para@5": 0.553,
+    "para@10": 0.5785,
+    "sec_via_para@10": 0.622
+   },
+   "hybrid": {
+    "para@1": 0.478,
+    "sec_via_para@1": 0.5025,
+    "para@5": 0.673,
+    "sec_via_para@5": 0.703,
+    "para@10": 0.7415,
+    "sec_via_para@10": 0.769,
+    "section@1": 0.4115,
+    "section@5": 0.638,
+    "section@10": 0.7295
+   },
+   "by_kind": {
+    "dense/specific": {
+     "para@1": 0.499,
+     "para@5": 0.695,
+     "para@10": 0.768
+    },
+    "bm25/specific": {
+     "para@1": 0.502,
+     "para@5": 0.65,
+     "para@10": 0.704
+    },
+    "hybrid/specific": {
+     "para@1": 0.583,
+     "para@5": 0.762,
+     "para@10": 0.822
+    },
+    "dense/general": {
+     "para@1": 0.355,
+     "para@5": 0.547,
+     "para@10": 0.636
+    },
+    "bm25/general": {
+     "para@1": 0.242,
+     "para@5": 0.39,
+     "para@10": 0.453
+    },
+    "hybrid/general": {
+     "para@1": 0.373,
+     "para@5": 0.584,
+     "para@10": 0.661
+    }
+   },
+   "seconds": 128.6
+  }
+ }
+}
