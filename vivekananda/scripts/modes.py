@@ -136,7 +136,7 @@ def retrieve(con, question: str, k: int = 8, model: str = vklib.DEFAULT_MODEL, e
     # add the opening paragraph of the top section hits: whole-lecture questions are answered by lecture openings
     ids = [h.id for h in hits]
     for sec in secs[:section_openings]:
-        row = con.execute("SELECT id FROM paragraphs WHERE section_id = ? AND length(text) >= 200 ORDER BY para_idx LIMIT 1", (sec["id"],)).fetchone()
+        row = con.execute("SELECT id FROM paragraphs WHERE section_id = ? AND length(text) >= 200 AND id NOT IN (SELECT id FROM paragraphs WHERE editorial = 1) ORDER BY para_idx LIMIT 1", (sec["id"],)).fetchone()
         if row and row[0] not in ids:
             ids.append(row[0])
     passages = []
@@ -399,6 +399,21 @@ def render_oracle(con, ctx: Context, plan: dict, raw: str = "") -> dict:
     _, qreport = quote_guard(con, text, ctx)  # by construction every quote verifies; recorded for the eval
     return {"mode": "oracle", "text": text, "citations": cites, "see_also": see_also, "quotes": quotes, "quoted_words": words,
             "quote_guard": qreport, "raw": raw}
+
+
+SMALLTALK_RE = re.compile(
+    r"^(?:(?:hi|hii+|hello|hey|hallo|namaste|namaskar|namaskaram|pranam|pranams|greetings|good\s?(?:morning|afternoon|evening|night|day)|"
+    r"thanks?|thank\s?you|thank\s?you\s?very\s?much|ok|okay|bye|goodbye|see\s?you|how\s?are\s?you|how\s?do\s?you\s?do|"
+    r"nice\s?to\s?meet\s?you|who\s?are\s?you|what\s?is\s?your\s?name|are\s?you\s?there)\b[\s,!.?]*)+"
+    r"(?:(?:swamiji|swami|maharaj|sir|ji|guruji|vivekananda|dear|there|again|too|so\s?much|very\s?much)\b[\s,!.?]*)*$", re.I)
+
+
+def is_smalltalk(question: str) -> bool:
+    """Greetings, thanks, farewells and 'who are you': not questions about the corpus, so they go to persona without a model
+    routing step (the trained model has no small talk under the Vivekananda prompt and quotes a passage instead). Conservative:
+    the eval set (170 questions + 50 probes) must never match; checked in scripts/engine.py --selftest."""
+    q = question.strip().lower()
+    return len(q) <= 80 and bool(SMALLTALK_RE.fullmatch(q))
 
 
 def route(con, ctx: Context, model: str = DEV_MODEL) -> dict:

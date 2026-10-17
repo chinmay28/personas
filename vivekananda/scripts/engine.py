@@ -33,10 +33,16 @@ def answer(con, question: str, mode: str = "auto", backend: str = DEFAULT_BACKEN
     if mode not in MODES:
         raise ValueError(f"mode must be one of {MODES}")
     model = model or default_model(backend)
+    pre_route = None
+    if mode == "auto" and modes.is_smalltalk(question):
+        mode, pre_route = "persona", "smalltalk"   # greetings etc. never route through the model (2026-10-17)
     if backend == "unified":
-        return unified.ask(con, question, mode, model, k, on_token=on_token, on_mode=on_mode, expand=expand)
-    r = modes.ask(con, question, mode, model, k, expand=expand, on_mode=on_mode)
-    r["backend"] = "prompted"
+        r = unified.ask(con, question, mode, model, k, on_token=on_token, on_mode=on_mode, expand=expand)
+    else:
+        r = modes.ask(con, question, mode, model, k, expand=expand, on_mode=on_mode)
+        r["backend"] = "prompted"
+    if pre_route:
+        r["pre_route"] = pre_route
     return r
 
 
