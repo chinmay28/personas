@@ -2,7 +2,7 @@
 
 Local system that answers as Swami Vivekananda from the nine-volume Complete Works.
 The authoritative plan is `PLAN.md` in this directory.
-This README documents how to run each stage as it is built.
+This README documents how to run each stage as it is built; `TUTORIAL.md` is the step-by-step narrative of how the model was made.
 
 ## Phase 0: environment (done 2026-10-14)
 
