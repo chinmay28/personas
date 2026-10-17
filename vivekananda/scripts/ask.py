@@ -3,7 +3,7 @@
   .venv/bin/python scripts/ask.py "What is Karma-Yoga?" [--mode auto|scholar|oracle|persona|mixed] [--backend prompted|unified]
                                   [--model M] [--show 3] [--json] [--api http://host:8765] [-k 8] [--no-expand]
 
---backend unified uses the fine-tuned single model (vivekananda:8b) with the training-time prompt; prompted is the phase 3 cascade.
+--backend unified (default) uses the fine-tuned single model (vivekananda:8b-run2) with the training-time prompt; prompted is the phase 3 cascade.
 --show N prints the full section behind citation N after the answer.  --api sends the question to a running server (scripts/server.py)
 instead of answering in-process; --json then prints the server's JSON, which is identical to the in-process result.
 """

@@ -458,5 +458,5 @@ Training: 914 steps, 6.4 h, peak VRAM 9.4 GiB, masked holdout loss 0.3595 (run1 
 Both run1 regressions are fixed: mode accuracy 0.98 (prompted14b 0.973, run1 0.94; oracle 50/50, scholar 50/50, 3 persona->oracle), persona
 marker 1.0 (run1 0.579), 8-gram overlap 3.5% (run1 7%), guard violations 0 (prompted14b 4), generic 0.115 (run1 0.20), 6.4 s/answer
 (prompted14b 10.1 s). Still behind the prompted 14b on oracle relevance 0.919 vs 0.989 (8 "quotes not relevant") and probe agreement 0.74 vs 0.86,
-and the judge flags 3 third-person self-references (prompted14b 1). Shipping decision (plan checkpoint c) is the owner's; the server default
-is still the prompted cascade on qwen3:14b.
+and the judge flags 3 third-person self-references (prompted14b 1). **Shipping decision (owner, 2026-10-17): run 2 ships.** `engine.DEFAULT_BACKEND` is now `unified` and `unified.UNIFIED_MODEL` is
+`vivekananda:8b-run2`; the prompted cascade on qwen3:14b stays one setting away as the fallback (`--backend prompted`, or the PWA settings drawer).
