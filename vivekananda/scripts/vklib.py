@@ -135,6 +135,21 @@ def fts_query(q: str) -> str:
     return " OR ".join(f'"{t}"' for t in toks)
 
 
+_EDITORIAL: dict[int, frozenset] = {}
+
+
+def editorial_ids(con) -> frozenset:
+    """Paragraph ids flagged by scripts/flag_editorial.py (editor's notes, translator prefaces, report notices): never offered as
+    his words. Cached per connection; empty if the column does not exist yet (index built before 2026-10-17)."""
+    key = id(con)
+    if key not in _EDITORIAL:
+        try:
+            _EDITORIAL[key] = frozenset(r[0] for r in con.execute("SELECT id FROM paragraphs WHERE editorial = 1"))
+        except sqlite3.OperationalError:
+            _EDITORIAL[key] = frozenset()
+    return _EDITORIAL[key]
+
+
 def search_paragraphs(con, q: str, model: str = DEFAULT_MODEL, k: int = 10, cand: int = PARA_CAND, qvec=None) -> list[Hit]:
     """Hybrid paragraph search: dense lists for `model` (plus the other FUSE_MODELS when model is the default) and BM25 over
     paragraph text only (headers unweighted: they hurt paragraph precision), fused with RRF."""
@@ -147,7 +162,8 @@ def search_paragraphs(con, q: str, model: str = DEFAULT_MODEL, k: int = 10, cand
             f"SELECT id FROM vec_para_{slug} WHERE embedding MATCH ? ORDER BY distance LIMIT ?", (pack(v), cand))])
     lists.append([r[0] for r in con.execute(
         "SELECT id FROM fts_para WHERE fts_para MATCH ? ORDER BY bm25(fts_para, 0.0, 0.0, 1.0) LIMIT ?", (fts_query(q), cand))])
-    hits = rrf(lists, k=PARA_RRF_K)[:k]
+    skip = editorial_ids(con)
+    hits = [h for h in rrf(lists, k=PARA_RRF_K) if h.id not in skip][:k]
     for h in hits:  # report ranks as (first dense list, bm25)
         h.bm25_rank = None
     ranks = {}

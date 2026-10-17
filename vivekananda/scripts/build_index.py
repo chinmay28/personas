@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS sections (
   date TEXT, recipient TEXT, recipient_full TEXT, place TEXT, "order" INTEGER, depth INTEGER,
   text TEXT, char_count INTEGER, para_count INTEGER);
 CREATE TABLE IF NOT EXISTS paragraphs (
-  id TEXT PRIMARY KEY, section_id TEXT, para_idx INTEGER, text TEXT, sentences TEXT, note_refs TEXT);
+  id TEXT PRIMARY KEY, section_id TEXT, para_idx INTEGER, text TEXT, sentences TEXT, note_refs TEXT, editorial INTEGER NOT NULL DEFAULT 0);
 CREATE INDEX IF NOT EXISTS paragraphs_section ON paragraphs(section_id);
 CREATE TABLE IF NOT EXISTS endnotes (id TEXT PRIMARY KEY, number INTEGER, text TEXT);
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_para USING fts5(id UNINDEXED, header, text, tokenize = "unicode61 remove_diacritics 2");
@@ -68,8 +68,8 @@ def build_tables(con, rebuild_fts: bool = False):
         [(s["id"], s["volume"], s["work"], s["title"], json.dumps(s["toc_path"]), s["genre"], s["kind"], s.get("date"),
           s.get("recipient"), s.get("recipient_full"), s.get("place"), s["order"], s["depth"], s["text"], s["char_count"], s["para_count"]) for s in secs])
     paras = list(load_jsonl(os.path.join(vklib.CORPUS_DIR, "paragraphs.jsonl")))
-    con.executemany("INSERT INTO paragraphs VALUES (?,?,?,?,?,?)",
-                    [(p["id"], p["section_id"], p["para_idx"], p["text"], json.dumps(p["sentences"]), json.dumps(p["note_refs"])) for p in paras])
+    con.executemany("INSERT INTO paragraphs VALUES (?,?,?,?,?,?,?)",
+                    [(p["id"], p["section_id"], p["para_idx"], p["text"], json.dumps(p["sentences"]), json.dumps(p["note_refs"]), int(p.get("editorial", False))) for p in paras])
     build_fts(con, secs, paras)
     con.executemany("INSERT INTO endnotes VALUES (?,?,?)",
                     [(n["id"], n["number"], n["text"]) for n in load_jsonl(os.path.join(vklib.CORPUS_DIR, "endnotes.jsonl"))])

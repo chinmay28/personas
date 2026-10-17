@@ -460,3 +460,18 @@ marker 1.0 (run1 0.579), 8-gram overlap 3.5% (run1 7%), guard violations 0 (prom
 (prompted14b 10.1 s). Still behind the prompted 14b on oracle relevance 0.919 vs 0.989 (8 "quotes not relevant") and probe agreement 0.74 vs 0.86,
 and the judge flags 3 third-person self-references (prompted14b 1). **Shipping decision (owner, 2026-10-17): run 2 ships.** `engine.DEFAULT_BACKEND` is now `unified` and `unified.UNIFIED_MODEL` is
 `vivekananda:8b-run2`; the prompted cascade on qwen3:14b stays one setting away as the fallback (`--backend prompted`, or the PWA settings drawer).
+
+### Editorial paratext and small talk (2026-10-17, after the first phone use)
+
+"hi swamiji" on the shipped model routed to oracle and quoted the translator's preface to the Conversations and Dialogues ("The disciple is
+Sharatchandra Chakravarty, who published his records in a Bengali book...") as his own words: verbatim in the corpus, so the guard passed, but
+not Vivekananda speaking. Two fixes, no retraining:
+- **`scripts/flag_editorial.py`** marks editor's notes, translator prefaces, "Delivered at ..." headers and report notices (127 paragraphs,
+  listed in `corpus/editorial_paragraphs.tsv`; rules kept narrow, a one-line Raja-Yoga summary opener in his own words is deliberately not
+  flagged). It writes `editorial` into `corpus/paragraphs.jsonl` (ids unchanged) and an `editorial` column into `index/corpus.db`;
+  `vklib.search_paragraphs` and the section openings in `modes.retrieve` skip flagged ids, so neither backend can quote them. `build_index.py`
+  carries the column on a rebuild.
+- **`modes.is_smalltalk` + `engine.answer` pre-route**: greetings, thanks, farewells and "who are you" go straight to persona (`result["pre_route"]
+  = "smalltalk"`) on both backends; the trained model has no small talk under the Vivekananda prompt and quoted a passage instead. Checked
+  against all 220 eval questions and probes (0 matches) and the training questions (2 matches, both "How are you, Swamiji?" persona records).
+Re-eval of the shipped model with the filter: tag `unified8b_run2b`, compare against `unified8b_run2`.
