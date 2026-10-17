@@ -424,3 +424,39 @@ Options for run2 (owner decision; another ~6 h GPU run plus re-eval):
    marker; more complex, keeps the letter register as a style signal.
 3. Add LLM query expansion to the unified path (or retrieve with the 8B's own rewritten query) to recover oracle relevance.
 Until then the prompted cascade on qwen3:14b (`--backend prompted`, the server default) remains the system of record.
+
+## Run2 (started 2026-10-16 20:00, owner chose option 1 + query expansion)
+
+Data redesign (`scripts/run_run2_data.sh`, log `data/tiers/run2_data.out`), all deterministic except the 14b generations:
+- **Tiers 2 and 3 become oracle records** (`build_dataset.py oracle23` -> `data/tiers/tier2_o.jsonl`, `tier3_o.jsonl`; the persona originals stay
+  on disk, `assemble_dataset.py --persona-verbatim` rebuilds the run1 mix). Same user turn (the disciple's question / the synthesized incoming
+  letter); the block now includes the source paragraph (injected when retrieval misses it, like tiers 1/4) instead of excluding the section;
+  the target is a selection plan over the answer paragraph with the most question overlap (`best_window`, <= 200 words) and a metadata bridge.
+  The 27 LLM-converted narrative dialogues have no paragraph ids and are dropped. `modes.render_oracle` now strips a leading `Swamiji:` speaker
+  label from quoted spans (dialogue paragraphs carry it) the way it stripped `A. —`.
+- **Tier 1 persona prose (12 records, verbatim substrings with tags) is dropped** at assembly: persona = marked synthetic answers only.
+- **Tier 6 enlarged**: 124 new topics (`TOPICS_RUN2`: work, relationships, politics and identity, technology, illness and death, ethics,
+  practice, post-1902 India and the world), 8 questions each, asker varied by age/sex/country/faith; `tier6` now generates questions for any
+  topic without them and appends to `tier6_questions.jsonl`. Target ~1,000 kept persona records; the 25% cap is gone in the run2 mix.
+- **Tier 9, query expansion** (`build_dataset.py tier9 --n 1000`): question -> `{"queries": [...]}` under `modes.EXPAND_SYSTEM`, written by the
+  14b, questions sampled from the other tiers' user turns and the tier 6 pool (eval questions excluded). No mode tag, like tier 8. This lets
+  the single 8B write its own retrieval queries, which was the second regression in run1 (oracle relevance 0.88 without expansion).
+- **Caps** in the run2 assembly: tier 3o <= 300 and tier 4 <= 2,300 so oracle does not swamp the mix; tier 8 stays at 12% of the core.
+- **Assembly fix (2026-10-16 22:00)**: the first run2 assembly kept only 3 tier 9 records because the cross-tier duplicate-question check
+  dropped the other 997 (tier 9 questions are sampled from the other tiers on purpose). `assemble_dataset.py` now dedups tier 9 only against
+  itself. Final run2 mix: train 7,311 / holdout 384; oracle 3,084, persona 1,426 (all marked), scholar 1,382, expand 1,000, chat 803.
+- **Unified path** (`scripts/unified.py`): retrieval is now expanded with 2-3 queries the model writes itself under `EXPAND_SYSTEM`
+  (`VK_UNIFIED_EXPAND=self` default, `0` off, or an Ollama model name to delegate); `modes.retrieve` takes `extra_queries`;
+  `engine.answer(expand=...)` and `eval_full.py --no-expand` reach it; `result["queries"]` lists the queries used. Checked on the run1 q4 model
+  before training: "What is Maya?" -> queries ["Maya and illusion", "Maya and reality"], oracle, 6.6 s.
+- Training/export/eval: `scripts/run_run2_train.sh` (`train/out/run2`, Ollama `vivekananda:8b-run2` + `-q4`, GGUFs `models/vivekananda-8b-run2-*`,
+  eval tag `unified8b_run2`, comparisons against `prompted14b` and `unified8b`). run1 stays installed as `vivekananda:8b` until run2 beats the baseline.
+
+### Run2 result (2026-10-17 04:45, `eval/results/full_unified8b_run2.md`, compares `full_compare_*_vs_unified8b_run2.md`)
+
+Training: 914 steps, 6.4 h, peak VRAM 9.4 GiB, masked holdout loss 0.3595 (run1 0.5878). Exported as `vivekananda:8b-run2` / `-q4`.
+Both run1 regressions are fixed: mode accuracy 0.98 (prompted14b 0.973, run1 0.94; oracle 50/50, scholar 50/50, 3 persona->oracle), persona
+marker 1.0 (run1 0.579), 8-gram overlap 3.5% (run1 7%), guard violations 0 (prompted14b 4), generic 0.115 (run1 0.20), 6.4 s/answer
+(prompted14b 10.1 s). Still behind the prompted 14b on oracle relevance 0.919 vs 0.989 (8 "quotes not relevant") and probe agreement 0.74 vs 0.86,
+and the judge flags 3 third-person self-references (prompted14b 1). Shipping decision (plan checkpoint c) is the owner's; the server default
+is still the prompted cascade on qwen3:14b.

@@ -1,7 +1,9 @@
 """Inference path for the fine-tuned single model (phase 7 output): one prompt, the model emits <mode>X</mode> then the mode output.
 
-The prompt is byte-for-byte the phase 6 training prompt: UNIFIED_SYSTEM, the numbered-sentence retrieval block from deterministic hybrid
-retrieval (no LLM query expansion), the question, then the Qwen3 non-thinking assistant header. Ollama's /api/generate is used in raw mode
+The prompt is byte-for-byte the phase 6 training prompt: UNIFIED_SYSTEM, the numbered-sentence retrieval block from hybrid retrieval,
+the question, then the Qwen3 non-thinking assistant header. Since run2 the retrieval is expanded (as in the prompted cascade) with 2-3
+search queries written by the fine-tuned model itself under modes.EXPAND_SYSTEM (tier 9 of the training set); VK_UNIFIED_EXPAND=0 turns
+that off, VK_UNIFIED_EXPAND=<ollama model> delegates the expansion to another model. Ollama's /api/generate is used in raw mode
 so the rendered prompt is exactly the Hugging Face chat template (verified 2026-10-15) and so a mode override can be prefilled as
 "<mode>X</mode>\\n" (the chat endpoint cannot prefill with the Qwen3 template). The model's output is then rendered by the same
 functions as the prompted system: oracle plans -> verbatim quotes, scholar JSON -> strict citations, persona prose -> quote guard.
@@ -24,6 +26,7 @@ import traindata  # noqa: E402
 import vklib  # noqa: E402
 
 UNIFIED_MODEL = os.environ.get("VK_UNIFIED_MODEL", "vivekananda:8b")
+EXPAND = os.environ.get("VK_UNIFIED_EXPAND", "self")  # "self" | "0" | an Ollama model name
 MODE_RE = re.compile(r"^\s*<mode>(scholar|oracle|persona)</mode>[ \t]*\r?\n?", re.S)
 MODES = ("scholar", "oracle", "persona")
 
@@ -55,6 +58,20 @@ def generate(prompt: str, model: str = UNIFIED_MODEL, temperature: float = 0.3, 
             if j.get("done"):
                 break
     return "".join(out)
+
+
+def expand_queries(question: str, model: str = UNIFIED_MODEL) -> list[str]:
+    """The fine-tuned model writes its own search queries (tier 9 behaviour); same prompt as the prompted cascade's expansion."""
+    if EXPAND == "0":
+        return []
+    if EXPAND != "self":
+        return modes.expand_queries(question, EXPAND)
+    try:
+        raw = generate(render_prompt(modes.EXPAND_SYSTEM, question), model, temperature=0.0, max_tokens=120)
+        qs = [str(q).strip() for q in modes.parse_json(raw).get("queries", []) if str(q).strip()]
+        return qs[:3]
+    except Exception:  # noqa: BLE001
+        return []
 
 
 def split_mode(raw: str) -> tuple[str | None, str]:
@@ -111,10 +128,11 @@ def _generate_mode(con, ctx: modes.Context, user: str, mode: str, model: str, on
     return m, render(con, ctx, m, body, raw)
 
 
-def ask(con, question: str, mode: str = "auto", model: str = UNIFIED_MODEL, k: int = 8, on_token=None, on_mode=None) -> dict:
+def ask(con, question: str, mode: str = "auto", model: str = UNIFIED_MODEL, k: int = 8, on_token=None, on_mode=None, expand: bool = True) -> dict:
     """Same result shape as modes.ask (plus backend='unified', mode_tag)."""
     t0 = time.time()
-    ctx = modes.retrieve(con, question, k, vklib.DEFAULT_MODEL, None)  # deterministic, as in training
+    extra = expand_queries(question, model) if expand else []
+    ctx = modes.retrieve(con, question, k, vklib.DEFAULT_MODEL, None, extra_queries=extra)
     user = traindata.user_content(ctx, question)
     routed = None
     if mode == "mixed":  # not a trained mode: two prefilled generations, same layout as the prompted system
@@ -138,7 +156,7 @@ def ask(con, question: str, mode: str = "auto", model: str = UNIFIED_MODEL, k: i
     result["router"] = routed
     result["model"] = model
     result["backend"] = "unified"
-    result["queries"] = [question]
+    result["queries"] = list(getattr(ctx, "queries", [question]))
     result["retrieved"] = [{"para_id": p.para["id"], "section_id": p.section["id"], "citation": p.citation} for p in ctx.passages]
     result["seconds"] = round(time.time() - t0, 1)
     return result
@@ -151,8 +169,9 @@ if __name__ == "__main__":
     ap.add_argument("--mode", default="auto", choices=["auto", "scholar", "oracle", "persona", "mixed"])
     ap.add_argument("--model", default=UNIFIED_MODEL)
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--no-expand", action="store_true")
     a = ap.parse_args()
-    r = ask(vklib.connect(), a.question, a.mode, a.model)
+    r = ask(vklib.connect(), a.question, a.mode, a.model, expand=not a.no_expand)
     if a.json:
         print(json.dumps(r, ensure_ascii=False, indent=1))
     else:
