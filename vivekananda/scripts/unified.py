@@ -8,7 +8,7 @@ so the rendered prompt is exactly the Hugging Face chat template (verified 2026-
 "<mode>X</mode>\\n" (the chat endpoint cannot prefill with the Qwen3 template). The model's output is then rendered by the same
 functions as the prompted system: oracle plans -> verbatim quotes, scholar JSON -> strict citations, persona prose -> quote guard.
 
-    .venv/bin/python scripts/unified.py "What is Maya?" [--mode auto|oracle|scholar|persona|mixed] [--model vivekananda:8b]
+    .venv/bin/python scripts/unified.py "What is Maya?" [--mode auto|oracle|scholar|persona|mixed] [--model vivekananda:8b-run2]
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ import modes  # noqa: E402
 import traindata  # noqa: E402
 import vklib  # noqa: E402
 
-UNIFIED_MODEL = os.environ.get("VK_UNIFIED_MODEL", "vivekananda:8b")
+UNIFIED_MODEL = os.environ.get("VK_UNIFIED_MODEL", "vivekananda:8b-run2")
 EXPAND = os.environ.get("VK_UNIFIED_EXPAND", "self")  # "self" | "0" | an Ollama model name
 MODE_RE = re.compile(r"^\s*<mode>(scholar|oracle|persona)</mode>[ \t]*\r?\n?", re.S)
 MODES = ("scholar", "oracle", "persona")

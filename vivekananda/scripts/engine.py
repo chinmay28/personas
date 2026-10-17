@@ -19,7 +19,7 @@ import vklib  # noqa: E402
 
 BACKENDS = ("prompted", "unified")
 MODES = ("auto", "scholar", "oracle", "persona", "mixed")
-DEFAULT_BACKEND = os.environ.get("VK_BACKEND", "prompted")
+DEFAULT_BACKEND = os.environ.get("VK_BACKEND", "unified")   # run 2 is the shipping model (owner decision 2026-10-17); prompted = fallback
 
 
 def default_model(backend: str) -> str:
