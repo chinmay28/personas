@@ -7,7 +7,7 @@ verbatim in the source corpus.
 
 | persona | corpus | status | directory |
 |---|---|---|---|
-| Swami Vivekananda | Complete Works, 9 volumes (1,391 sections, 20,694 paragraphs) | retrieval index, prompted modes, eval harness, API/CLI/PWA done; 8B QLoRA in progress | [`vivekananda/`](vivekananda/) |
+| Swami Vivekananda | Complete Works, 9 volumes (1,391 sections, 20,694 paragraphs) | retrieval index, prompted modes, eval harness, API/CLI/PWA done; two 8B QLoRA runs trained and evaluated (run 2 matches the prompted 14B on most metrics) | [`vivekananda/`](vivekananda/) |
 
 ## How a persona is built
 
@@ -18,7 +18,8 @@ verbatim in the source corpus.
 5. **Eval**: automatic checks (verbatim rate, citation coverage, mode accuracy, memorization) plus an LLM judge and a set of stance probes (`eval/`).
 6. **Clients**: one local HTTP server with server-sent events, a CLI, and an installable PWA (`scripts/server.py`, `scripts/ask.py`, `pwa/`).
 
-The per-persona README is the runbook; `PLAN.md` in each directory records the design decisions.
+The per-persona README is the runbook; `PLAN.md` in each directory records the design decisions, and
+[`vivekananda/TUTORIAL.md`](vivekananda/TUTORIAL.md) walks through the whole build step by step.
 
 ## Setup
 
