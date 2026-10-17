@@ -474,4 +474,7 @@ not Vivekananda speaking. Two fixes, no retraining:
 - **`modes.is_smalltalk` + `engine.answer` pre-route**: greetings, thanks, farewells and "who are you" go straight to persona (`result["pre_route"]
   = "smalltalk"`) on both backends; the trained model has no small talk under the Vivekananda prompt and quoted a passage instead. Checked
   against all 220 eval questions and probes (0 matches) and the training questions (2 matches, both "How are you, Swamiji?" persona records).
-Re-eval of the shipped model with the filter: tag `unified8b_run2b`, compare against `unified8b_run2`.
+Re-eval with the filter (`unified8b_run2b`, `eval/results/full_compare_unified8b_run2_vs_unified8b_run2b.md`): no regression. Mode accuracy 0.973
+vs 0.98 (one oracle question, "How should I practise meditation?", went to persona; its passage is not editorial, so this is temperature-0.3
+noise), oracle relevance 0.918 vs 0.919, probe agreement 0.76 vs 0.74, generic 0.085 vs 0.115, guard violations 0, 6.5 s per answer. No run 2
+eval answer had cited a flagged paragraph, so the filter only matters off the eval set, where "hi swamiji" found one.
