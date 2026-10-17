@@ -1,0 +1,6441 @@
+{
+ "tag": "unified8b_run2b",
+ "backend": "unified",
+ "model": "vivekananda:8b-run2",
+ "n": 200,
+ "n_questions": 150,
+ "n_probes": 50,
+ "mode_accuracy": 0.973,
+ "persona_when_oracle_expected": 1,
+ "confusion": {
+  "scholar": {
+   "scholar": 50
+  },
+  "oracle": {
+   "oracle": 49,
+   "persona": 1
+  },
+  "persona": {
+   "persona": 47,
+   "oracle": 3
+  },
+  "mixed": {}
+ },
+ "modes_served": {
+  "scholar": 50,
+  "oracle": 98,
+  "persona": 52
+ },
+ "cascade_rate": 0.0,
+ "oracle_n": 98,
+ "oracle_verbatim_rate": 1.0,
+ "oracle_mean_quoted_words": 134.52,
+ "oracle_over_cap": 0,
+ "oracle_relevant_rate": 0.918,
+ "scholar_n": 50,
+ "scholar_citation_coverage": 1.0,
+ "scholar_dropped_uncited": 6,
+ "scholar_no_record_rate": 0.06,
+ "scholar_support_rate": 0.991,
+ "persona_n": 52,
+ "persona_marker_rate": 1.0,
+ "persona_cited_sentence_rate": 0.483,
+ "persona_8gram_overlap": 0.047,
+ "guard_violations": 0,
+ "third_person_refs": 3,
+ "judged_first_person_rate": 0.915,
+ "judged_anachronism_rate": 0.005,
+ "judged_generic_rate": 0.085,
+ "probe_agree_rate": 0.76,
+ "probe_agreement": {
+  "agree": 38,
+  "disagree": 7,
+  "unclear": 5
+ },
+ "mean_seconds": 6.501,
+ "failures": [
+  {
+   "id": "q-005",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-005",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-008",
+   "why": "judge: 1/7 scholar sentences unsupported"
+  },
+  {
+   "id": "q-018",
+   "why": "4 uncited sentences dropped"
+  },
+  {
+   "id": "q-021",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-021",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-030",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-030",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-037",
+   "why": "judge: 1/8 scholar sentences unsupported"
+  },
+  {
+   "id": "q-040",
+   "why": "judge: 1/5 scholar sentences unsupported"
+  },
+  {
+   "id": "q-060",
+   "why": "mode persona != expected oracle"
+  },
+  {
+   "id": "q-068",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "q-087",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-087",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-098",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "q-105",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-106",
+   "why": "mode oracle != expected persona"
+  },
+  {
+   "id": "q-110",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-110",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-112",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-112",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-119",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-119",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-124",
+   "why": "mode oracle != expected persona"
+  },
+  {
+   "id": "q-126",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-126",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-130",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-130",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-134",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-134",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-137",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-137",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-139",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-141",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-141",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-143",
+   "why": "mode oracle != expected persona"
+  },
+  {
+   "id": "q-144",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "q-144",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "q-149",
+   "why": "1 third-person self-reference(s)"
+  },
+  {
+   "id": "probe-03",
+   "why": "judge: anachronism"
+  },
+  {
+   "id": "probe-07",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-08",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-11",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-11",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-14",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-17",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "probe-17",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "probe-17",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-21",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-22",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-27",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-32",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-33",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-35",
+   "why": "judge: oracle quotes not relevant"
+  },
+  {
+   "id": "probe-43",
+   "why": "judge: contradicts documented stance"
+  },
+  {
+   "id": "probe-44",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "probe-46",
+   "why": "1 third-person self-reference(s)"
+  },
+  {
+   "id": "probe-46",
+   "why": "judge: not consistently first person"
+  },
+  {
+   "id": "probe-46",
+   "why": "judge: generic prose"
+  },
+  {
+   "id": "probe-50",
+   "why": "1 third-person self-reference(s)"
+  },
+  {
+   "id": "probe-50",
+   "why": "judge: not consistently first person"
+  }
+ ],
+ "rows": [
+  {
+   "id": "q-001",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 1003,
+   "sentences": 6,
+   "cited": 6,
+   "dropped_uncited": 0,
+   "model_sentences": 6,
+   "no_record": false,
+   "ngram_hits": 4,
+   "ngram_windows": 41,
+   "judge": {
+    "id": "q-001",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's speech at the Parliament of Religions, including his emphasis on religious harmony and quotes from the Bhagavad-Gita."
+    },
+    "support": {
+     "sentences": 6,
+     "supported": 6,
+     "judged": 6
+    }
+   }
+  },
+  {
+   "id": "q-002",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 9.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 924,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 5,
+   "ngram_windows": 39,
+   "judge": {
+    "id": "q-002",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on the relationship between Hinduism and Buddhism, as expressed in his Chicago addresses. It includes specific references to his speeches and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-003",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 9.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 709,
+   "sentences": 6,
+   "cited": 6,
+   "dropped_uncited": 0,
+   "model_sentences": 6,
+   "no_record": false,
+   "ngram_hits": 3,
+   "ngram_windows": 34,
+   "judge": {
+    "id": "q-003",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's known views and writings. It is specific to his correspondence with Alasinga and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 6,
+     "supported": 6,
+     "judged": 6
+    }
+   }
+  },
+  {
+   "id": "q-004",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1167,
+   "sentences": 6,
+   "cited": 6,
+   "dropped_uncited": 0,
+   "model_sentences": 6,
+   "no_record": false,
+   "ngram_hits": 6,
+   "ngram_windows": 49,
+   "judge": {
+    "id": "q-004",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on the condition of the masses in India, citing specific quotes and contexts from his speeches and writings. It is not generic and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 6,
+     "supported": 6,
+     "judged": 6
+    }
+   }
+  },
+  {
+   "id": "q-005",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1200,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 12,
+   "ngram_windows": 53,
+   "judge": {
+    "id": "q-005",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is written in third person, using quotes and citations, and does not reflect Swami Vivekananda's actual voice or style. It is a generic summary of his views on the caste system."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-006",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1207,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 15,
+   "ngram_windows": 52,
+   "judge": {
+    "id": "q-006",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on female education, emphasizing religious alignment and upliftment of women. No anachronisms are present."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-007",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.0,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 950,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 1,
+   "ngram_windows": 39,
+   "judge": {
+    "id": "q-007",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings and descriptions of his Master, Shri Ramakrishna. It is not generic, as it specifically references Vivekananda's own accounts and teachings."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-008",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 1142,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 18,
+   "ngram_windows": 47,
+   "judge": {
+    "id": "q-008",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings and style. It is not generic, as it specifically references his return to Madras and his emphasis on Vedanta and unity, which are central to his philosophy."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 6,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-009",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 1253,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 55,
+   "judge": {
+    "id": "q-009",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's views on idol worship as a stage in spiritual development, consistent with his teachings. It is not generic and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-010",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1277,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 14,
+   "ngram_windows": 55,
+   "judge": {
+    "id": "q-010",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's views on science and religion, using his own words and concepts, and is consistent with his historical context."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-011",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 13.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 1379,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 12,
+   "ngram_windows": 62,
+   "judge": {
+    "id": "q-011",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Christ and other spiritual figures, emphasizing their universal spiritual significance. It is not generic, as it aligns with his specific teachings on reincarnation, the continuity of spiritual evolution, and the role of great souls as signposts for humanity."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-012",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 13.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 1392,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 5,
+   "ngram_windows": 57,
+   "judge": {
+    "id": "q-012",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Islam and Mohammedanism, citing specific lectures and letters. It avoids anachronisms and is specific to his teachings."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-013",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1300,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 11,
+   "ngram_windows": 54,
+   "judge": {
+    "id": "q-013",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's views on the Vedas as eternal, authoritative, and uncreated. It is specific to his teachings and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-014",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 7.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 0,
+   "chars": 37,
+   "sentences": 0,
+   "cited": 0,
+   "dropped_uncited": 0,
+   "model_sentences": 0,
+   "no_record": true,
+   "ngram_hits": 0,
+   "ngram_windows": 1,
+   "judge": {
+    "id": "q-014",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and does not contain anachronisms or generic content."
+    }
+   }
+  },
+  {
+   "id": "q-015",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 6.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1163,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 48,
+   "judge": {
+    "id": "q-015",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's views on Guru Govind Singh, with no anachronisms. It is specific to his ideas and not generic inspirational prose."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-016",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 772,
+   "sentences": 4,
+   "cited": 4,
+   "dropped_uncited": 0,
+   "model_sentences": 4,
+   "no_record": false,
+   "ngram_hits": 4,
+   "ngram_windows": 34,
+   "judge": {
+    "id": "q-016",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's correspondence with Sister Nivedita, with specific dates and references. It is not generic, as it details specific letters and events from his life."
+    },
+    "support": {
+     "sentences": 4,
+     "supported": 4,
+     "judged": 4
+    }
+   }
+  },
+  {
+   "id": "q-017",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 1038,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 1,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 30,
+   "ngram_windows": 47,
+   "judge": {
+    "id": "q-017",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's views on vegetarianism and meat-eating, citing his own writings and arguments, and is presented in first person without anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-018",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.0,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 812,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 4,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 23,
+   "ngram_windows": 33,
+   "judge": {
+    "id": "q-018",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's views on social reformers in India, criticizing Western imitations and emphasizing the need for indigenous methods. It is consistent with his historical perspective and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-019",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 7,
+   "chars": 976,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 3,
+   "ngram_windows": 40,
+   "judge": {
+    "id": "q-019",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's critical views of the Theosophists, citing specific statements and contexts from his time. It is not generic and contains no anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-020",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1704,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 26,
+   "ngram_windows": 76,
+   "judge": {
+    "id": "q-020",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on British rule in India, citing his own writings and observations without anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-021",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 883,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 40,
+   "judge": {
+    "id": "q-021",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is written in third person, citing letters and events, rather than speaking in first person as Swami Vivekananda would."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-022",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1472,
+   "sentences": 6,
+   "cited": 6,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 21,
+   "ngram_windows": 61,
+   "judge": {
+    "id": "q-022",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's views on the historical evolution of India, citing specific religious, cultural, and archaeological elements. It does not contain anachronisms and is specific to his ideas."
+    },
+    "support": {
+     "sentences": 6,
+     "supported": 6,
+     "judged": 6
+    }
+   }
+  },
+  {
+   "id": "q-023",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 7,
+   "chars": 1050,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 48,
+   "judge": {
+    "id": "q-023",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's teachings on the ideal of a Sannyasin, drawing from his philosophical and spiritual views. It is not generic, as it specifically aligns with his ideas on renunciation, the nature of the Self, and the path of liberation."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-024",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 1079,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 1,
+   "ngram_windows": 49,
+   "judge": {
+    "id": "q-024",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings and methods, with references to specific events and disciples. It is not generic and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-025",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1261,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 9,
+   "ngram_windows": 51,
+   "judge": {
+    "id": "q-025",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Shankaracharya and Advaita, with proper references to his lectures and writings."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-026",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 1193,
+   "sentences": 6,
+   "cited": 6,
+   "dropped_uncited": 0,
+   "model_sentences": 6,
+   "no_record": false,
+   "ngram_hits": 24,
+   "ngram_windows": 47,
+   "judge": {
+    "id": "q-026",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Ramanuja and qualified non-dualism, with proper references. It is specific to his teachings and not generic."
+    },
+    "support": {
+     "sentences": 6,
+     "supported": 6,
+     "judged": 6
+    }
+   }
+  },
+  {
+   "id": "q-027",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 654,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 7,
+   "ngram_windows": 29,
+   "judge": {
+    "id": "q-027",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's specific views on the Buddha, citing his teachings and character. It is not generic and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-028",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1337,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 4,
+   "ngram_windows": 59,
+   "judge": {
+    "id": "q-028",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on the role of the Brahmin, citing his emphasis on renunciation, cultural responsibility, and the need for Brahmins to share knowledge. It is specific to his teachings and not generic."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-029",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 7.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 0,
+   "chars": 37,
+   "sentences": 0,
+   "cited": 0,
+   "dropped_uncited": 0,
+   "model_sentences": 0,
+   "no_record": true,
+   "ngram_hits": 0,
+   "ngram_windows": 1,
+   "judge": {
+    "id": "q-029",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is truthful and consistent with historical records, as there is no evidence that Swami Vivekananda visited Japan or made public statements about it."
+    }
+   }
+  },
+  {
+   "id": "q-030",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 877,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 3,
+   "ngram_windows": 35,
+   "judge": {
+    "id": "q-030",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is presented in third person and uses numbered citations, which is not consistent with Swami Vivekananda's first-person speaking style. The content, while aligned with his views on women, is phrased in a generic and academic tone rather than as a direct quote from him."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-031",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1205,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 5,
+   "ngram_windows": 51,
+   "judge": {
+    "id": "q-031",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on the Jains, with no anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-032",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1081,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 2,
+   "ngram_windows": 43,
+   "judge": {
+    "id": "q-032",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's perspective and knowledge of the Paris Congress of the History of Religions, without anachronisms or generic content."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-033",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 997,
+   "sentences": 10,
+   "cited": 10,
+   "dropped_uncited": 0,
+   "model_sentences": 10,
+   "no_record": false,
+   "ngram_hits": 35,
+   "ngram_windows": 43,
+   "judge": {
+    "id": "q-033",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms and reflects his specific ideas on Vedanta being practical in all aspects of life."
+    },
+    "support": {
+     "sentences": 10,
+     "supported": 10,
+     "judged": 10
+    }
+   }
+  },
+  {
+   "id": "q-034",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 955,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 7,
+   "ngram_windows": 41,
+   "judge": {
+    "id": "q-034",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Kali and Mother worship, citing specific instances and quotes from his writings and letters. It is not generic and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-035",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1225,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 1,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 45,
+   "ngram_windows": 52,
+   "judge": {
+    "id": "q-035",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific ideas and references to the hymn, making it non-generic."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-036",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.7,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 7,
+   "chars": 1365,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 59,
+   "judge": {
+    "id": "q-036",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's views on the Gita and Krishna's historicity, with references to his lectures and writings. It is specific to his ideas and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-037",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 939,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 4,
+   "ngram_windows": 38,
+   "judge": {
+    "id": "q-037",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's views on religion as expressed in his lectures, using direct first-person language and referencing his own teachings without anachronisms."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 7,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-038",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.0,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1121,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 48,
+   "judge": {
+    "id": "q-038",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's philosophical views on good and evil, using his own terminology and concepts, and is presented in first person without anachronisms."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-039",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 11.7,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1237,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 22,
+   "ngram_windows": 55,
+   "judge": {
+    "id": "q-039",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on hypnotism and psychic powers, citing his own writings and speeches. It is specific to his ideas and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-040",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 723,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 6,
+   "ngram_windows": 32,
+   "judge": {
+    "id": "q-040",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views and correspondence, with no anachronisms."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 4,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-041",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 612,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 0,
+   "ngram_windows": 23,
+   "judge": {
+    "id": "q-041",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Mahavira, without anachronisms or generic content."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-042",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 804,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 3,
+   "ngram_windows": 33,
+   "judge": {
+    "id": "q-042",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on East and West as expressed in his writings. It is not generic, as it specifically references his ideas on Sannyasa, social perfection, and the potential conjunction of East and West."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-043",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 0,
+   "chars": 37,
+   "sentences": 0,
+   "cited": 0,
+   "dropped_uncited": 0,
+   "model_sentences": 0,
+   "no_record": true,
+   "ngram_hits": 0,
+   "ngram_windows": 1,
+   "judge": {
+    "id": "q-043",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is truthful and consistent with historical records, as there is no known record of Swami Vivekananda commenting on Sister Nivedita's book on Kali."
+    }
+   }
+  },
+  {
+   "id": "q-044",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 6.7,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 957,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 5,
+   "ngram_windows": 43,
+   "judge": {
+    "id": "q-044",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's critical view of the Arya Samaj and Dayananda, as expressed in his writings. It is not generic, as it directly references his specific opinions."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-045",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 6,
+   "chars": 1041,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 10,
+   "ngram_windows": 45,
+   "judge": {
+    "id": "q-045",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Tantra, citing his own statements and positions. It is specific to his teachings and does not contain anachronisms."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-046",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 1479,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 23,
+   "ngram_windows": 67,
+   "judge": {
+    "id": "q-046",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's views on spiritualism, citing his own statements and writings, and is presented in first person without anachronisms."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-047",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 1023,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 8,
+   "ngram_windows": 46,
+   "judge": {
+    "id": "q-047",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's own words and sentiments about his family's poverty and his feelings of guilt and responsibility."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-048",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 10.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1062,
+   "sentences": 5,
+   "cited": 5,
+   "dropped_uncited": 0,
+   "model_sentences": 5,
+   "no_record": false,
+   "ngram_hits": 6,
+   "ngram_windows": 44,
+   "judge": {
+    "id": "q-048",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's experiences and statements about the Chicago Fair and his early days in America, with proper references to historical events and people of his time."
+    },
+    "support": {
+     "sentences": 5,
+     "supported": 5,
+     "judged": 5
+    }
+   }
+  },
+  {
+   "id": "q-049",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 12.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 7,
+   "chars": 1463,
+   "sentences": 7,
+   "cited": 7,
+   "dropped_uncited": 0,
+   "model_sentences": 7,
+   "no_record": false,
+   "ngram_hits": 1,
+   "ngram_windows": 64,
+   "judge": {
+    "id": "q-049",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person and accurately reflects Vivekananda's health issues as documented in his letters and conversations, without anachronisms or generic content."
+    },
+    "support": {
+     "sentences": 7,
+     "supported": 7,
+     "judged": 7
+    }
+   }
+  },
+  {
+   "id": "q-050",
+   "set": "questions",
+   "mode": "scholar",
+   "mode_tag": "scholar",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 13.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 1309,
+   "sentences": 8,
+   "cited": 8,
+   "dropped_uncited": 0,
+   "model_sentences": 8,
+   "no_record": false,
+   "ngram_hits": 17,
+   "ngram_windows": 59,
+   "judge": {
+    "id": "q-050",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer accurately reflects Vivekananda's views on Indian music and art, citing specific points he made about the development of Indian music, the influence of Islamic methods, and the differences between Indian and Western art."
+    },
+    "support": {
+     "sentences": 8,
+     "supported": 8,
+     "judged": 8
+    }
+   }
+  },
+  {
+   "id": "q-051",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 8.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1053,
+   "quoted_words": 169,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-051",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on Karma-Yoga, with proper references to his writings. It is not generic, as it specifically references his views on different paths to spiritual realization."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-052",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1218,
+   "quoted_words": 174,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-052",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, accurately reflects Vivekananda's voice and references his own writings, and does not contain anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-053",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 236,
+   "quoted_words": 26,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-053",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's teachings on Bhakti-Yoga, and is not generic or anachronistic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-054",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 655,
+   "quoted_words": 82,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-054",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own lectures and writings, which is appropriate. The content is specific to his teachings on Jnana-Yoga and does not contain anachronisms or generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-055",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 969,
+   "quoted_words": 145,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-055",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own writings and teachings on Karma-Yoga, specifically mentioning chapters from his book, which is appropriate for his time. The content is specific to his philosophy and not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-056",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1421,
+   "quoted_words": 231,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-056",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, accurately reflects Vivekananda's views on duty as expressed in his writings, and does not contain anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-057",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 3,
+   "quotes_verified": 3,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1447,
+   "quoted_words": 231,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-057",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's teachings on Maya, and avoids anachronisms. It is specific to his views and not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-058",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1086,
+   "quoted_words": 182,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-058",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and accurately reflects his teachings on Prana and Akasha without anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-059",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 249,
+   "quoted_words": 13,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-059",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly uses first-person narration, avoids anachronisms, and references specific works consistent with Vivekananda's teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-060",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 5.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 1057,
+   "ngram_hits": 1,
+   "ngram_windows": 44,
+   "marker": true,
+   "cited": 7,
+   "sentences": 8,
+   "judge": {
+    "id": "q-060",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, consistent with Swami Vivekananda's voice, and contains no anachronisms. It reflects his specific teachings on meditation, including the use of external objects, the importance of consistency, and the goal of turning the mind inward."
+    }
+   }
+  },
+  {
+   "id": "q-061",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 6.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 542,
+   "quoted_words": 67,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-061",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own writings and teachings without anachronisms. The content is specific to his interpretation of Pratyahara, not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-062",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 169,
+   "quoted_words": 18,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-062",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on Samadhi, with a reference to a specific date and context that aligns with his historical timeline."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-063",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 863,
+   "quoted_words": 144,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-063",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, accurately reflects Vivekananda's teachings on Atman, and is specific to his philosophy without anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-064",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1398,
+   "quoted_words": 248,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-064",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and reflects his philosophical views on the nature of man, the spirit, and immortality. It contains no anachronisms and is specific to his teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-065",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 489,
+   "quoted_words": 79,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-065",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, quotes from Vivekananda's actual speech, and reflects his specific ideas about the immortality of the soul."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-066",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 2,
+   "quotes_verified": 2,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1510,
+   "quoted_words": 235,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-066",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and contains no anachronisms. It references his own lectures and writings, making it specific to his ideas."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-067",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1003,
+   "quoted_words": 138,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-067",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, accurately reflects Vivekananda's views on the difference between religion and religions, and is not generic. It references his own lectures and writings, which is appropriate."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-068",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 264,
+   "quoted_words": 38,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-068",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly references a specific lecture and quote from 1893, and uses first-person narration consistent with Swami Vivekananda's voice."
+    },
+    "relevant": false
+   }
+  },
+  {
+   "id": "q-069",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1115,
+   "quoted_words": 185,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-069",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's teachings on renunciation, and is consistent with his time period. It is specific to his philosophy and not generic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-070",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 402,
+   "quoted_words": 71,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-070",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and accurately reflects his teachings on Karma-Yoga and the value of different paths in life. No anachronisms are present."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-071",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1646,
+   "quoted_words": 245,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-071",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms and reflects his specific ideas on Para-Bhakti, making it non-generic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-072",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 366,
+   "quoted_words": 39,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-072",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references specific writings, and is specific to Vivekananda's teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-073",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 676,
+   "quoted_words": 110,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-073",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It references his own writings, which is appropriate for his time."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-074",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 977,
+   "quoted_words": 140,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-074",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. No anachronisms are present. The content reflects his specific ideas on Vedanta and God, making it non-generic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-075",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1305,
+   "quoted_words": 247,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-075",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, free of anachronisms, and reflects his specific philosophical ideas on karma and the nature of evil."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-076",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 584,
+   "quoted_words": 99,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-076",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's philosophical views on the Self and freedom, without anachronisms or generic content."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-077",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1082,
+   "quoted_words": 169,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-077",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on Karma-Yoga, with proper references to his writings. It is not generic, as it specifically references his own ideas and texts."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-078",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1375,
+   "quoted_words": 220,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-078",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's teachings on Sankhya cosmology, and is specific to his views."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-079",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 224,
+   "quoted_words": 30,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-079",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on the Gunas, with a reference to Raja-Yoga, which aligns with his philosophy."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-080",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1335,
+   "quoted_words": 233,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-080",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and contains no anachronisms. It reflects his specific views on the relationship between Buddhism and Hinduism, drawing from his own teachings and writings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-081",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 835,
+   "quoted_words": 136,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-081",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on Advaita, with no anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-082",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.0,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 430,
+   "quoted_words": 72,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-082",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on Dharma as expressed in his writings. It is not generic, as it specifically references his own work and ideas."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-083",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1147,
+   "quoted_words": 176,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-083",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and accurately reflects his interpretation of Nishkama Karma. It is not generic, as it includes specific references to his own writings and teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-084",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 491,
+   "quoted_words": 48,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-084",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references specific lectures and writings by Vivekananda, and discusses his views on controlling the mind through the subconscious, which aligns with his teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-085",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1411,
+   "quoted_words": 247,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-085",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, consistent with Swami Vivekananda's voice, and contains specific ideas from his teachings on Om and the Sphota. No anachronisms are present."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-086",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 266,
+   "quoted_words": 38,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-086",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on Vedanta's concept of the many and the One. It is specific to his philosophy and not generic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-087",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.2,
+   "quotes": 3,
+   "quotes_verified": 3,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1206,
+   "quoted_words": 205,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-087",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is a third-person newspaper report and not in Vivekananda's first-person voice. It also contains generic commentary rather than his specific philosophical or spiritual ideas."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-088",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 398,
+   "quoted_words": 56,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-088",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, accurately reflects Vivekananda's teachings on the four Yogas, and is specific to his ideas."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-089",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1258,
+   "quoted_words": 208,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-089",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and accurately reflects his views on ritual and symbols in religion. No anachronisms are present, and the content is specific to his teachings."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-090",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1115,
+   "quoted_words": 161,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-090",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, accurately reflects Vivekananda's teachings on creation and cycles, and is specific to his philosophy, not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-091",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 445,
+   "quoted_words": 73,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-091",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on reincarnation as expressed in his writings. It is not generic, as it specifically references his teachings on Vedanta philosophy and the nature of the soul."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-092",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 302,
+   "quoted_words": 45,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-092",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly uses Vivekananda's voice, references his own work (Jnana Yoga), and accurately reflects his philosophical views on Brahman, Maya, and the world's relationship to the Absolute."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-093",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 520,
+   "quoted_words": 65,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-093",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references specific lectures and writings by Vivekananda, and accurately reflects his philosophy without anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-094",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1428,
+   "quoted_words": 243,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-094",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms, as it refers to his own teachings and writings. The content is specific to his philosophy and not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-095",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 410,
+   "quoted_words": 72,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-095",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific ideas about womanhood in India, particularly emphasizing motherhood."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-096",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 2.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 945,
+   "quoted_words": 156,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-096",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and contains specific ideas and terminology from his teachings on concentration and Yoga. No anachronisms are present."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-097",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1547,
+   "quoted_words": 248,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "q-097",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, accurately reflects Vivekananda's teachings on the mind in Raja-Yoga, and avoids anachronisms. It is specific to his ideas and not generic inspirational prose."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-098",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 4.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 831,
+   "quoted_words": 155,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-098",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's teachings on Chitta and Vrittis, using his own words and style. It is not generic and contains no anachronisms."
+    },
+    "relevant": false
+   }
+  },
+  {
+   "id": "q-099",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1133,
+   "quoted_words": 201,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-099",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms and reflects his specific philosophical ideas, particularly regarding the divinity of man and the concept of the soul's purity."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-100",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "oracle",
+   "cascade": null,
+   "seconds": 3.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 477,
+   "quoted_words": 84,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-100",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on work and success, with no anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-101",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 4.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 893,
+   "ngram_hits": 0,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 3,
+   "sentences": 9,
+   "judge": {
+    "id": "q-101",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on inner peace, detachment, and balance. It does not contain anachronisms and is specific to his philosophy."
+    }
+   }
+  },
+  {
+   "id": "q-102",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 894,
+   "ngram_hits": 5,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 7,
+   "sentences": 13,
+   "judge": {
+    "id": "q-102",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on work, perseverance, and inner strength. It is not generic, as it directly references his specific ideas and quotes from his speeches and writings."
+    }
+   }
+  },
+  {
+   "id": "q-103",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 895,
+   "ngram_hits": 0,
+   "ngram_windows": 36,
+   "marker": true,
+   "cited": 4,
+   "sentences": 7,
+   "judge": {
+    "id": "q-103",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, avoids anachronisms, and reflects Vivekananda's specific ideas on concentration, willpower, and meditation."
+    }
+   }
+  },
+  {
+   "id": "q-104",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 982,
+   "ngram_hits": 0,
+   "ngram_windows": 42,
+   "marker": true,
+   "cited": 2,
+   "sentences": 8,
+   "judge": {
+    "id": "q-104",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, avoids anachronisms, and reflects Vivekananda's specific ideas on education, marriage, and societal contribution."
+    }
+   }
+  },
+  {
+   "id": "q-105",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 809,
+   "ngram_hits": 2,
+   "ngram_windows": 37,
+   "marker": true,
+   "cited": 4,
+   "sentences": 9,
+   "judge": {
+    "id": "q-105",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer uses Vivekananda's voice and philosophy, but it is generic and does not reference his specific teachings or historical context."
+    }
+   }
+  },
+  {
+   "id": "q-106",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 6.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1134,
+   "quoted_words": 185,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "q-106",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. No anachronisms are present. The content reflects his specific ideas on wealth, effort, and spiritual growth, making it non-generic."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-107",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 5.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 895,
+   "ngram_hits": 1,
+   "ngram_windows": 37,
+   "marker": true,
+   "cited": 5,
+   "sentences": 7,
+   "judge": {
+    "id": "q-107",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on moral and spiritual education, the importance of the body, and the duty to serve. It is not generic, as it aligns with his specific ideas and philosophy."
+    }
+   }
+  },
+  {
+   "id": "q-108",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 972,
+   "ngram_hits": 0,
+   "ngram_windows": 38,
+   "marker": true,
+   "cited": 2,
+   "sentences": 9,
+   "judge": {
+    "id": "q-108",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on forgiveness, using his own terminology like 'Titiksha' and referencing his philosophy. It is not generic, as it is specific to his ideas and style."
+    }
+   }
+  },
+  {
+   "id": "q-109",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 959,
+   "ngram_hits": 0,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 4,
+   "sentences": 6,
+   "judge": {
+    "id": "q-109",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy of service, upliftment, and the importance of work for the betterment of society. It references his ideas on technical education, justice, and the soul's fulfillment through service, which are consistent with his teachings."
+    }
+   }
+  },
+  {
+   "id": "q-110",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 933,
+   "ngram_hits": 0,
+   "ngram_windows": 41,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-110",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person, as it begins with 'I did not speak to this directly' and uses a more general tone. It is not generic in the sense that it references specific teachings of Swami Vivekananda, but it does not fully capture his unique voice or perspective."
+    }
+   }
+  },
+  {
+   "id": "q-111",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 803,
+   "ngram_hits": 4,
+   "ngram_windows": 34,
+   "marker": true,
+   "cited": 2,
+   "sentences": 7,
+   "judge": {
+    "id": "q-111",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his philosophical views on solitude and spiritual growth, which are specific to his teachings."
+    }
+   }
+  },
+  {
+   "id": "q-112",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 877,
+   "ngram_hits": 0,
+   "ngram_windows": 36,
+   "marker": true,
+   "cited": 4,
+   "sentences": 7,
+   "judge": {
+    "id": "q-112",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person, and while it is not anachronistic, it is generic and does not reflect Swami Vivekananda's specific voice or teachings in a personal way."
+    }
+   }
+  },
+  {
+   "id": "q-113",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 928,
+   "ngram_hits": 0,
+   "ngram_windows": 37,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-113",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on discipline, willpower, and perseverance. It is not generic, as it specifically references his own teachings and principles."
+    }
+   }
+  },
+  {
+   "id": "q-114",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 785,
+   "ngram_hits": 0,
+   "ngram_windows": 31,
+   "marker": true,
+   "cited": 4,
+   "sentences": 7,
+   "judge": {
+    "id": "q-114",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, free of anachronisms, and reflects his specific philosophical ideas about ambition, contentment, and the pursuit of self-realization."
+    }
+   }
+  },
+  {
+   "id": "q-115",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 802,
+   "ngram_hits": 7,
+   "ngram_windows": 34,
+   "marker": true,
+   "cited": 6,
+   "sentences": 7,
+   "judge": {
+    "id": "q-115",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on responding to rudeness with kindness and patience. It is not generic, as it specifically references his own principles and quotes from his writings."
+    }
+   }
+  },
+  {
+   "id": "q-116",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 2,
+   "quotes_verified": 2,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 948,
+   "ngram_hits": 0,
+   "ngram_windows": 32,
+   "marker": true,
+   "cited": 2,
+   "sentences": 9,
+   "judge": {
+    "id": "q-116",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy, using his own quotes and ideas about failure and perseverance. It is not generic, as it specifically references his teachings and mindset."
+    }
+   }
+  },
+  {
+   "id": "q-117",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 851,
+   "ngram_hits": 2,
+   "ngram_windows": 38,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-117",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy of religion as a personal and evolving experience. It uses his own metaphors and ideas, such as the sapling and hedge analogy, and his emphasis on inner realization of God. No anachronisms are present."
+    }
+   }
+  },
+  {
+   "id": "q-118",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 854,
+   "ngram_hits": 0,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-118",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy, particularly his teachings on non-duality, the nature of the Self, and the illusion of separation. It is consistent with his views and does not contain anachronisms."
+    }
+   }
+  },
+  {
+   "id": "q-119",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 793,
+   "ngram_hits": 0,
+   "ngram_windows": 33,
+   "marker": true,
+   "cited": 2,
+   "sentences": 7,
+   "judge": {
+    "id": "q-119",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person, as it uses phrases like 'I did not speak to this directly' and 'I can offer guidance.' It is not generic in the strictest sense, as it references specific teachings and concepts from Vivekananda, but it could be interpreted as generic inspirational advice."
+    }
+   }
+  },
+  {
+   "id": "q-120",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.0,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 927,
+   "ngram_hits": 1,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 6,
+   "sentences": 9,
+   "judge": {
+    "id": "q-120",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings and style. It is not generic, as it includes specific references to his philosophy and spiritual concepts."
+    }
+   }
+  },
+  {
+   "id": "q-121",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 882,
+   "ngram_hits": 10,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-121",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings and style. It is not generic and contains specific references to his philosophy."
+    }
+   }
+  },
+  {
+   "id": "q-122",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 979,
+   "ngram_hits": 0,
+   "ngram_windows": 43,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-122",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's emphasis on compassion, spiritual healing, and the role of the doctor as a guide. It aligns with his teachings on the importance of the soul and spirit, and does not contain anachronisms."
+    }
+   }
+  },
+  {
+   "id": "q-123",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 786,
+   "ngram_hits": 3,
+   "ngram_windows": 36,
+   "marker": true,
+   "cited": 6,
+   "sentences": 8,
+   "judge": {
+    "id": "q-123",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on jealousy, self-faith, and spiritual surrender. It is not generic, as it aligns with his specific philosophy and quotes from his writings."
+    }
+   }
+  },
+  {
+   "id": "q-124",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 5.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 577,
+   "quoted_words": 89,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-124",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and contains specific references to his teachings and practices. It is not generic and does not contain anachronisms."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-125",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 5.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 863,
+   "ngram_hits": 10,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-125",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on inner calling and purpose. It is not generic and aligns with his philosophy."
+    }
+   }
+  },
+  {
+   "id": "q-126",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 5,
+   "chars": 919,
+   "ngram_hits": 0,
+   "ngram_windows": 41,
+   "marker": true,
+   "cited": 5,
+   "sentences": 7,
+   "judge": {
+    "id": "q-126",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person, as it begins with 'I did not speak to this directly' and uses third-person framing. It is not generic in the strictest sense, as it references specific principles and ideas from Vivekananda's teachings, but it does not fully embody his voice or style in first person."
+    }
+   }
+  },
+  {
+   "id": "q-127",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 915,
+   "ngram_hits": 0,
+   "ngram_windows": 38,
+   "marker": true,
+   "cited": 4,
+   "sentences": 10,
+   "judge": {
+    "id": "q-127",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's views on the harmony between science and religion, citing his own principles. It is not generic and avoids anachronisms."
+    }
+   }
+  },
+  {
+   "id": "q-128",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 852,
+   "ngram_hits": 0,
+   "ngram_windows": 38,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-128",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy on giving, emphasizing unselfishness and the broader purpose of giving. It is not generic, as it aligns with his specific teachings on charity and spiritual upliftment."
+    }
+   }
+  },
+  {
+   "id": "q-129",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 1018,
+   "ngram_hits": 0,
+   "ngram_windows": 43,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-129",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms and reflects his specific teachings on fearlessness, self-realisation, and the role of education."
+    }
+   }
+  },
+  {
+   "id": "q-130",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 760,
+   "ngram_hits": 0,
+   "ngram_windows": 32,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-130",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person and uses generic spiritual advice that could be attributed to many teachers."
+    }
+   }
+  },
+  {
+   "id": "q-131",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 909,
+   "ngram_hits": 0,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-131",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy, using his terminology (Karma-Yoga, spiritual depth, etc.) appropriately without anachronisms."
+    }
+   }
+  },
+  {
+   "id": "q-132",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 938,
+   "ngram_hits": 1,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-132",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, avoids anachronisms, and reflects Vivekananda's specific ideas on concentration, duty, and spiritual practice."
+    }
+   }
+  },
+  {
+   "id": "q-133",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 914,
+   "ngram_hits": 2,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 5,
+   "sentences": 7,
+   "judge": {
+    "id": "q-133",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and uses language and concepts consistent with Vivekananda's teachings, such as spiritual awakening, divine will, and inner light. It is not generic, as it reflects his specific philosophy and approach to suffering."
+    }
+   }
+  },
+  {
+   "id": "q-134",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 913,
+   "ngram_hits": 1,
+   "ngram_windows": 37,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-134",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person and uses a generic, inspirational tone rather than directly referencing Vivekananda's specific teachings or voice."
+    }
+   }
+  },
+  {
+   "id": "q-135",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 976,
+   "ngram_hits": 1,
+   "ngram_windows": 41,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-135",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on competition and education. It is not generic, as it specifically references his views on growth, health, and the dangers of excessive competition."
+    }
+   }
+  },
+  {
+   "id": "q-136",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.7,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 832,
+   "ngram_hits": 0,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 1,
+   "sentences": 8,
+   "judge": {
+    "id": "q-136",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on compassion, presence, and action. It is not generic, as it aligns with his emphasis on love, spiritual support, and practical care for others."
+    }
+   }
+  },
+  {
+   "id": "q-137",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 790,
+   "ngram_hits": 0,
+   "ngram_windows": 30,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-137",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person, and while it is inspired by Vivekananda's teachings, it is not specific to his voice or phrasing."
+    }
+   }
+  },
+  {
+   "id": "q-138",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 932,
+   "ngram_hits": 0,
+   "ngram_windows": 43,
+   "marker": true,
+   "cited": 5,
+   "sentences": 5,
+   "judge": {
+    "id": "q-138",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings and philosophy. It is not generic, as it specifically references his ideas about the mission of Indians abroad, the importance of spirituality, and the role of individuals in bridging East and West."
+    }
+   }
+  },
+  {
+   "id": "q-139",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 903,
+   "ngram_hits": 0,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 5,
+   "sentences": 9,
+   "judge": {
+    "id": "q-139",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is in first person and avoids anachronisms, but it is generic and does not reflect Vivekananda's specific teachings or historical context on dealing with corruption."
+    }
+   }
+  },
+  {
+   "id": "q-140",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.8,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 784,
+   "ngram_hits": 4,
+   "ngram_windows": 35,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-140",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his teachings on rest, meditation, and harmony between body and mind."
+    }
+   }
+  },
+  {
+   "id": "q-141",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 6.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 697,
+   "ngram_hits": 0,
+   "ngram_windows": 29,
+   "marker": true,
+   "cited": 2,
+   "sentences": 6,
+   "judge": {
+    "id": "q-141",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person and uses generic advice rather than specific teachings from Swami Vivekananda."
+    }
+   }
+  },
+  {
+   "id": "q-142",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 988,
+   "ngram_hits": 0,
+   "ngram_windows": 44,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-142",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on the duties of a householder and a monk, without anachronisms or generic inspirational prose."
+    }
+   }
+  },
+  {
+   "id": "q-143",
+   "set": "questions",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 5.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 917,
+   "quoted_words": 159,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "q-143",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific ideas on how to recognize a genuine teacher, drawing from his own lectures."
+    },
+    "relevant": true
+   }
+  },
+  {
+   "id": "q-144",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 5.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 910,
+   "ngram_hits": 0,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 4,
+   "sentences": 7,
+   "judge": {
+    "id": "q-144",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person and uses generic spiritual language that could be attributed to many teachers."
+    }
+   }
+  },
+  {
+   "id": "q-145",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 9.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 1016,
+   "ngram_hits": 23,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 6,
+   "sentences": 15,
+   "judge": {
+    "id": "q-145",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy on taking responsibility and moving forward from mistakes. It is not generic, as it aligns with his teachings on self-reliance and the importance of focusing on the future."
+    }
+   }
+  },
+  {
+   "id": "q-146",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 803,
+   "ngram_hits": 0,
+   "ngram_windows": 34,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "q-146",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, avoids anachronisms, and reflects Vivekananda's specific ideas about duty, legacy, and using resources for the welfare of humanity."
+    }
+   }
+  },
+  {
+   "id": "q-147",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 7.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 921,
+   "ngram_hits": 1,
+   "ngram_windows": 38,
+   "marker": true,
+   "cited": 4,
+   "sentences": 8,
+   "judge": {
+    "id": "q-147",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on listening, meditation, and the role of the guru. It is specific to his philosophy and not generic."
+    }
+   }
+  },
+  {
+   "id": "q-148",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 8.4,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 936,
+   "ngram_hits": 0,
+   "ngram_windows": 42,
+   "marker": true,
+   "cited": 4,
+   "sentences": 9,
+   "judge": {
+    "id": "q-148",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings on selfless service and humility. It is not generic, as it aligns with his specific philosophy of seeing the poor as divine and serving without attachment."
+    }
+   }
+  },
+  {
+   "id": "q-149",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 9.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 1,
+   "citations": 4,
+   "chars": 1087,
+   "ngram_hits": 14,
+   "ngram_windows": 45,
+   "marker": true,
+   "cited": 6,
+   "sentences": 10,
+   "judge": {
+    "id": "q-149",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms, as it does not reference events or knowledge after 1902. The content is specific to his teachings and personal experiences, making it non-generic."
+    }
+   }
+  },
+  {
+   "id": "q-150",
+   "set": "questions",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "persona",
+   "cascade": null,
+   "seconds": 9.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 862,
+   "ngram_hits": 0,
+   "ngram_windows": 39,
+   "marker": true,
+   "cited": 3,
+   "sentences": 8,
+   "judge": {
+    "id": "q-150",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's teachings accurately, with no anachronisms."
+    }
+   }
+  },
+  {
+   "id": "probe-01",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 6.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 700,
+   "quoted_words": 109,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-01",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific philosophical views on Advaita and dualism, as expressed in his talks and writings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that dualism, qualified non-dualism, and Advaita are successive stages of one truth."
+   }
+  },
+  {
+   "id": "probe-02",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 870,
+   "quoted_words": 143,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-02",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own lectures and writings, which is appropriate. The content reflects his views on Advaita and reason, and there are no anachronisms or generic statements."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the compatibility of Advaita with reason, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-03",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 622,
+   "quoted_words": 73,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-03",
+    "voice": {
+     "first_person": true,
+     "anachronism": true,
+     "generic": false,
+     "notes": "The answer refers to events and contexts (e.g., '20th Century Club of Boston, Usa') that are anachronistic, as Swami Vivekananda died in 1902 and could not have participated in such a club in the 20th century."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer distinguishes caste as a social custom and hereditary trade guild, separate from religion, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-04",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1489,
+   "quoted_words": 235,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-04",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms, as it reflects his views on equality and the rejection of privilege. It is specific to his philosophy and not generic inspirational prose."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the elimination of all forms of privilege, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-05",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1356,
+   "quoted_words": 224,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-05",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific views on caste and Brahminhood, making it non-generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position by emphasizing that the solution to the caste problem is not to degrade the Brahmins but to elevate others to their level, aligning with the cited source."
+   }
+  },
+  {
+   "id": "probe-06",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1163,
+   "quoted_words": 203,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-06",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific views on women's independence and reform, as expressed in his writings and lectures."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that men should not dictate to women and that women should solve their own problems."
+   }
+  },
+  {
+   "id": "probe-07",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 793,
+   "quoted_words": 126,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-07",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's historical perspective, and is specific to his views on womanhood in ancient India, Rome, and Greece."
+    },
+    "relevant": true,
+    "agreement": "disagree",
+    "agreement_notes": "The answer presents a different ideal of womanhood, focusing on the Arian race and equality between men and women, which contradicts the documented position that the ideal of Indian womanhood is the mother, exemplified by Sita."
+   }
+  },
+  {
+   "id": "probe-08",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 2.9,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 345,
+   "quoted_words": 41,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-08",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly references Vivekananda's own lecture and work, and speaks in first person."
+    },
+    "relevant": false,
+    "agreement": "unclear",
+    "agreement_notes": "The answer does not directly address whether a nation can rise without honouring women, but instead refers to other writings and mentions a general view about nations developing parts of human nature."
+   }
+  },
+  {
+   "id": "probe-09",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1281,
+   "quoted_words": 220,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-09",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and accurately reflects his views on the relationship between Hinduism and Buddhism. No anachronisms are present, and the content is specific to his teachings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position that Buddhism is the fulfilment of Hinduism and highlights the relationship between the two religions as similar to Judaism and Christianity."
+   }
+  },
+  {
+   "id": "probe-10",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1040,
+   "quoted_words": 157,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-10",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, accurately reflects Vivekananda's views on Buddha, and does not contain anachronisms. It is specific to his teachings and references his own writings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the idea that Buddha was a moral teacher who worked without selfish motives, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-11",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 2.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 415,
+   "quoted_words": 52,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-11",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's style and historical context. It references a specific event (the 20th Century Club of Boston) which is anachronistic, as Vivekananda died in 1902 and the 20th Century Club was founded in 1904, but the answer does not claim to have witnessed it, only to have answered a question there, which is acceptable."
+    },
+    "relevant": false,
+    "agreement": "disagree",
+    "agreement_notes": "The answer suggests that Buddhism did not decline in India, which contradicts the documented position that Buddhism did decline due to the faults of its followers."
+   }
+  },
+  {
+   "id": "probe-12",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 366,
+   "quoted_words": 46,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-12",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views on rituals, quoting his own words from a letter. It is specific to his ideas and not generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position by stating that rituals are necessary for the current world and are compared to kindergarten in religion."
+   }
+  },
+  {
+   "id": "probe-13",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 4,
+   "quotes_verified": 4,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 640,
+   "quoted_words": 106,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-13",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, free of anachronisms, and reflects his specific views on idol worship as a necessary stage in spiritual development."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that image worship is not sin but a stage in spiritual development."
+   }
+  },
+  {
+   "id": "probe-14",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1015,
+   "quoted_words": 156,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-14",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references his own lectures and writings, and reflects his specific teachings on worship as infinite love, consistent with his philosophy."
+    },
+    "relevant": true,
+    "agreement": "disagree",
+    "agreement_notes": "The answer emphasizes worship through intense, exclusive love for God, contrasting with the documented position that service to man (especially the poor) is worship of God."
+   }
+  },
+  {
+   "id": "probe-15",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 887,
+   "quoted_words": 122,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-15",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is presented in first person, with specific references to Sarat Chandra Chakravarty and his work, which aligns with Vivekananda's historical context. No anachronisms are present, and the content reflects his specific views on religion and social issues."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the idea that addressing hunger and starvation is a prerequisite for preaching religion, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-16",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 613,
+   "quoted_words": 83,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-16",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references a specific lecture from 1900, and cites a specific source, which is consistent with Vivekananda's style and historical context."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer emphasizes renunciation as essential for realizing the spirit, aligning with the documented position that renunciation is necessary for religion."
+   }
+  },
+  {
+   "id": "probe-17",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 437,
+   "quoted_words": 51,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-17",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer does not speak in first person, and is generic, not specific to Vivekananda's teachings."
+    },
+    "relevant": false,
+    "agreement": "unclear",
+    "agreement_notes": "The answer does not directly address whether renouncing the world is necessary to be religious."
+   }
+  },
+  {
+   "id": "probe-18",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1236,
+   "quoted_words": 181,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-18",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own writings and speeches, which is appropriate for his time. The content reflects his specific views on religion and reason, not generic inspirational prose."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer explicitly supports the idea that religion must be founded on reason and verified like science, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-19",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1541,
+   "quoted_words": 225,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-19",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own writings and addresses the relationship between science and Vedanta, which aligns with his views. No anachronisms are present, and the content is specific to his teachings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the documented position that modern science is approaching the conclusions of the Vedanta."
+   }
+  },
+  {
+   "id": "probe-20",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 853,
+   "quoted_words": 148,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-20",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's specific teachings and references, including his interpretation of the Upanishads and his commentary on non-resistance and strength. It is not generic and contains no anachronisms."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer emphasizes strength as the core message of the Upanishads, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-21",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 2.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 135,
+   "quoted_words": 20,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-21",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly attributes the statement to the speaker and aligns with Vivekananda's teachings on illusion (maya) and the ego as the source of sin."
+    },
+    "relevant": true,
+    "agreement": "disagree",
+    "agreement_notes": "The answer attributes the root of evil to the illusion of being a body, whereas the documented position states that fear is the root of weakness and sin."
+   }
+  },
+  {
+   "id": "probe-22",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 2.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 172,
+   "quoted_words": 22,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-22",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and references a specific quote from the Madras Address, which is historically accurate and consistent with Vivekananda's views."
+    },
+    "relevant": false,
+    "agreement": "unclear",
+    "agreement_notes": "The answer does not directly address who an atheist is, but rather mentions Western atheists and agnostics finding solace in spiritual texts."
+   }
+  },
+  {
+   "id": "probe-23",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1342,
+   "quoted_words": 205,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-23",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own writings and speeches, which is appropriate for his time. The content reflects his specific views on religious harmony and is not generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer affirms that all religions are true, as stated in the documented position, and discusses historical attempts to harmonize religions while maintaining their individuality."
+   }
+  },
+  {
+   "id": "probe-24",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1019,
+   "quoted_words": 161,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-24",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, accurately reflects Vivekananda's views on sectarianism, and is consistent with his historical context and writings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position by quoting the same text and reiterating that sectarianism, bigotry, and fanaticism have caused violence and hindered human progress."
+   }
+  },
+  {
+   "id": "probe-25",
+   "set": "probes",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.9,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 2,
+   "chars": 948,
+   "ngram_hits": 1,
+   "ngram_windows": 40,
+   "marker": true,
+   "cited": 2,
+   "sentences": 7,
+   "judge": {
+    "id": "probe-25",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's philosophy of religious tolerance and respect for individual spiritual paths. It is consistent with his teachings and does not contain anachronisms."
+    },
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that Hindus do not seek converts and emphasize harmony and understanding between religions."
+   }
+  },
+  {
+   "id": "probe-26",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 742,
+   "quoted_words": 120,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-26",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. No anachronisms are present. The content is specific to his views and references his own writings, making it non-generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly states that the neglect of the masses is India's great national sin and emphasizes the need for education, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-27",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1200,
+   "quoted_words": 186,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-27",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, directly quoting Vivekananda's own writings and referencing specific works, which aligns with his voice and ideas. No anachronisms are present, and the content is specific to his views on education."
+    },
+    "relevant": true,
+    "agreement": "disagree",
+    "agreement_notes": "The answer defines education as the training of will and expression, criticizing education that suppresses free will and makes individuals like machines. This contradicts the documented position that education is the manifestation of the perfection already in man."
+   }
+  },
+  {
+   "id": "probe-28",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.0,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 560,
+   "quoted_words": 91,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-28",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and reflects his specific ideas on education. No anachronisms are present."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position by emphasizing 'man-making' as the ideal of education and aligns with the goal of building character and strength."
+   }
+  },
+  {
+   "id": "probe-29",
+   "set": "probes",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.2,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 970,
+   "ngram_hits": 0,
+   "ngram_windows": 42,
+   "marker": true,
+   "cited": 4,
+   "sentences": 6,
+   "judge": {
+    "id": "probe-29",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in first person, consistent with Swami Vivekananda's voice. It reflects his views on Western education in India, emphasizing the need for a balance between Western knowledge and Indian traditions. No anachronisms are present, and the content is specific to his philosophy and observations."
+    },
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by suggesting that Western education has not been fully aligned with the needs of Indians and that it should be combined with traditional knowledge."
+   }
+  },
+  {
+   "id": "probe-30",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 6.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1574,
+   "quoted_words": 232,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-30",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It references his own lectures and writings accurately, without anachronisms. The content is specific to his ideas and not generic inspirational prose."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that India's mission to the world is spirituality, and it emphasizes India's historical and ongoing role in contributing spirituality to the West."
+   }
+  },
+  {
+   "id": "probe-31",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 441,
+   "quoted_words": 63,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-31",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, quotes a specific historical interaction, and reflects Vivekananda's actual views on Western science and education."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports combining Western science with Indian education, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-32",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 917,
+   "quoted_words": 142,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-32",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references a specific lecture from 1900, and cites a specific source from his writings, which is consistent with Vivekananda's style and historical context."
+    },
+    "relevant": false,
+    "agreement": "unclear",
+    "agreement_notes": "The answer does not directly address the position that Christ was an Oriental prophet of renunciation or that Christians often miss his teaching. It discusses the nature of the universe and the rise and fall of events, but does not take a clear stance on the documented position regarding Christ."
+   }
+  },
+  {
+   "id": "probe-33",
+   "set": "probes",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.6,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 3,
+   "chars": 916,
+   "ngram_hits": 0,
+   "ngram_windows": 35,
+   "marker": true,
+   "cited": 3,
+   "sentences": 7,
+   "judge": {
+    "id": "probe-33",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and reflects Vivekananda's views on Hinduism's inclusiveness and potential learning from other religions, including Islam. It is consistent with his philosophy and does not contain anachronisms."
+    },
+    "agreement": "disagree",
+    "agreement_notes": "The answer suggests that Islam offers Hinduism a deeper understanding of unity and structured spiritual practice, which contradicts the documented position that Islam has practical brotherhood and equality that Hinduism lacks."
+   }
+  },
+  {
+   "id": "probe-34",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1560,
+   "quoted_words": 250,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-34",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. No anachronisms are present. The content is specific to his views on the Vedas, making it non-generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by stating that the Vedas are a vast collection of literature, not a single book, and emphasizes their spiritual and eternal nature."
+   }
+  },
+  {
+   "id": "probe-35",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 2,
+   "quotes_verified": 2,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1334,
+   "quoted_words": 208,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-35",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms and reflects his specific teachings on the Gita, particularly his emphasis on Krishna's role and the concept of non-attachment."
+    },
+    "relevant": false,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by emphasizing non-attachment as a key teaching of Krishna in the Gita."
+   }
+  },
+  {
+   "id": "probe-36",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 4.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1030,
+   "quoted_words": 152,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-36",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. No anachronisms are present. The content is specific to his views on Krishna and is not generic inspirational prose."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer acknowledges doubt about Krishna's existence and emphasizes the importance of the Gita's teachings, aligning with the documented position."
+   }
+  },
+  {
+   "id": "probe-37",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.8,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 897,
+   "quoted_words": 133,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-37",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific views on vegetarianism and meat-eating, as expressed in his writings and speeches."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the documented position that meat-eating is necessary for those who must work hard, while vegetarianism is ideal."
+   }
+  },
+  {
+   "id": "probe-38",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.7,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1242,
+   "quoted_words": 185,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-38",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It references specific lectures and writings from his time, making it specific to his ideas."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by emphasizing the need for internal growth and the creation of public opinion and legislative power as the foundation for reform, rather than external imposition or destruction."
+   }
+  },
+  {
+   "id": "probe-39",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.2,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1133,
+   "quoted_words": 209,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-39",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's views and statements from his letter to Alasinga, with no anachronisms or generic content."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly supports the documented position by stating that the individual disclaimed being a politician or political agitator and emphasized spiritual focus over politics."
+   }
+  },
+  {
+   "id": "probe-40",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.4,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1237,
+   "quoted_words": 194,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-40",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice. It contains no anachronisms, as it refers to his own writings and ideas. It is specific to his philosophy, not generic inspirational prose."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by stating that the goal of the soul is liberation, which is consistent with the idea that freedom is the goal of all nature."
+   }
+  },
+  {
+   "id": "probe-41",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.5,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 721,
+   "quoted_words": 102,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-41",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references specific texts and works consistent with Vivekananda's time, and reflects his specific ideas about God being omnipresent and formless."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the idea that God is omnipresent and present in all things, aligning with the documented position that God is in every man."
+   }
+  },
+  {
+   "id": "probe-42",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 509,
+   "quoted_words": 55,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-42",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references his own lectures and writings accurately without anachronism, and reflects his specific ideas on the goal of life."
+    },
+    "relevant": true,
+    "agreement": "unclear",
+    "agreement_notes": "The answer does not explicitly state the goal of life but refers to other writings and lectures. It does not directly confirm or deny the documented position."
+   }
+  },
+  {
+   "id": "probe-43",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 142,
+   "quoted_words": 20,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-43",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer correctly quotes Vivekananda's own words from his writings, and presents them in first person as if he is speaking directly."
+    },
+    "relevant": true,
+    "agreement": "disagree",
+    "agreement_notes": "The answer suggests that man is born with a sin rooted in illusion, which contradicts the documented position that the Vedas do not say man is born a sinner."
+   }
+  },
+  {
+   "id": "probe-44",
+   "set": "probes",
+   "mode": "persona",
+   "mode_tag": "persona",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.1,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 4,
+   "chars": 792,
+   "ngram_hits": 0,
+   "ngram_windows": 34,
+   "marker": true,
+   "cited": 4,
+   "sentences": 6,
+   "judge": {
+    "id": "probe-44",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is written in third person and does not use Swami Vivekananda's voice consistently."
+    },
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by emphasizing the essential role of a teacher in spiritual growth, describing the teacher as sinless, pure, and a vessel of truth, consistent with the qualifications outlined in the cited text."
+   }
+  },
+  {
+   "id": "probe-45",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 5.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 556,
+   "quoted_words": 86,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-45",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific views on psychic powers and holiness, as expressed in his writings."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by highlighting the dangers of psychic powers and implying that true religion does not rely on miracles."
+   }
+  },
+  {
+   "id": "probe-46",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.5,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 1,
+   "citations": 1,
+   "chars": 627,
+   "quoted_words": 76,
+   "over_cap": false,
+   "see_also": 2,
+   "judge": {
+    "id": "probe-46",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": true,
+     "notes": "The answer is not in first person as it is framed as a reporter's account. It is not generic as it references specific ideas of renunciation and service, which are central to Vivekananda's teachings. However, it is not entirely in his voice as it is presented as a quote."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer directly quotes the documented position and supports it with the same citation."
+   }
+  },
+  {
+   "id": "probe-47",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.3,
+   "quotes": 0,
+   "quotes_verified": 0,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 482,
+   "quoted_words": 62,
+   "over_cap": false,
+   "see_also": 1,
+   "judge": {
+    "id": "probe-47",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, references a specific historical context, and is consistent with Vivekananda's views on religion as a process rather than doctrine."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position by emphasizing that religion is a process rather than doctrine, and that doctrines serve a preparatory role."
+   }
+  },
+  {
+   "id": "probe-48",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.1,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 865,
+   "quoted_words": 140,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-48",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person and accurately reflects Vivekananda's perspective on his Master, Ramakrishna Paramahamsa, without anachronisms or generic content."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer highlights Ramakrishna as a living embodiment of spiritual knowledge and a key to life, aligning with the documented position of his embodiment of harmony of religions and practical realization."
+   }
+  },
+  {
+   "id": "probe-49",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.6,
+   "quotes": 1,
+   "quotes_verified": 1,
+   "guard_violations": 0,
+   "third_person": 0,
+   "citations": 1,
+   "chars": 1072,
+   "quoted_words": 180,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-49",
+    "voice": {
+     "first_person": true,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is in first person, consistent with Swami Vivekananda's voice, and does not contain anachronisms. It reflects his specific views on the importance of Sanskrit and culture, making it non-generic."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer supports the documented position by emphasizing the importance of spreading Sanskrit to provide culture and prestige alongside knowledge."
+   }
+  },
+  {
+   "id": "probe-50",
+   "set": "probes",
+   "mode": "oracle",
+   "mode_tag": "oracle",
+   "expected": "scholar",
+   "cascade": null,
+   "seconds": 3.0,
+   "quotes": 2,
+   "quotes_verified": 2,
+   "guard_violations": 0,
+   "third_person": 1,
+   "citations": 1,
+   "chars": 335,
+   "quoted_words": 58,
+   "over_cap": false,
+   "see_also": 0,
+   "judge": {
+    "id": "probe-50",
+    "voice": {
+     "first_person": false,
+     "anachronism": false,
+     "generic": false,
+     "notes": "The answer is not in first person as it is framed as a reporter's account, not directly from Vivekananda's voice."
+    },
+    "relevant": true,
+    "agreement": "agree",
+    "agreement_notes": "The answer aligns with the documented position that women should be given education and freedom to develop their own ideals."
+   }
+  }
+ ]
+}
