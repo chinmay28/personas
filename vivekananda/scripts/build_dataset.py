@@ -7,6 +7,9 @@
   .venv/bin/python scripts/build_dataset.py tier5 [--limit N]  # scholar: templated + generated "about him" questions -> cited JSON sentences
   .venv/bin/python scripts/build_dataset.py tier6 [--limit N]  # persona: modern questions -> grounded first-person answers (capped later)
   .venv/bin/python scripts/build_dataset.py tier8 [--n 1200]   # general chat mix (Dolly 15k), generic system prompt, no mode tag
+  .venv/bin/python scripts/build_dataset.py oracle23           # run2: tiers 2 and 3 re-rendered as oracle plans -> tier2_o.jsonl, tier3_o.jsonl
+  .venv/bin/python scripts/build_dataset.py tier9 [--n 1000]   # run2: query-expansion records (question -> JSON search queries), no mode tag
+tier6 generates questions for any topic in TOPICS that has none yet (run2 added TOPICS_RUN2, 14 questions each) and answers the new ones.
 Models: VK_GEN_MODEL (default qwen3:14b) for synthesis/extraction, VK_PERSONA_MODEL for tier 6 answers. Log: data/tiers/build.log
 """
 from __future__ import annotations
@@ -462,8 +465,43 @@ TOPICS = ["burnout and overwork in a modern office job", "choosing between a saf
           "whether to become a monk or nun today", "interfaith marriage", "forgiving an abusive parent", "the fear of public speaking", "creative block for an artist",
           "wealth and whether to give it away", "grief after a miscarriage", "vegetarianism and modern food ethics", "whether prayer works",
           "doubt about one's own abilities", "political polarization among friends", "how to serve the poor without becoming cynical", "insomnia and a racing mind"]
-MODERN_Q = """Write 10 distinct questions a person today might ask Swami Vivekananda for personal advice about the topic given. Each is in the first
-person, concrete, 15 to 40 words, with a real-life detail (a job, a family, a habit, a fear). Return JSON only: {"questions": ["..."]}"""
+TOPICS_RUN2 = [
+    "being replaced by automation or AI at work", "a start-up founder facing failure", "working from home and never switching off", "a nurse or doctor exhausted by patients' suffering",
+    "a teacher losing faith in the school system", "a soldier or police officer troubled by what the job demands", "a lawyer asked to defend something unjust",
+    "a journalist facing pressure to distort the truth", "an athlete after a career-ending injury", "a musician or actor craving fame", "an engineer building weapons",
+    "a civil servant surrounded by corruption", "a farmer ruined by debt and drought", "a gig worker with no security", "unemployment and shame in front of the family",
+    "dating apps and finding a partner", "staying celibate in a culture obsessed with sex", "pornography and compulsive habits", "a long-distance relationship",
+    "deciding whether to have children", "infertility and the longing for a child", "divorce and shared custody of children", "a spouse who has lost interest in spiritual life",
+    "an arranged marriage one does not want", "coming out as gay or transgender to a religious family", "a daughter forbidden to study or work by her family",
+    "sexual harassment at the workplace", "domestic violence and whether to leave", "a teenager rebelling against parents", "adopting a child",
+    "being the only vegetarian or believer among friends", "losing one's native language and roots abroad", "racism faced in a Western country",
+    "caste discrimination faced today", "religious conversion pressure on the poor", "communal riots between Hindus and Muslims", "nationalism and hatred of other countries",
+    "whether to vote or stay out of politics", "a politician who wants to stay honest", "protests, strikes and civil disobedience", "censorship and free speech online",
+    "terrorism done in the name of religion", "refugees and whether to take them in", "the gap between the very rich and the very poor today", "consumerism and endless shopping",
+    "cryptocurrency, gambling and quick money", "advertising and manipulation of desire", "fast fashion and the workers who make it", "eating meat and factory farming",
+    "nuclear weapons and the fear of war", "space travel and whether other worlds matter", "genetic engineering and designer babies", "surveillance by governments and companies",
+    "video games and virtual worlds", "a child who wants to be an influencer", "cancel culture and public shaming", "conspiracy theories in the family",
+    "evolution, physics and whether God is needed", "near-death experiences and life after death", "psychedelic drugs and spiritual experience", "mindfulness apps and paid meditation courses",
+    "fake gurus and spiritual scams", "yoga as a fitness industry", "the Ramakrishna Mission and monastic orders today", "Hindu temples and rituals that seem empty to the young",
+    "converting to Hinduism as a Westerner", "atheist parents raising a child who wants to pray", "a Muslim or Christian asking whether their path is enough",
+    "Buddhism, mindfulness and whether to abandon Hinduism", "astrology, horoscopes and auspicious dates", "superstition in the village and modern medicine",
+    "depression and whether medication is weakness", "panic attacks and the body's fear", "an eating disorder", "self-harm and thoughts of suicide", "therapy versus spiritual practice",
+    "chronic illness and pain", "a terminal diagnosis", "caring for a parent with dementia", "euthanasia and the right to die", "organ donation and the body after death",
+    "cremation versus burial far from home", "a child's death", "a pet's death", "surviving an accident others did not", "trauma from war or disaster",
+    "a prisoner seeking redemption", "a recovering alcoholic", "lying to protect someone", "whistleblowing on one's employer", "paying bribes to get things done",
+    "cheating in exams because everyone does", "plagiarism and taking credit", "revenge against someone who wronged me", "road rage and anger in traffic",
+    "a neighbour from a hated community", "beggars and whether to give", "tipping, charity and feeling used", "inherited wealth and guilt", "minimalism and giving up possessions",
+    "learning Sanskrit or the scriptures as an adult", "which translation of the Gita or Upanishads to read", "a daily practice for a busy householder", "a vow one cannot keep",
+    "fasting and festivals in a modern schedule", "pilgrimage versus a holiday", "teaching children the Gita without preaching", "running a meditation group at work",
+    "being asked to give a speech about India abroad", "the English language versus the mother tongue", "studying abroad and whether to return to India", "a village that wants a school and a temple",
+    "writing a novel or making a film about religion", "a programmer who wants to build something good", "science students who mock spirituality", "physical weakness and bodybuilding culture",
+    "old age alone in a flat", "a widow or widower starting again", "retirement savings versus giving", "writing a will and leaving things to children who fight",
+    "what you would say to India today", "what you would make of the world after your death", "women leading nations and companies", "whether machines can be conscious",
+]
+TOPICS += TOPICS_RUN2
+Q_PER_TOPIC_RUN2 = 8
+MODERN_Q = """Write {n} distinct questions a person today might ask Swami Vivekananda for personal advice about the topic given. Each is in the first
+person, concrete, 15 to 40 words, with a real-life detail (a job, a family, a habit, a fear). Vary the asker (age, sex, country, faith). Return JSON only: {{"questions": ["..."]}}"""
 MARKER_RE = re.compile(r"(did not speak|not a question of my day|never (addressed|spoke)|was not before me|not (something|a matter) I (spoke|addressed)|"
                        r"you ask (me )?of (a )?(thing|matter|world)|I did not know|not of my day|had no (occasion|cause) to|in my day)", re.I)
 
@@ -472,22 +510,27 @@ def tier6(args):
     w = td.TierWriter(6)
     rng = random.Random(6)
     qpath = os.path.join(td.TIER_DIR, "tier6_questions.jsonl")
-    if os.path.exists(qpath):
-        questions = td.load_jsonl(qpath)
-    else:
-        lists = td.pmap(lambda t: [(t, str(q).strip()) for q in ((td.llm_json(MODERN_Q, f"Topic: {t}", max_tokens=900, temperature=0.8) or {}).get("questions") or [])],
-                        TOPICS, label="tier6 questions")
-        seen, questions = set(), []
+    questions = td.load_jsonl(qpath) if os.path.exists(qpath) else []
+    have = {q["topic"] for q in questions}
+    todo = [t for t in TOPICS if t not in have]
+    if todo:
+        n = 10 if not questions else Q_PER_TOPIC_RUN2
+        lists = td.pmap(lambda t: [(t, str(q).strip()) for q in ((td.llm_json(MODERN_Q.format(n=n), f"Topic: {t}", max_tokens=1200, temperature=0.8) or {}).get("questions") or [])],
+                        todo, label="tier6 questions")
+        seen = {td.norm(q["question"]) for q in questions}
+        new_qs = []
         for lst in lists:
             for t, q in lst or []:
                 k = td.norm(q)
                 if len(q) < 20 or k in seen:
                     continue
                 seen.add(k)
-                questions.append({"id": f"t6-{td.stable_hash(q)}", "topic": t, "question": q})
-        with open(qpath, "w") as f:
-            for q in questions:
+                new_qs.append({"id": f"t6-{td.stable_hash(q)}", "topic": t, "question": q})
+        with open(qpath, "a") as f:
+            for q in new_qs:
                 f.write(json.dumps(q, ensure_ascii=False) + "\n")
+        td.log(f"tier6: {len(new_qs)} new questions for {len(todo)} topics")
+        questions += new_qs
     rng.shuffle(questions)
     jobs = [q for q in questions if q["id"] not in w.done]
     if args.limit:
@@ -547,13 +590,117 @@ def tier8(args):
     td.log(f"tier8 total written: {len(w.done)} ({w.n_new} new this run)")
 
 
+# ================================================================== run2: tiers 2 and 3 as oracle plans
+def _pick_gold(c, para_ids: list[str], question: str) -> dict | None:
+    """The answer paragraph with the most question overlap (ties: earlier wins); paragraphs under 15 words are skipped."""
+    q = td.content_words(question)
+    best, best_score = None, -1.0
+    for i, pid in enumerate(para_ids):
+        p = vklib.get_paragraph(c, pid)
+        if td.words(p["text"]) < 15:
+            continue
+        score = len(q & td.content_words(p["text"])) - 0.01 * i
+        if score > best_score:
+            best, best_score = p, score
+    return best
+
+
+def oracle23(args):
+    """Re-render the verbatim persona tiers (dialogue answers, letters) as oracle records: same user turn, the block now includes the source
+    paragraph (injected if retrieval missed it), the target is a selection plan quoting the best window of the answer paragraph with a
+    metadata bridge. Writes tier2_o.jsonl / tier3_o.jsonl; the originals are left in place (assemble_dataset.py --persona-verbatim uses them)."""
+    c = td.con()
+    for t in (2, 3):
+        src = os.path.join(td.TIER_DIR, f"tier{t}.jsonl")
+        if not os.path.exists(src):
+            td.log(f"oracle23: {src} missing, skipped")
+            continue
+        w = td.TierWriter(t, "o")
+        recs = td.load_jsonl(src)
+        jobs = []
+        for r in recs:
+            rid = r["id"].replace(f"t{t}-", f"t{t}o-", 1)
+            if rid in w.done or not r["source"].get("para_ids"):
+                continue
+            jobs.append((rid, r))
+        if args.limit:
+            jobs = jobs[:max(0, args.limit - len(w.done))]
+        td.log(f"oracle23: tier {t}: {len(recs)} source records, {len(jobs)} to render")
+
+        def do(job):
+            rid, r = job
+            question = r["messages"][1]["content"].split("QUESTION: ")[-1]
+            gold = _pick_gold(td.con(), r["source"]["para_ids"], question)
+            if gold is None:
+                return None
+            ctx, info = td.build_context(question, gold_pids=[gold["id"]])
+            plan, rendered = td.oracle_plan(ctx, gold["id"], question)
+            if rendered.get("fallthrough") or not rendered.get("text"):
+                return None
+            meta = {"citation": r["meta"].get("citation"), "from_persona_record": r["id"], "rendered": rendered["text"],
+                    "quoted_words": rendered.get("quoted_words")}
+            for k in ("questioner", "recipient", "date"):
+                if k in r["meta"]:
+                    meta[k] = r["meta"][k]
+            source = dict(r["source"], kind=r["source"]["kind"] + "_oracle", gold_para=gold["id"])
+            return td.make_record(rid, t, "oracle", question, ctx, info, td.plan_json(plan), source, meta)
+        for rec in td.pmap(do, jobs, label=f"oracle23 tier{t}"):
+            if rec:
+                w.write(rec)
+        td.log(f"oracle23: tier{t}o total written: {len(w.done)} ({w.n_new} new this run)")
+
+
+# ================================================================== run2: tier 9, query expansion (the 8B expands its own retrieval queries)
+def tier9(args):
+    """question -> {"queries": [...]} under modes.EXPAND_SYSTEM, written by the gen model. Questions are sampled from the other tiers' user
+    turns (short ones only) plus the tier 6 question pool, never from the eval set."""
+    w = td.TierWriter(9)
+    rng = random.Random(9)
+    evalq = eval_question_set()
+    pool: dict[str, str] = {}
+    for t in (1, 4, 5, 6, "2_o"):
+        path = os.path.join(td.TIER_DIR, f"tier{t}.jsonl")
+        if not os.path.exists(path):
+            continue
+        for r in td.load_jsonl(path):
+            q = r["messages"][1]["content"].split("QUESTION: ")[-1].strip()
+            if 15 <= len(q) <= 300 and td.norm(q) not in evalq:
+                pool.setdefault(td.norm(q), q)
+    qpath = os.path.join(td.TIER_DIR, "tier6_questions.jsonl")
+    if os.path.exists(qpath):
+        for r in td.load_jsonl(qpath):
+            if td.norm(r["question"]) not in evalq:
+                pool.setdefault(td.norm(r["question"]), r["question"])
+    qs = list(pool.values())
+    rng.shuffle(qs)
+    jobs = [q for q in qs if f"t9-{td.stable_hash(q)}" not in w.done][:max(0, args.n - len(w.done))]
+    td.log(f"tier9: pool {len(qs)} questions, {len(jobs)} expansions to generate with {td.GEN_MODEL}")
+
+    def do(q):
+        queries = modes.expand_queries(q, td.GEN_MODEL)
+        queries = [x.strip() for x in queries if 2 <= len(x.split()) <= 10 and not re.search(r"\b(Vivekananda|Swami|Swamiji)\b", x)]
+        if len(queries) < 2:
+            return None
+        body = json.dumps({"queries": queries[:3]}, ensure_ascii=False, separators=(",", ":"))
+        return {"id": f"t9-{td.stable_hash(q)}", "tier": 9, "mode": "expand", "source": {"section_id": None, "para_ids": [], "kind": "expand"},
+                "block_ids": [], "section_ids": [], "gold_injected": False,
+                "messages": [{"role": "system", "content": modes.EXPAND_SYSTEM}, {"role": "user", "content": q}, {"role": "assistant", "content": body}],
+                "meta": {"model": td.GEN_MODEL}}
+    for rec in td.pmap(do, jobs, label="tier9 expansions"):
+        if rec:
+            w.write(rec)
+    td.log(f"tier9 total written: {len(w.done)} ({w.n_new} new this run)")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("tier", choices=["tier1", "tier2", "tier3", "tier4", "tier5", "tier6", "tier8"])
+    ap.add_argument("tier", choices=["tier1", "tier2", "tier3", "tier4", "tier5", "tier6", "tier8", "oracle23", "tier9"])
     ap.add_argument("--limit", type=int, default=0, help="stop once this many records exist in the tier file (sample runs)")
-    ap.add_argument("--n", type=int, default=1200, help="tier8 size")
+    ap.add_argument("--n", type=int, default=1200, help="tier8 size (tier9: default 1000)")
     ap.add_argument("--gen-sections", type=int, default=400, help="tier5: sections to generate topical questions for")
     args = ap.parse_args()
+    if args.tier == "tier9" and args.n == 1200:
+        args.n = 1000
     td.log(f"=== {args.tier} start (gen model {td.GEN_MODEL}, persona model {td.PERSONA_MODEL})")
     globals()[args.tier](args)
 

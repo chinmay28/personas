@@ -119,9 +119,12 @@ def expand_queries(question: str, model: str = DEV_MODEL) -> list[str]:
         return []
 
 
-def retrieve(con, question: str, k: int = 8, model: str = vklib.DEFAULT_MODEL, expand_model: str | None = None, section_openings: int = 2) -> Context:
-    """Hybrid retrieval; with expand_model set, 2-3 LLM-written keyword queries are fused in with the question itself."""
-    queries = [question] + (expand_queries(question, expand_model) if expand_model else [])
+def retrieve(con, question: str, k: int = 8, model: str = vklib.DEFAULT_MODEL, expand_model: str | None = None, section_openings: int = 2,
+             extra_queries: list[str] | None = None) -> Context:
+    """Hybrid retrieval; with expand_model set, 2-3 LLM-written keyword queries are fused in with the question itself
+    (or pass them in as extra_queries, e.g. written by the fine-tuned model itself)."""
+    extra = list(extra_queries) if extra_queries is not None else (expand_queries(question, expand_model) if expand_model else [])
+    queries = [question] + [q for q in extra if q.strip() and _norm(q) != _norm(question)][:3]
     qvecs = vklib.embed(queries, model, "query")
     qvec = qvecs[0]
     if len(queries) == 1:
@@ -338,6 +341,14 @@ def run_oracle(con, ctx: Context, model: str = DEV_MODEL) -> dict:
     return oracle_from_plan(con, ctx, parse_json(raw), raw)
 
 
+LABEL_RE = re.compile(r"^(?:[QA]\.\s*[—–-]*\s*|(?:Swamiji|Swami|Swami Vivekananda|Vivekananda)\s*[:.—–-]+\s*)")
+
+
+def _strip_label(span: str) -> str:
+    """Q&A sections carry "A. — " markers and dialogues a "Swamiji: " speaker label at the start of his paragraphs; neither is his speech."""
+    return LABEL_RE.sub("", span, count=1)
+
+
 def render_oracle(con, ctx: Context, plan: dict, raw: str = "") -> dict:
     parts, cites, quotes = [], [], []
     words = 0
@@ -352,7 +363,7 @@ def render_oracle(con, ctx: Context, plan: dict, raw: str = "") -> dict:
         b = min(n, int(q.get("to", a)))
         if a > b:
             continue
-        span = re.sub(r"^[QA]\.\s*[—–-]*\s*", "", " ".join(p.sentences[a - 1:b]))  # Q&A sections carry "A. — " markers in the text
+        span = _strip_label(" ".join(p.sentences[a - 1:b]))
         w = len(span.split())
         if words and words + w > QUOTE_WORD_CAP:
             overflow_secs.append(p.section["id"])
@@ -360,7 +371,7 @@ def render_oracle(con, ctx: Context, plan: dict, raw: str = "") -> dict:
         if w > QUOTE_WORD_CAP:  # trim a single over-long range sentence by sentence
             while b > a and len(" ".join(p.sentences[a - 1:b]).split()) > QUOTE_WORD_CAP:
                 b -= 1
-            span = re.sub(r"^[QA]\.\s*[—–-]*\s*", "", " ".join(p.sentences[a - 1:b])); w = len(span.split())
+            span = _strip_label(" ".join(p.sentences[a - 1:b])); w = len(span.split())
         words += w
         span = span.strip()
         if len(span) > 2 and span[0] in "\"“" and span[-1] in "\"”" and span.count('"') + span.count("“") + span.count("”") == 2:

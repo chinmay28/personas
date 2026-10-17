@@ -34,7 +34,7 @@ def answer(con, question: str, mode: str = "auto", backend: str = DEFAULT_BACKEN
         raise ValueError(f"mode must be one of {MODES}")
     model = model or default_model(backend)
     if backend == "unified":
-        return unified.ask(con, question, mode, model, k, on_token=on_token, on_mode=on_mode)
+        return unified.ask(con, question, mode, model, k, on_token=on_token, on_mode=on_mode, expand=expand)
     r = modes.ask(con, question, mode, model, k, expand=expand, on_mode=on_mode)
     r["backend"] = "prompted"
     return r
