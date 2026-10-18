@@ -478,3 +478,14 @@ Re-eval with the filter (`unified8b_run2b`, `eval/results/full_compare_unified8b
 vs 0.98 (one oracle question, "How should I practise meditation?", went to persona; its passage is not editorial, so this is temperature-0.3
 noise), oracle relevance 0.918 vs 0.919, probe agreement 0.76 vs 0.74, generic 0.085 vs 0.115, guard violations 0, 6.5 s per answer. No run 2
 eval answer had cited a flagged paragraph, so the filter only matters off the eval set, where "hi swamiji" found one.
+
+### PWA: conversations and export (2026-10-17)
+
+The PWA now keeps multiple conversations ("sessions") in `localStorage` (`vk_sessions_v2`; the old single history under `vk_history_v1`
+is migrated into one session on first load). Header: a conversations drawer (list sorted by last activity, open / rename / delete, current
+marked), a new-conversation button, and the current title. Export of the current conversation: **Markdown** (download, or the share sheet on
+phones that support file sharing) and **PDF** (a print-only view and the browser's print dialog, "Save as PDF"; no server work, no
+dependencies). Settings keep "export all conversations (JSON)" and "delete all". `/?new=1&q=...` asks in a fresh conversation. Limits: 100
+sessions, 200 exchanges each. Service worker cache bumped to `vk-shell-v2` so installed apps pick up the new shell. Checked in headless Chrome
+(24 checks: create, switch, rename, delete current and non-current, markdown download, PDF via `Page.printToPDF`, migration); `window.vk`
+exposes the session functions for tests.
