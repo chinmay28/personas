@@ -136,6 +136,7 @@
         if (e.see_also && e.see_also.length) lines.push(`See also: ${e.see_also.map((x) => x.citation).join("; ")}`);
         lines.push("");
       }
+      if (e.rating) lines.push(`_Feedback: ${e.rating === "up" ? "👍" : "👎"}${e.comment ? " — " + e.comment : ""}_`, "");
       if (e.meta && (e.meta.backend || e.meta.model)) lines.push(`<sub>${[e.meta.backend, e.meta.model, e.meta.seconds != null ? e.meta.seconds + " s" : ""].filter(Boolean).join(" · ")}</sub>`, "");
       lines.push("---", "");
     }
@@ -236,7 +237,15 @@
         (m.queries && m.queries.length > 1 ? `\nqueries: ${esc(m.queries.join(" | "))}` : "") +
         (m.retrieved ? `\nretrieved: ${m.retrieved.map((r) => r.citation).join("; ")}` : "") + `</div>`;
     }
-    return head + body + chips + meta;
+    let fb = "";
+    if (!e.error && e.text != null) {
+      const r = e.rating || "";
+      fb = `<div class="feedback" data-eid="${esc(e.id)}">` +
+        `<button class="thumb ${r === "up" ? "on" : ""}" data-rate="up" title="Good answer" aria-label="Thumbs up" aria-pressed="${r === "up"}">&#128077;</button>` +
+        `<button class="thumb ${r === "down" ? "on" : ""}" data-rate="down" title="Poor answer" aria-label="Thumbs down" aria-pressed="${r === "down"}">&#128078;</button>` +
+        (e.ratingNote ? `<span class="fbnote">${esc(e.ratingNote)}</span>` : "") + `</div>`;
+    }
+    return head + body + chips + meta + fb;
   }
 
   function render() {
@@ -304,7 +313,7 @@
     else if (ev === "token") { e.stream = (e.stream || "") + d.t; }
     else if (ev === "text") { e.text = d.text; e.mode = d.mode; if (d.cascade) e.cascade = d.cascade; e.stream = ""; }
     else if (ev === "citations") { e.citations = d.citations || []; e.see_also = d.see_also || []; }
-    else if (ev === "meta") { e.meta = d; if (!e.router && d.router) e.router = d.router; }
+    else if (ev === "meta") { e.meta = d; if (!e.router && d.router) e.router = d.router; if (d.pre_route) e.pre_route = d.pre_route; }
     else if (ev === "error") { e.error = d.error; }
     else if (ev === "done") { save(); }
     rerender(e);
@@ -345,9 +354,35 @@
   }
   function closeDrawers() { drawer.hidden = true; settings.hidden = true; sessionsDrawer.hidden = true; scrim.hidden = true; }
   chat.addEventListener("click", (ev) => {
+    const th = ev.target.closest(".thumb");
+    if (th) { rate(th.closest(".feedback").dataset.eid, th.dataset.rate); return; }
     const t = ev.target.closest("[data-sid]");
     if (t) openSection(t.dataset.sid, t.dataset.pid);
   });
+
+  // ---------------------------------------------------------------- feedback (server-side log: eval/feedback.jsonl)
+  async function rate(eid, rating) {
+    const e = history.find((x) => x.id === eid);
+    if (!e) return;
+    let comment;
+    if (e.rating === rating) rating = "clear";                      // tapping the active thumb withdraws it
+    else if (rating === "down") { comment = prompt("What was wrong? (optional)", e.comment || "") ; if (comment === null) return; }
+    e.rating = rating === "clear" ? "" : rating;
+    e.comment = rating === "down" ? (comment !== undefined ? comment.trim() : (e.comment || "")) : "";   // a comment belongs to a thumbs-down only
+    e.ratingNote = "saving…"; rerender(e);
+    const m = e.meta || {};
+    const body = { rating, entry_id: e.id, session_id: current().id, question: e.q, req_mode: e.reqMode, mode: e.mode, backend: m.backend || prefs.backend || (health && health.backend) || null,
+                   model: m.model || prefs.model || (health && health.model) || null, text: e.text, citations: (e.citations || []).map((c) => ({ n: c.n, para_id: c.para_id, section_id: c.section_id, citation: c.citation })),
+                   queries: m.queries || null, seconds: m.seconds ?? null, pre_route: e.pre_route || null, cascade: e.cascade || null, comment: e.comment || null, client_ts: new Date().toISOString() };
+    try {
+      const r = await fetch("/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      if (!r.ok) throw new Error((await r.json()).error || r.status);
+      e.ratingNote = rating === "clear" ? "" : (rating === "down" && e.comment ? "noted: " + e.comment : "thanks, noted");
+    } catch (err) {
+      e.ratingNote = "could not reach the server; not recorded";
+    }
+    save(); rerender(e);
+  }
   $("drawerClose").addEventListener("click", closeDrawers);
   $("settingsClose").addEventListener("click", closeDrawers);
   scrim.addEventListener("click", closeDrawers);
