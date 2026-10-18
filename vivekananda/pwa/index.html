@@ -15,6 +15,7 @@
 </head>
 <body>
 <header class="top">
+  <button class="icon-btn" id="sessionsBtn" title="Conversations" aria-label="Conversations">&#9776;</button>
   <div class="brand">
     <img src="/icon-192.png" alt="" width="28" height="28">
     <div>
@@ -22,6 +23,8 @@
       <div class="status" id="status">connecting…</div>
     </div>
   </div>
+  <div class="session-name" id="sessionName" title="Current conversation"></div>
+  <button class="icon-btn" id="newSessionTop" title="New conversation" aria-label="New conversation">&#65291;</button>
   <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings">&#9881;</button>
 </header>
 
@@ -54,6 +57,22 @@
   <div class="drawer-body" id="drawerBody"></div>
 </aside>
 
+<aside class="drawer settings" id="sessions" hidden aria-label="Conversations">
+  <header>
+    <div class="drawer-title">Conversations</div>
+    <button class="icon-btn" id="sessionsClose" aria-label="Close">&times;</button>
+  </header>
+  <div class="drawer-body">
+    <div class="row">
+      <button id="newSession" class="primary">&#65291; New conversation</button>
+      <button id="exportMdTop" title="Download the current conversation as Markdown">Export .md</button>
+      <button id="exportPdfTop" title="Print the current conversation; choose Save as PDF">Export PDF</button>
+    </div>
+    <div id="sessionList" class="session-list"></div>
+    <p class="hint">Conversations are stored only in this browser. Export one before clearing site data.</p>
+  </div>
+</aside>
+
 <aside class="drawer settings" id="settings" hidden aria-label="Settings">
   <header>
     <div class="drawer-title">Settings</div>
@@ -73,12 +92,18 @@
     </label>
     <label class="row"><input type="checkbox" id="showMeta"> show retrieval and timing details</label>
     <div class="row">
-      <button id="clearHistory" class="danger">Clear history</button>
-      <button id="exportHistory">Export history (JSON)</button>
+      <button id="exportMd">Export conversation (.md)</button>
+      <button id="exportPdf">Export conversation (PDF)</button>
+    </div>
+    <div class="row">
+      <button id="exportHistory">Export all conversations (JSON)</button>
+      <button id="clearHistory" class="danger">Delete all conversations</button>
     </div>
     <pre id="healthDump" class="small"></pre>
   </div>
 </aside>
+
+<div id="printView" class="print-view" aria-hidden="true"></div>
 
 <script src="/app.js"></script>
 </body>
