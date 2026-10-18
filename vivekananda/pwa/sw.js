@@ -1,6 +1,6 @@
 /* Service worker: caches the app shell so the installed PWA opens offline (and then reports the server as unreachable).
    API calls (/ask, /search, /section, /paragraph, /health) always go to the network. */
-const CACHE = "vk-shell-v1";
+const CACHE = "vk-shell-v2";   // bumped 2026-10-17: sessions + export
 const SHELL = ["/", "/index.html", "/app.js", "/style.css", "/manifest.webmanifest", "/icon-192.png", "/icon-512.png"];
 
 self.addEventListener("install", (ev) => {

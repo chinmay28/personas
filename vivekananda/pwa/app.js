@@ -1,24 +1,186 @@
 /* Vivekananda PWA: one chat screen over the local API (scripts/server.py). No build step, no dependencies.
-   History lives in localStorage only; nothing is stored server side. */
+   Conversations ("sessions") live in localStorage only; nothing is stored server side. A session can be created, renamed, deleted,
+   and exported as Markdown (download / share sheet) or PDF (print view, "Save as PDF" in the browser's print dialog). */
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
   const chat = $("chat"), form = $("form"), qBox = $("q"), modeSel = $("mode"), sendBtn = $("send"), statusEl = $("status");
   const drawer = $("drawer"), drawerBody = $("drawerBody"), drawerTitle = $("drawerTitle"), scrim = $("scrim");
   const settings = $("settings"), backendSel = $("backend"), modelInp = $("model"), showMeta = $("showMeta"), healthDump = $("healthDump");
-  const HKEY = "vk_history_v1", SKEY = "vk_settings_v1";
+  const sessionsDrawer = $("sessions"), sessionList = $("sessionList"), sessionName = $("sessionName");
+  const OLD_HKEY = "vk_history_v1", SKEY = "vk_settings_v1", DKEY = "vk_sessions_v2";
+  const MAX_SESSIONS = 100, MAX_ENTRIES = 200;
   const BADGE = { oracle: "oracle · his own words, verbatim", scholar: "scholar · what he said or wrote, cited",
                   persona: "persona · reasoning beyond his record", mixed: "mixed · what I said / what I would say" };
-  let history = load(HKEY, []);
   let prefs = load(SKEY, { backend: "", model: "", showMeta: false });
+  let db = loadSessions();
+  let history = current().entries;   // the active session's entries (alias kept so the rest of the code reads as before)
   let health = null;
   const sectionCache = new Map();
 
   function load(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } }
-  function save() { localStorage.setItem(HKEY, JSON.stringify(history.slice(-200))); }
   function savePrefs() { localStorage.setItem(SKEY, JSON.stringify(prefs)); }
   function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
   function scrollDown() { chat.scrollTop = chat.scrollHeight; }
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+  function fmtDate(iso) { try { return new Date(iso).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); } catch { return iso; } }
+
+  // ---------------------------------------------------------------- sessions
+  function newSession(title) {
+    const now = new Date().toISOString();
+    return { id: uid(), title: title || "", created: now, updated: now, entries: [] };
+  }
+  function loadSessions() {
+    let d = load(DKEY, null);
+    if (!d || !Array.isArray(d.sessions)) {
+      d = { sessions: [], current: null };
+      const old = load(OLD_HKEY, []);          // migrate the single pre-session history, if any
+      if (Array.isArray(old) && old.length) {
+        const s = newSession("Earlier conversation");
+        s.entries = old.slice(-MAX_ENTRIES); s.created = old[0].ts || s.created; s.updated = old[old.length - 1].ts || s.updated;
+        d.sessions.push(s);
+      }
+      localStorage.removeItem(OLD_HKEY);
+    }
+    if (!d.sessions.length) d.sessions.push(newSession());
+    if (!d.sessions.some((s) => s.id === d.current)) d.current = d.sessions[d.sessions.length - 1].id;
+    return d;
+  }
+  function current() { return db.sessions.find((s) => s.id === db.current); }
+  function save() {
+    const s = current();
+    s.entries = s.entries.slice(-MAX_ENTRIES);
+    if (!s.title && s.entries.length) s.title = s.entries[0].q.slice(0, 60);
+    s.updated = new Date().toISOString();
+    if (db.sessions.length > MAX_SESSIONS) {   // drop the oldest empty-or-untouched sessions first
+      db.sessions.sort((a, b) => a.updated.localeCompare(b.updated));
+      while (db.sessions.length > MAX_SESSIONS) { const i = db.sessions.findIndex((x) => x.id !== db.current); if (i < 0) break; db.sessions.splice(i, 1); }
+    }
+    localStorage.setItem(DKEY, JSON.stringify(db));
+  }
+  function titleOf(s) { return s.title || (s.entries.length ? s.entries[0].q.slice(0, 60) : "New conversation"); }
+  function clearChat() { chat.querySelectorAll(".msg, .card").forEach((n) => n.remove()); }
+  function switchTo(id) {
+    if (!db.sessions.some((s) => s.id === id)) return;
+    db.current = id; history = current().entries;
+    localStorage.setItem(DKEY, JSON.stringify(db));
+    clearChat(); render(); scrollDown(); updateHeader(); closeDrawers();
+  }
+  function createSession() {
+    const cur = current();
+    if (cur && !cur.entries.length) { switchTo(cur.id); return cur; }   // an empty session is already "new"
+    const s = newSession(); db.sessions.push(s); switchTo(s.id); return s;
+  }
+  function deleteSession(id) {
+    const i = db.sessions.findIndex((s) => s.id === id);
+    if (i < 0) return;
+    db.sessions.splice(i, 1);
+    if (!db.sessions.length) db.sessions.push(newSession());
+    if (db.current === id) db.current = db.sessions[db.sessions.length - 1].id;
+    history = current().entries;
+    localStorage.setItem(DKEY, JSON.stringify(db));
+    clearChat(); render(); updateHeader(); renderSessionList();
+  }
+  function renameSession(id, title) {
+    const s = db.sessions.find((x) => x.id === id);
+    if (!s) return;
+    s.title = (title || "").trim().slice(0, 80);
+    localStorage.setItem(DKEY, JSON.stringify(db));
+    updateHeader(); renderSessionList();
+  }
+  function updateHeader() {
+    const s = current();
+    sessionName.textContent = titleOf(s);
+    document.title = (s.entries.length ? titleOf(s) + " · " : "") + "Vivekananda";
+  }
+  function renderSessionList() {
+    const sorted = db.sessions.slice().sort((a, b) => b.updated.localeCompare(a.updated));
+    sessionList.innerHTML = sorted.map((s) => `
+      <div class="session ${s.id === db.current ? "current" : ""}" data-id="${esc(s.id)}">
+        <button class="open" data-act="open" data-id="${esc(s.id)}">
+          <div class="stitle">${esc(titleOf(s))}</div>
+          <div class="smeta">${s.entries.length} ${s.entries.length === 1 ? "exchange" : "exchanges"} · ${esc(fmtDate(s.updated))}</div>
+        </button>
+        <button class="icon-btn" data-act="rename" data-id="${esc(s.id)}" title="Rename" aria-label="Rename">&#9998;</button>
+        <button class="icon-btn danger" data-act="delete" data-id="${esc(s.id)}" title="Delete" aria-label="Delete">&times;</button>
+      </div>`).join("");
+  }
+  sessionList.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-act]");
+    if (!b) return;
+    const id = b.dataset.id, s = db.sessions.find((x) => x.id === id);
+    if (b.dataset.act === "open") switchTo(id);
+    else if (b.dataset.act === "rename") { const t = prompt("Conversation name", titleOf(s)); if (t !== null) renameSession(id, t); }
+    else if (b.dataset.act === "delete") {
+      if (confirm(`Delete "${titleOf(s)}" (${s.entries.length} exchanges) from this device?`)) deleteSession(id);
+    }
+  });
+  $("sessionsBtn").addEventListener("click", () => { renderSessionList(); sessionsDrawer.hidden = false; scrim.hidden = false; });
+  $("sessionsClose").addEventListener("click", closeDrawers);
+  $("newSession").addEventListener("click", () => { createSession(); qBox.focus(); });
+  $("newSessionTop").addEventListener("click", () => { createSession(); qBox.focus(); });
+
+  // ---------------------------------------------------------------- export (current session)
+  function plainText(text) { return String(text || ""); }
+  function toMarkdown(s) {
+    const lines = [`# Swami Vivekananda — ${titleOf(s)}`, "", `_Conversation started ${fmtDate(s.created)}; exported ${fmtDate(new Date().toISOString())}._`,
+                   "_Every answer is in his voice and labelled by grounding: oracle = his own words verbatim, scholar = what he said or wrote with citations, persona = reasoning beyond his record, marked as such._", ""];
+    for (const e of s.entries) {
+      lines.push(`## You`, "", plainText(e.q) + (e.reqMode && e.reqMode !== "auto" ? `  _(mode: ${e.reqMode})_` : ""), "");
+      const label = e.mode ? (BADGE[e.mode] || e.mode) : "no answer";
+      lines.push(`## Swamiji  _(${label}${e.cascade ? ", " + e.cascade : ""})_`, "");
+      if (e.error) lines.push(`> Error: ${e.error}`, "");
+      else if (e.text != null) lines.push(...plainText(e.text).split("\n").map((l) => l), "");
+      if (e.citations && e.citations.length) {
+        lines.push(...e.citations.map((c) => `[${c.n}] ${c.citation}${c.para_id ? "  (" + c.para_id + ")" : ""}`));
+        if (e.see_also && e.see_also.length) lines.push(`See also: ${e.see_also.map((x) => x.citation).join("; ")}`);
+        lines.push("");
+      }
+      if (e.meta && (e.meta.backend || e.meta.model)) lines.push(`<sub>${[e.meta.backend, e.meta.model, e.meta.seconds != null ? e.meta.seconds + " s" : ""].filter(Boolean).join(" · ")}</sub>`, "");
+      lines.push("---", "");
+    }
+    lines.push("Generated by the Vivekananda persona (github.com/chinmay28/personas). Quotations are verbatim from the Complete Works; everything else is model output.");
+    return lines.join("\n");
+  }
+  function localDate(iso) { const d = new Date(iso), p = (n) => String(n).padStart(2, "0"); return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`; }
+  function fileStem(s) { return "vivekananda-" + (titleOf(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "conversation") + "-" + localDate(s.created); }
+  async function deliver(blob, name) {
+    const file = new File([blob], name, { type: blob.type });
+    if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: name }); return; } catch (err) { if (err && err.name === "AbortError") return; }
+    }
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+  }
+  function exportMarkdown() { const s = current(); return deliver(new Blob([toMarkdown(s)], { type: "text/markdown" }), fileStem(s) + ".md"); }
+  function printView(s) {
+    const pv = $("printView");
+    pv.innerHTML = `<h1>Swami Vivekananda — ${esc(titleOf(s))}</h1>
+      <p class="pmeta">Conversation started ${esc(fmtDate(s.created))} · exported ${esc(fmtDate(new Date().toISOString()))}. Oracle = his own words verbatim; scholar = what he said or wrote, cited; persona = reasoning beyond his record, marked.</p>` +
+      s.entries.map((e) => `
+        <section class="pentry ${esc(e.mode || "")}">
+          <p class="pq"><b>You:</b> ${esc(e.q)}${e.reqMode && e.reqMode !== "auto" ? ` <i>(mode: ${esc(e.reqMode)})</i>` : ""}</p>
+          <p class="plabel">Swamiji · ${esc(e.mode ? (BADGE[e.mode] || e.mode) : "no answer")}${e.cascade ? " · " + esc(e.cascade) : ""}</p>
+          ${e.error ? `<p class="perr">Error: ${esc(e.error)}</p>` : `<div class="ptext">${renderText(e.text || "", e.citations)}</div>`}
+          ${e.citations && e.citations.length ? `<ol class="pcites">${e.citations.map((c) => `<li value="${c.n}">${esc(c.citation)}</li>`).join("")}</ol>` : ""}
+          ${e.see_also && e.see_also.length ? `<p class="psee">See also: ${e.see_also.map((x) => esc(x.citation)).join("; ")}</p>` : ""}
+        </section>`).join("") +
+      `<p class="pfoot">Generated by the Vivekananda persona (github.com/chinmay28/personas). Quotations are verbatim from the Complete Works; everything else is model output.</p>`;
+    return pv;
+  }
+  function exportPdf() {
+    const s = current();
+    if (!s.entries.length) { alert("Nothing to export yet."); return; }
+    printView(s);
+    document.body.classList.add("printing");
+    const done = () => { document.body.classList.remove("printing"); window.removeEventListener("afterprint", done); };
+    window.addEventListener("afterprint", done);
+    setTimeout(() => { window.print(); setTimeout(done, 1500); }, 50);   // the timeout covers browsers that never fire afterprint
+  }
+  $("exportMd").addEventListener("click", () => { closeDrawers(); exportMarkdown(); });
+  $("exportPdf").addEventListener("click", () => { closeDrawers(); exportPdf(); });
+  $("exportMdTop").addEventListener("click", () => { closeDrawers(); exportMarkdown(); });
+  $("exportPdfTop").addEventListener("click", () => { closeDrawers(); exportPdf(); });
 
   // ---------------------------------------------------------------- health / status
   async function refreshHealth() {
@@ -154,11 +316,12 @@
     const q = qBox.value.trim();
     if (!q) return;
     const e = { id: Date.now().toString(36), q, reqMode: modeSel.value, ts: new Date().toISOString() };
-    history.push(e); save();
+    const session = current();
+    history.push(e); save(); updateHeader();
     qBox.value = ""; qBox.style.height = "auto";
     render(); scrollDown();
     sendBtn.disabled = true;
-    try { await ask(e); } finally { sendBtn.disabled = false; qBox.focus(); }
+    try { await ask(e); } finally { sendBtn.disabled = false; qBox.focus(); if (current() === session) updateHeader(); }
   });
   qBox.addEventListener("input", () => { qBox.style.height = "auto"; qBox.style.height = Math.min(qBox.scrollHeight, 160) + "px"; });
   qBox.addEventListener("keydown", (ev) => { if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); } });
@@ -180,7 +343,7 @@
     if (target) target.scrollIntoView({ block: "start", behavior: "instant" });
     else drawerBody.scrollTop = 0;
   }
-  function closeDrawers() { drawer.hidden = true; settings.hidden = true; scrim.hidden = true; }
+  function closeDrawers() { drawer.hidden = true; settings.hidden = true; sessionsDrawer.hidden = true; scrim.hidden = true; }
   chat.addEventListener("click", (ev) => {
     const t = ev.target.closest("[data-sid]");
     if (t) openSection(t.dataset.sid, t.dataset.pid);
@@ -196,23 +359,31 @@
   backendSel.addEventListener("change", () => { prefs.backend = backendSel.value; savePrefs(); refreshHealth(); });
   modelInp.addEventListener("change", () => { prefs.model = modelInp.value.trim(); savePrefs(); refreshHealth(); });
   showMeta.addEventListener("change", () => { prefs.showMeta = showMeta.checked; savePrefs(); render(); });
-  $("clearHistory").addEventListener("click", () => { if (confirm("Clear the conversation history on this device?")) { history = []; save(); chat.querySelectorAll(".msg, .card").forEach((n) => n.remove()); render(); closeDrawers(); } });
+  $("clearHistory").addEventListener("click", () => {
+    const n = db.sessions.reduce((a, s) => a + s.entries.length, 0);
+    if (confirm(`Delete all ${db.sessions.length} conversations (${n} exchanges) on this device?`)) {
+      db = { sessions: [newSession()], current: null }; db.current = db.sessions[0].id; history = current().entries;
+      localStorage.setItem(DKEY, JSON.stringify(db)); clearChat(); render(); updateHeader(); closeDrawers();
+    }
+  });
   $("exportHistory").addEventListener("click", () => {
-    const blob = new Blob([JSON.stringify(history, null, 1)], { type: "application/json" });
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "vivekananda-history.json"; a.click();
+    deliver(new Blob([JSON.stringify(db, null, 1)], { type: "application/json" }), "vivekananda-conversations.json");
   });
 
   // ---------------------------------------------------------------- boot
   window.addEventListener("online", refreshHealth);
   window.addEventListener("offline", refreshHealth);
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {});
-  render(); scrollDown(); refreshHealth();
-  // /?q=...&mode=... asks immediately (shareable links, smoke tests)
+  render(); scrollDown(); updateHeader(); refreshHealth();
+  // /?q=...&mode=... asks immediately (shareable links, smoke tests); &new=1 starts it in a fresh conversation
   const params = new URLSearchParams(location.search);
+  if (params.get("new")) createSession();
   if (params.get("q")) {
     qBox.value = params.get("q");
     if (params.get("mode")) modeSel.value = params.get("mode");
     window.history.replaceState(null, "", location.pathname);
     form.requestSubmit();
   }
+  // test/debug hooks (not used by the UI)
+  window.vk = { sessions: () => db, current, createSession, deleteSession, renameSession, switchTo, toMarkdown: () => toMarkdown(current()), printView: () => printView(current()).innerHTML };
 })();
