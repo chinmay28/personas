@@ -17,3 +17,6 @@ __pycache__/
 *.safetensors
 *.epub
 *.mobi
+
+# user feedback collected by the server (review with scripts/feedback.py; keep local unless the owner decides to publish it)
+*/eval/feedback.jsonl

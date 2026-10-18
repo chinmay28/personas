@@ -489,3 +489,16 @@ dependencies). Settings keep "export all conversations (JSON)" and "delete all".
 sessions, 200 exchanges each. Service worker cache bumped to `vk-shell-v2` so installed apps pick up the new shell. Checked in headless Chrome
 (24 checks: create, switch, rename, delete current and non-current, markdown download, PDF via `Page.printToPDF`, migration); `window.vk`
 exposes the session functions for tests.
+
+### Feedback: thumbs up / down (2026-10-17)
+
+Every finished answer card in the PWA has 👍 / 👎. A tap posts to `POST /feedback` and the server appends one JSON event to
+`eval/feedback.jsonl` (`VK_FEEDBACK` overrides the path; the file is git-ignored): rating, entry and session ids, question, requested and served
+mode, backend, model, answer text, citations, the retrieval queries, seconds, pre-route, cascade, optional comment (asked on 👎), timestamps and
+client address. Tapping the active thumb withdraws it (`rating: clear`); the latest event per answer wins. The rating is kept in the browser's
+session entry too, so it survives reloads and appears in the Markdown export. `GET /feedback?n=50` returns counts plus the last n events.
+Review: `scripts/feedback.py [--since YYYY-MM-DD] [--down-only] [--json] [--export eval/feedback_review.md]` prints counts by mode and by
+backend/model and every rated answer with its question, comment, queries, text and citations, newest first. The intended loop: read the
+thumbs-downs every so often, classify each (retrieval miss, routing miss, voice, bad question), and turn the real ones into eval questions or
+dataset fixes for the next run. Checked in headless Chrome (thumbs appear only on finished answers, up, down with comment, withdraw, reload,
+export). Service worker cache bumped to `vk-shell-v3`.

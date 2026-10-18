@@ -12,6 +12,9 @@ Endpoints
   GET  /section/{id}      section metadata + all paragraphs (citation drill-down)
   GET  /paragraph/{id}    one paragraph with its sentences and citation
   GET  /health            Ollama reachability, models present, index counts, active backend/model
+  POST /feedback          {"rating": "up"|"down"|"clear", "entry_id", "question", "mode", "backend", "model", "text", "citations", "comment"?, ...}
+                          appended as one JSON line to eval/feedback.jsonl (server side; review with scripts/feedback.py)
+  GET  /feedback?n=50     the last n feedback events plus counts (home network only; no auth, like everything here)
   GET  /                  the PWA (static files from pwa/)
 """
 from __future__ import annotations
@@ -32,6 +35,50 @@ import engine  # noqa: E402
 import vklib  # noqa: E402
 
 PWA_DIR = os.path.join(vklib.ROOT, "pwa")
+FEEDBACK_PATH = os.environ.get("VK_FEEDBACK", os.path.join(vklib.ROOT, "eval", "feedback.jsonl"))
+FEEDBACK_LOCK = threading.Lock()
+FEEDBACK_FIELDS = ("entry_id", "session_id", "question", "req_mode", "mode", "backend", "model", "text", "citations", "queries", "seconds",
+                   "pre_route", "cascade", "comment", "client_ts")
+
+
+def record_feedback(body: dict, client: str) -> dict:
+    """One JSON line per event. The latest event per entry_id wins when summarising (scripts/feedback.py)."""
+    rating = str(body.get("rating") or "").lower()
+    if rating not in ("up", "down", "clear"):
+        raise ValueError("rating must be up, down or clear")
+    ev = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "rating": rating, "client": client}
+    for k in FEEDBACK_FIELDS:
+        v = body.get(k)
+        if v is None:
+            continue
+        if k in ("question", "text", "comment", "entry_id", "session_id") and isinstance(v, str):
+            v = v[:20000 if k == "text" else 2000]
+        ev[k] = v
+    line = json.dumps(ev, ensure_ascii=False)
+    with FEEDBACK_LOCK:
+        os.makedirs(os.path.dirname(FEEDBACK_PATH), exist_ok=True)
+        with open(FEEDBACK_PATH, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    return ev
+
+
+def read_feedback(n: int = 50) -> dict:
+    events = []
+    if os.path.exists(FEEDBACK_PATH):
+        with FEEDBACK_LOCK, open(FEEDBACK_PATH, encoding="utf-8") as f:
+            for l in f:
+                try:
+                    events.append(json.loads(l))
+                except json.JSONDecodeError:
+                    continue
+    latest = {}
+    for e in events:
+        latest[e.get("entry_id") or e["ts"]] = e
+    counts = {"up": 0, "down": 0}
+    for e in latest.values():
+        if e["rating"] in counts:
+            counts[e["rating"]] += 1
+    return {"events": len(events), "entries": len(latest), "counts": counts, "path": FEEDBACK_PATH, "recent": events[-n:]}
 VERSION = "0.1"
 CFG = {"backend": engine.DEFAULT_BACKEND, "model": None, "k": 8, "expand": True}
 _tls = threading.local()
@@ -134,6 +181,12 @@ class Handler(BaseHTTPRequestHandler):
         qs = {k: v[0] for k, v in urllib.parse.parse_qs(u.query).items()}
         path = u.path
         try:
+            if path == "/feedback":
+                try:
+                    n = max(1, min(500, int(qs.get("n") or 50)))
+                except ValueError:
+                    n = 50
+                return self._json(200, read_feedback(n))
             if path == "/health":
                 return self._json(200, health())
             if path == "/search":
@@ -169,6 +222,12 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urllib.parse.urlsplit(self.path).path
+        if path == "/feedback":
+            try:
+                ev = record_feedback(self._read_json(), self.address_string())
+            except ValueError as e:
+                return self._json(400, {"error": str(e)})
+            return self._json(200, {"ok": True, "ts": ev["ts"], "rating": ev["rating"]})
         if path != "/ask":
             return self._json(404, {"error": "not found"})
         body = self._read_json()
